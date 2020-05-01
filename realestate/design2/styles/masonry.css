@@ -1,0 +1,50 @@
+/* center the grid */
+#fit-width .masonry {
+	margin: 0 auto;
+}
+.masonry {
+	max-width: 100%;
+	margin: 0 auto;
+}
+.masonry .item {
+	width: 290px;
+	float: left;
+	margin: 10px; /* add gutter space */
+	margin-bottom: 10px; /* add extra vertical gutter space */
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: pointer; background-color:#e7e8ee;
+}
+.masonry .item:hover {
+	opacity:.6;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.item-title {
+	width: 290px;
+	background-color: #8c8fa0;
+	z-index: 2;
+	position: relative;
+}
+.item-title h2 {
+	text-align:center; color:#fff; font-size:1.25em; padding:10px; margin:0; text-transform:uppercase; font-weight:bold;
+}
+.masonry .item hr {
+	padding:0; margin:0;
+}
+.masonry .item p {
+	text-align:center; color:#333; padding:10px; margin:0;
+}
+.item-image {
+	position: relative;
+	width: 290px;
+}
+.item-image img {
+	width:100%; height:auto;
+}

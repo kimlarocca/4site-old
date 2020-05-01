@@ -1,0 +1,210 @@
+/**
+* Wicked Framework - custom build
+* ----------------- 
+* Copyright 2014 KimLaRocca.com
+* Licensed under MIT (https://github.com/kimlarocca/WickedFramework/blob/master/LICENSE)
+**/
+/* responsive columns */
+.wf_row {
+	display: table;
+	width: 100%;
+}
+.wf_column {
+	display: table-cell;
+	vertical-align:top;
+	padding-left: 1%;
+	padding-right: 1%;
+	*margin-right:-5px; /* IE7 and below */
+	*float:left; /* IE7 and below */
+}
+.wf_column img {
+	max-width: 100%;
+	height: auto;
+}
+.wf_one {
+	width: 100%;
+}
+.wf_two {
+	width: 48%;
+}
+.wf_three {
+	width: 31%;
+}
+.wf_threeCenter {
+	width: 32%;
+}
+.wf_four {
+	width: 23%;
+}
+.wf_five {
+	width: 19%;
+}
+.wf_six {
+	width: 16%;
+}
+.wf_twoThirds1 {
+	width: 32%;
+}
+.wf_twoThirds2 {
+	width: 64%;
+}
+.wf_oneQuarter1 {
+	width: 23%;
+}
+.wf_oneQuarter2 {
+	width: 73%;
+}
+.wf_quad {
+	width: 23%;
+}
+/**/
+/* horizontal divider */
+.wf_hr {
+	height: 1px;
+	box-shadow: inset 0 -1px 0 #ccc;
+	border-top: solid 1px #ccc\9; /* IE8 and below */
+}
+/* common styles */
+.wf_float_left {
+	float: left;
+}
+.wf_float_right {
+	float: right;
+}
+.wf_clearfloat {
+	width: 100%;
+	clear: left;
+}
+.wf_hide {
+	display: none;
+}
+.wf_show {
+	display: block;
+}
+.wf_padding0 {
+	padding: 0;
+}
+.wf_margin0 {
+	margin: 0;
+}
+.wf_margin5 {
+	margin-bottom: 5px;
+}
+.wf_margin10 {
+	margin-bottom: 10px;
+}
+.wf_margin15 {
+	margin-bottom: 15px;
+}
+.wf_margin20 {
+	margin-bottom: 20px;
+}
+.wf_margin25 {
+	margin-bottom: 25px;
+}
+.wf_margin30 {
+	margin-bottom: 30px;
+}
+.wf_margin35 {
+	margin-bottom: 35px;
+}
+.wf_margin40 {
+	margin-bottom: 40px;
+}
+.wf_margin45 {
+	margin-bottom: 45px;
+}
+.wf_margin50 {
+	margin-bottom: 50px;
+}
+.wf_text_left {
+	text-align: left!important;
+}
+.wf_text_right {
+	text-align: right!important;
+}
+.wf_text_center {
+	text-align: center!important;
+}
+.wf_text_justify {
+	text-align: justify!important;
+}
+.wf_text_centeredOnMobile {
+	text-align: left!important;
+}
+.wf_centered {
+	margin: auto;
+	text-align: center!important;
+}
+/* hide and show styles */
+.wf_showOnDesktop {
+	display: block;
+}
+.wf_showColumnOnDesktop {
+	display:table-cell;
+}
+.wf_hideOnMobile, .wf_hideOnTablet {
+	display: block;
+}
+.wf_hideColumnOnMobile, .wf_hideColumnOnTablet {
+	display: table-cell;
+}
+.wf_hideOnDesktop, .wf_hideColumnOnDesktop {
+	display: none;
+}
+/* tablet styles */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+.wf_text_centeredOnTablet {
+	text-align: center!important;
+}
+/* hide and show styles */
+.wf_hideOnMobile, .wf_hideOnDesktop {
+	display: block;
+}
+.wf_hideColumnOnMobile, .wf_hideColumnOnDesktop {
+	display: table-cell;
+}
+.wf_showOnDesktop, .wf_showColumnOnDesktop {
+	display: none;
+}
+.wf_hideOnTablet, .wf_hideColumnOnTablet {
+	display: none;
+}
+}
+/**/
+/* mobile styles */
+@media screen and (max-width : 480px) {
+.wf_float_noneOnMobile {
+	float:none;
+}
+.wf_text_centeredOnMobile {
+	text-align: center!important; margin:auto;
+}
+.wf_column {
+	float: left; padding:0;
+}
+.wf_two, .wf_three, .wf_threeCenter, .wf_threeCustom, .wf_threeCustomDivider, .wf_four, .wf_five, .wf_twoThirds1, .wf_twoThirds2, .wf_oneQuarter1, .wf_oneQuarter2 {
+	width: 100%;
+}
+.wf_quad {
+	width: 50%;
+	float: left;
+}
+.wf_six {
+	width: 50%;
+	float: left;
+}
+/* hide and show styles */
+.wf_showOnDesktop, .wf_showColumnOnDesktop {
+	display: none;
+}
+.wf_hideOnTablet, .wf_hideOnDesktop {
+	display: block;
+}
+.wf_hideColumnOnTablet, .wf_hideColumnOnDesktop {
+	display: table-cell;
+}
+.wf_hideOnMobile, .wf_hideColumnOnMobile {
+	display: none;
+}
+}

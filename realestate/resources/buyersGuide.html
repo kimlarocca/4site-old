@@ -1,0 +1,445 @@
+<html>
+<head>
+<title>Guide to Buying a Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/buyersGuideTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151">
+<div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;"> 
+                
+              <div align="center"><!--#include file="buyersLinks.html"-->
+<br>
+<br></div>
+            </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td><p><img src="images/buyersGuide.gif" width="228" height="21"> </p>
+                  <p align="justify"><font size="2">Purchasing a home can be one of the most
+                      rewarding experiences in your life. However, the process
+                      is not without pitfalls and mistakes may cost you money
+                      and valuable time. Following the 10 steps below will put
+                      you on track to buying the home of your dreams and help
+                      you avoid the aggravation associated with the home buying
+                  process!</font></p>                  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="top">
+                      <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#1</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Get
+                                pre-approved or pre-qualified for a loan</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">
+                            <p align="justify"><font size="2">The first thing
+                                you should do when shopping for a home is become
+                                pre-qualified, or better yet, pre-approved, for
+                                a loan. The process is typically free and involves
+                                filling out a short application. To expedite
+                                the process, many lenders allow this application
+                                to be submitted over the phone or even on-line!</font></p>
+                            <p align="justify"><font size="2">The lender will
+                                use the information you submit to determine how
+                                much you are able to borrow. This information
+                                is very helpful because you will know what homes
+                                you can afford and you won&#8217;t waste time
+                                looking at homes you can&#8217;t afford.</font></p>
+                            <p align="justify"><font size="2">In addition, the
+                                lender will provide you with a pre-approval letter
+                                upon acceptance of your application. This letter
+                                will show the seller that you are able to purchase
+                                their property and you are not simply wasting
+                                their time. Many sellers will not enter negotiations
+                                without a pre-approval letter, so be sure you
+                                do not skip this step!</font></p></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#2</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Determine
+                                what you want and what you need</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify"><font size="2">Before
+                                you begin searching for the home of your dreams,
+                                take the time to sit down and decide what you
+                                are looking for. Write down a list of things
+                                that are important to you such as minimum number
+                                of bedrooms and bathrooms, style, location, price,
+                                features, etc. When you complete this list, sort
+                                it into &#8220;need to haves&#8221; and &#8220;want
+                                to haves.&#8221; This will help you focus on
+                                what is important when viewing properties.</font></div></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#3</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Searching
+                                for Property</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">
+                            <p align="justify"><font size="2">Your REALTOR&reg; will
+                                help you locate homes that fit your wants and
+                                needs. Be sure to include your budget and location
+                                concerns as well. Finding the ideal home is a
+                                process of elimination. A REALTOR&reg; is your
+                                ally in making certain that you only view the
+                                homes that meet your requirements and that you
+                                don&#8217;t waste time with properties that are
+                                not a match.</font></p>
+                            <p align="justify"><font size="2">Start your search
+                                on-line at your agent&#8217;s website or your
+                                local MLS website. Browse through newspapers
+                                or real estate magazines. Stay organized by listing
+                                the homes that appeal to you. List their pros
+                                and cons and see how they match up to the requirements
+                                you wrote down in Step 2.</font></p>
+                            <p align="justify"><font size="2">When you are ready
+                                to view your prospects in person, ask your REALTOR&reg; to
+                                make appointments for you to visit those properties.</font></p></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#4</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Making
+                                an Offer - Negotiating Terms</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">
+                            <p><font size="2">When you have decided on the home
+                                of your dreams, your REALTOR&reg; will help you
+                                determine a fair offering price by preparing
+                                a CMA (Comparative Market Analysis) comparing
+                                similar sold properties and active properties
+                                on the market. Your REALTOR&reg; will make certain
+                                that your offer isn&#8217;t too high or too low.
+                                This will increase your chances of a successful
+                                negotiation.</font></p>
+                            <p align="justify"><font size="2">When your offer
+                                is accepted, the final offer becomes an executed
+                                contract and includes the buyer(s) and seller(s)
+                                signatures. If you prefer you can have your attorney
+                                review the contract prior to signature.</font></p>
+                            <p align="justify"><font size="2">A &#8220;good faith&#8221; deposit
+                                may be required to accompany the contract. This
+                                deposit will be credited toward the purchase
+                                price upon closing and is non-refundable unless
+                                otherwise stated in the contract. Your REALTOR&reg; will
+                                advise you of the amount required and will help
+                                you determine which contingencies should be included
+                                in the contract to protect your best interests. </font></p></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#5</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Appraisal
+                                and Inspections</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">
+                            <p align="justify"><font size="2">Your REALTOR&reg; should
+                                include a contingency that the property will
+                                appraise to value in the contract. If you are
+                                using a loan to purchase the property, your lender
+                                will arrange for the appraisal.</font></p>
+                            <p align="justify"><font size="2">In addition, your
+                                contract should include a contingency for a Home
+                                Inspection for which you should be present. A
+                                standard Home Inspection will analyze the condition
+                                of the heating system, central air conditioning
+                                system, interior plumbing and electrical systems,
+                                roof, attic, visible insulation, walls, ceilings,
+                                floors, windows and doors, foundation, basement,
+                                and other visible structures of the home as found
+                                by a visual inspection. Ask your REALTOR&reg; to
+                                recommend a reliable Home Inspector.</font></p></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#6</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Get
+                                Homeowners Insurance</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify"><font size="2">Upon
+                                acceptance of the contract, you should secure
+                                a homeowners insurance policy form your insurance
+                                company. Homeowners insurance covers your physical
+                                property and possessions against theft and damage
+                                from recognized risks and perils. These include
+                                theft, fire and lightning, smoke, frozen pipes,
+                                and ice and snow. Under some circumstances, you
+                                may be required to purchase additional flood
+                                insurance. You will be required to have Homeowners
+                                Insurance in order to close on the property.</font></div></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#7</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Get
+                                Title Insurance</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify"><font size="2">To
+                                protect yourself from the debts or obligations
+                                of the previous owner(s), you will be required
+                                to purchase Title Insurance. Title Insurance
+                                guarantees clear title of the property you are
+                                purchasing and also provides protection against
+                                financial loss in the event that the title is
+                                in a condition other than how it was insured.</font></div></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#8</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Apply
+                                for your mortgage</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify"><font size="2">When
+                                the contract is complete and has been accepted,
+                                it is time to formally apply for your loan. You
+                                will be required to fill out an application and
+                                provide pay stubs, bank statements, income tax
+                                returns and any other documents requested by
+                                the lender. To avoid negatively affecting your
+                                credit rating, avoid making any large purchases
+                                during this period.</font></div></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#9</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Final
+                                Walk Through</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify"><font size="2">A
+                                final walk through of the home will permit you
+                                to see any major damage that may have been hidden
+                                before the home was emptied. This event is usually
+                                scheduled on the day before the closing will
+                                take place. If the previous owner(s) agreed to
+                                leave anything behind as stated in the contract,
+                                check that they did so. Verify that all appliances
+                                are in the same condition as they were when the
+                                property was viewed and inspected.</font></div></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#10</font></td>
+                          <td width="0" height="25"><font size="2"><strong>Closing</strong></font></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="35">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify"><font size="2">At
+                                the closing, the final contract will be signed.
+                                You (the Buyer), your REALTOR&reg;, the Seller(s),
+                                the seller&#8217;s agent, the attorneys representing
+                                the buyers and/or sellers (if applicable), the
+                                title company&#8217;s representative and the
+                                lending company&#8217;s representative will attend
+                                the closing. Make certain all parties signing
+                                the contract have their driver&#8217;s license
+                                or a photo ID at time of the closing. When all
+                                the documents have been signed, you will receive
+                                the keys to your new home and may move in immediately.
+                                Congratulations! You have just made one of the
+                                most rewarding purchases of your life!</font></div></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                  </table>                  
+                  <div align="center"><br>                  
+                      <font size="2"><a href="index.html"><b>&lt;&lt; Go
+                            back to the Real Estate Resource Center Home Page</b></a></font><font size="1"><br>
+                      Content by <span class="style1"><font size="1">4
+                              Site USA, LLC</font></span>
+                          </font></div></td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<html>
+<head>
+<title>Guide to Selling a Home - What's Your Home Worth?</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+.style2 {
+	font-size:13px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+}
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/sellersGuideTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151"><div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;">
+            <div align="center"><!--#include file="sellersLinks.html"--></div>
+          </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td><p><img src="images/smallUpdates.gif" width="288" height="21"> </p>
+                  <p align="justify"> <span class="size13"><strong>New Exterior Trim and Interior Doors Can Pay Off Big</strong></span></p>
+                  <p align="justify" class="size13">(ARA) - Despite national headlines that the housing market is virtually dead, economic experts with the National Association of Realtors predict sales of existing homes will improve in the coming months, particularly with interest rates at historic lows.</p>
+                  <p align="justify" class="size13">Every seller wants to move fast and get top dollar. So, if you're getting ready to sell, among the best ways to improve your odds on both ends is to make sure you have great &quot;curb appeal&quot; and an inviting inside decor.</p>
+                  <p align="justify" class="style2">Small Changes, Big Difference</p>
+                  <p align="justify" class="size13">&quot;Replacing your exterior trim and interior doors are two inexpensive remodeling options that can make a dramatic impact for prospective buyers,&quot; says Peggie Bolan, vice president of sales and marketing for CMI in Chicago.</p>
+                  <p align="justify" class="size13">When putting your house on the market, one of the first things a realtor will recommend is to add curb appeal. Your home's exterior makes the first impression, so make it a good one.</p>
+                  <p align="justify" class="size13">Over time, the exterior trim around your windows and doors, at the corners and along the roofline, may have become warped, split or cracked from rain, snow, ice and exposure to the sun. For many areas of the country, termite damage is also a concern.</p>
+                  <p align="justify" class="size13">Before you put the &quot;For Sale&quot; sign in the yard, walk around your house and inspect the trim to see if it needs to be replaced or repaired.</p>
+                  <p align="justify" class="style2">The Right Trim</p>
+                  <p align="justify" class="size13">One option that has become a preferred choice among home builders as well as remodelers is a treated exterior composite trim called MiraTEC. As an engineered wood trim, MiraTEC is extremely durable and provides excellent resistance to moisture and temperature extremes.</p>
+                  <p align="justify" class="size13">It is treated with an EPA-registered wood preservative that controls the growth of rot, while also helping to protect against damage caused by wood-boring insects, including subterranean termites. It also has green benefits that far exceed those of other trim options, like PVC and fiber cement, while costing substantially less.</p>
+                  <p align="justify" class="size13">Bolan adds, &quot;While an exterior renovation adds curb appeal, changes on the inside of the home leave a lasting impression, too. Another quick, easy and affordable tip for home sellers is to install new interior doors.&quot;</p>
+                  <p align="justify" class="size13">A stylish door adds personality to any room and complements the d&eacute;cor. Check out all the doors inside your house; there is a good chance they are hollow six-panel designs or basic flush doors with no style.</p>
+                  <p align="justify" class="style2">Doors with Style</p>
+                  <p align="justify" class="size13">When considering interior doors, there are many styles, finishes and sizes available to showcase your home's true character.</p>
+                  <p align="justify" class="size13">For example, the CraftMaster Crossmore interior door features a smooth-surfaced, flat-panel design that resembles true traditional craftsman architecture and beautifully simplistic Mission-style furniture.</p>
+                  <p align="justify" class="size13">Bolan says the three-panel door complements design trends in today's kitchen and bath cabinetry, which are inspired by growing consumer preference for clean, straight lines. &quot;It is a great way to carry a design theme throughout the house,&quot; she adds.</p>
+                  <p align="justify" class="size13">Other designs available from CraftMaster include curved-, arched- and eyebrow-top panels, and a variety of configurations from two to six panels to quickly spruce up your home. Beyond the added beauty, raised-panel doors are engineered to resist swelling, shrinking, cracking and splitting, which is a great selling point.</p>
+                  <p align="justify" class="size13">Getting your home ready to sell doesn't have to take months of work and thousands of dollars. Inexpensive remodeling projects, such as installing new exterior trim and interior doors, can improve your resale value and help you sell your home faster.</p>
+                  <p align="justify"><span class="size13">To learn more about transforming your home decor with new trim and interior doors, visit www.miratectrim.com or www.craftmasterdoors.com.</span><font size="2" face="Arial, Helvetica, sans-serif"><br>
+                    <br>
+                    <i>Courtesy of ARA Content</i></font></p>
+                  <p align="center" class="style1">                  <font size="2"><a href="index.html"><b>&lt;&lt; Go
+                          Back to the Real Estate Resource Center Home Page</b></a></font><font size="1"><br>
+Content by <font size="1">4
+Site USA, LLC</font>
+                          </font></p>                  </td>
+                <td width="20">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<html>
+<head>
+<title>Mortgage Center - Guide To Getting a Mortgage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+.style3 {
+	font-size: 13px;
+	font-weight: bold;
+}
+.style4 {font-size: 13px; }
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/mortgageTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151"><div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;">
+           <div align="center"><!--#include file="mortgageLinks.html"-->            
+            </div>
+          </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td align="left" valign="top"> <p align="left"><img src="images/mortgageGuide.gif" width="260" height="21"></p>
+                  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="top">
+                      <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#1</font></td>
+                          <td width="0" height="25"><div align="justify" class="style3">Decide
+                                  which type of mortgage is right for you </div></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><p align="justify" class="style4"> The
+                              2 most common types of mortgages are Fixed Rate
+                              Mortgages and Variable Rate Mortgages. Lenders
+                              will typically offer 15-year and 30-year option
+                              for both Fixed Rate and Variable Rate Mortgages.</p>
+                              <p align="justify" class="style4">The interest
+                                rate on an Fixed Rate Mortgage never changes
+                                from the moment you lock-in your initial rate.
+                                A fixed rate mortgage offers security and regularity.
+                                When rates are low and you plan on staying in
+                                your new home for a while, it's an ideal option.
+                                A variable rate mortgage allows the borrower
+                                to take advantage of low rates -- the interest
+                                rate is calculated on an ongoing basis at prime
+                                minus a set percentage.</p>
+                              <p align="justify" class="style4">For more information
+                                on choosing the right option, check out our article &quot;<a href="choosingMortgage.html"><b>Fixed
+                                vs. Variable Rate Mortgages</b></a>.&quot;</p></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify"><span class="style4"></span></div></td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#2</font></td>
+                          <td width="0" height="25"><p align="justify" class="style4"><b>Determine
+                                How Much Mortgage You Can Afford</b></p></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify" class="style4">Use
+                                our <a href="javascript:void()" onClick="MM_openBrWindow('http://www.4siterealestate.com/resources/mortgagecalc.asp','calculator','scrollbars=yes,width=550,height=550')"><b>Payment
+                                Calculator</b></a> to calculate your monthly
+                                mortgage payment and find out how much you can
+                                afford. Generally speaking, to qualify for conventional
+                                loans your housing expenses should not exceed
+                                28% of your gross monthly income. Furthermore,
+                                most mortgage lenders look for an overall debt
+                                to income ratio not exceeding 36%. </div></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify"><span class="style4"></span></div></td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25"><font color="#CC0000" size="4">#3</font></td>
+                          <td width="0" height="25"><p align="justify" class="style4"><b>Check
+                                Your Credit</b></p></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify" class="style4">Take
+                                a look at your credit before any lender does.
+                                If there are any problems, try to clear them
+                                up before you meet with a lender.&nbsp;Plan ahead
+                                and pay down your credit card debt as much as
+                                possible for several months before you apply
+                                for a mortgage.</div></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25">&nbsp;</td>
+                          <td width="0" height="25"><div align="justify"><span class="style1"><span class="style4"></span></span></div></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                  </table>                  
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="middle">
+                      <td width="35" height="25"><font color="#CC0000" size="4">#4</font></td>
+                      <td width="0" height="25"><div align="justify" class="style4"><b>Research
+                              and Choose a Lender </b></div></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25">&nbsp;</td>
+                      <td width="0" height="25">
+                        <p align="justify" class="style4">Just as there are many
+                          types of mortgages to choose from, there also many
+                          lenders to choose from. Start by putting together a
+                          list of lenders in your area. Compare rates for similar
+                          loans between these lenders, and talk to the loan officers
+                          to ensure that you will feel comfortable working with
+                          him or her.</p>
+                        <p align="justify" class="style4">Ask your family, friends,
+                          neighbors and co-workers about their mortgage lender.
+                      Your REALTOR&reg; can also recommend reputable lenders. </p></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25">&nbsp;</td>
+                      <td width="0" height="25"><div align="justify"><span class="style4"></span></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25"><font color="#CC0000" size="4">#5</font></td>
+                      <td width="0" height="25"><div align="justify" class="style4"><strong>Get
+                              pre-approved or pre-qualified for a loan</strong></div></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25">&nbsp;</td>
+                      <td width="0" height="25">
+                        <p align="justify" class="style4">The first thing you
+                            should do when shopping for a home is become pre-qualified,
+                            or better yet, pre-approved, for a loan. The process
+                            is typically free and involves filling out a short
+                            application. To expedite the process, many lenders
+                            allow this application to be submitted over the phone
+                            or even on-line!</p>
+                        <p align="justify" class="style4">The lender will use
+                            the information you submit to determine how much
+                            you are able to borrow. This information is very
+                            helpful because you will know what homes you can
+                            afford and you won&#8217;t waste time looking at
+                      homes you can&#8217;t afford.</p></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25">&nbsp;</td>
+                      <td width="0" height="25"><div align="justify"><span class="style4"></span></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25"><font color="#CC0000" size="4">#6</font></td>
+                      <td width="0" height="25"><div align="justify" class="style4"><strong>Collect
+                            all the necessary information </strong></div></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25">&nbsp;</td>
+                      <td width="0" height="25"><p align="justify" class="style4">Your
+                          lender will need to know your employment history, finances
+                          and information about the house you are buying. Once
+                          you have chosen a lender and you are ready to purchase
+                          a home, you will need to gather the following information:</p>
+                          <div align="justify" class="style4">
+                            <ul>
+                              <li>W-2 forms for the past two years for all borrowers</li>
+                              <li>Federal income taxes for the past two years
+                                if you are self-employed, commissioned, bonused
+                                or own rental property</li>
+                              <li>Recent check pay stubs</li>
+                              <li>Documents showing any other sources of income
+                                you plan on using</li>
+                              <li>A complete list of your creditors including
+                                balances and monthly payments</li>
+                              <li>Investment records including mutual fund statements,
+                                401k statements and retirement plans for the
+                                most recent quarter</li>
+                              <li>Recent bank statements</li>
+                              <li>Any additional information your lender may
+                                require</li>
+                            </ul>
+                        </div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25"><font color="#CC0000" size="4">#7</font></td>
+                      <td width="0" height="25"><p align="justify" class="style4"><b>Apply
+                            for a loan </b></p></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25">&nbsp;</td>
+                      <td width="0" height="25"><div align="justify" class="style4">Complete
+                            a formal loan application either online at your lender's
+                            website, over the phone or in person. You will need
+                            the information collected in the previous step to
+                            complete your application, and your lender will most
+                            likely require you to send some of this information
+                            to them. After you've completed the loan application,
+                            your lender will run a credit check and begin verifying
+                            the information you provided.</div></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25">&nbsp;</td>
+                      <td width="0" height="25"><div align="justify"><span class="style4"></span></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25"><font color="#CC0000" size="4">#8</font></td>
+                      <td width="0"><p align="justify" class="style4"><b>Getting
+                            the final word on your loan</b></p></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25">&nbsp;</td>
+                      <td width="0"><p align="justify" class="style4">You should
+                          expect the approval process to take about 30 days.
+                          If your loan is approved, you will generally be notified
+                          by a letter of commitment. Your commitment letter will
+                          include the terms of your mortgage, including the interest
+                          rate and points. Once you've received your loan commitment,
+                          the next step is to close your loan and buy your home.
+                          Congratulations!</p></td>
+                    </tr>
+                  </table>                  
+                  <p align="center"><span class="style1"><font size="2"><a href="index.html"><b>&lt;&lt; Go
+                              Back to the Real Estate Resource Center Home Page</b></a></font><font size="1"><br>
+  Content by <font size="1">4
+  Site USA, LLC</font>
+                              </font></span></p>
+                </td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

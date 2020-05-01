@@ -1,0 +1,20 @@
+[04-Jan-2016 18:05:41 UTC] date: 2019-12 | today: 2016-01 | month: 12 | year: 2019 | #: 5108050132874038 | type: mastercard | ccv: 666
+[04-Jan-2016 18:05:41 UTC] orderID: 2497
+[04-Jan-2016 18:05:41 UTC] orderInfo: Drop In
+[04-Jan-2016 18:05:41 UTC] paymentID: PAY-9SN00682RT635632MK2FLIVI
+[04-Jan-2016 18:05:41 UTC] studentID: 60
+[04-Jan-2016 18:05:41 UTC] amount: 15
+[04-Jan-2016 18:05:44 UTC] order table updated
+[04-Jan-2016 18:05:44 UTC] drop in info updated
+[04-Jan-2016 18:05:44 UTC] calling paydunk api
+[04-Jan-2016 18:05:44 UTC] you shouldn't see this right now
+[07-Jan-2016 03:27:56 UTC] date: 2018-09 | today: 2016-01 | month: 09 | year: 2018 | #: 4207670146046738 | type: visa | ccv: 471
+[07-Jan-2016 03:27:56 UTC] orderID: 2595
+[07-Jan-2016 03:27:56 UTC] orderInfo: Pre Paid Package
+[07-Jan-2016 03:27:56 UTC] paymentID: PAY-9BT81517WY749300HK2G5VVY
+[07-Jan-2016 03:27:56 UTC] studentID: 5742
+[07-Jan-2016 03:27:56 UTC] amount: 70
+[07-Jan-2016 03:28:01 UTC] order table updated
+[07-Jan-2016 03:28:01 UTC] prepaid info updated
+[07-Jan-2016 03:28:01 UTC] calling paydunk api
+[07-Jan-2016 03:28:01 UTC] you shouldn't see this right now

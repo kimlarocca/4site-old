@@ -1,0 +1,254 @@
+.iphone {
+  -webkit-animation: appear 1.5s ease;
+  -moz-animation: appear 1.5s ease;
+  animation: appear 1.5s ease; }
+
+.iphone-container {
+  position: relative;
+  height: 640px;
+  width: 316px;
+  margin: 80px 0;
+  -webkit-animation: iphone-rise 1s ease-in-out;
+  -moz-animation: iphone-rise 1s ease-in-out;
+  animation: iphone-rise 1s ease-in-out; }
+
+.iphone-body {
+  position: relative;
+  background: #fff;
+  height: 640px;
+  width: 316px;
+  border-radius: 30px; }
+
+.iphone-body:after {
+  content: "";
+  position: absolute;
+  background: #333d47;
+  background: url("../img/Vasculogic-iPhone.jpg");
+  height: 500px;
+  width: 290px;
+  border-radius: 5px;
+  margin: 70px 50px 0 -145px; }
+
+.extra {
+  position: absolute;
+  background: #D7DFE7;
+  height: 4px;
+  width: 40px;
+  border-radius: 4px;
+  top: 35px;
+  left: 138px; }
+
+.svg-iphone {
+  position: absolute;
+  -webkit-animation: disappear 1.5s ease forwards;
+  -moz-animation: disappear 1.5s ease forwards;
+  animation: disappear 1.5s ease forwards; }
+
+/* --- SVG ANIMATION --- */
+.outline-one {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  -webkit-animation: fill 1.2s linear forwards;
+  -moz-animation: fill 1.2s linear forwards;
+  animation: fill 1.2s linear forwards; }
+
+.outline-two {
+  stroke-dasharray: 1580;
+  stroke-dashoffset: 1580;
+  -webkit-animation: fill 1s linear forwards;
+  -moz-animation: fill 1s linear forwards;
+  animation: fill 1s linear forwards; }
+
+.outline-line {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  -webkit-animation: fill 0.6s linear forwards;
+  -moz-animation: fill 0.6s linear forwards;
+  animation: fill 0.6s linear forwards; }
+
+/* =============
+	ANIMATIONS
+============== */
+@-webkit-keyframes fill {
+  to {
+    stroke-dashoffset: 0; } }
+@-moz-keyframes fill {
+  to {
+    stroke-dashoffset: 0; } }
+@keyframes fill {
+  to {
+    stroke-dashoffset: 0; } }
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1; }
+  66% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-moz-keyframes disappear {
+  0% {
+    opacity: 1; }
+  66% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes disappear {
+  0% {
+    opacity: 1; }
+  66% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0; }
+  70% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes appear {
+  0% {
+    opacity: 0; }
+  70% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes appear {
+  0% {
+    opacity: 0; }
+  70% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes iphone-rise {
+  0% {
+    top: 200px; }
+  75% {
+    top: -10px; }
+  100% {
+    top: 0; } }
+@-moz-keyframes iphone-rise {
+  0% {
+    top: 200px; }
+  75% {
+    top: -10px; }
+  100% {
+    top: 0; } }
+@keyframes iphone-rise {
+  0% {
+    top: 200px; }
+  75% {
+    top: -10px; }
+  100% {
+    top: 0; } }
+@-webkit-keyframes appear-full {
+  0% {
+    opacity: 0;
+    top: 400px; }
+  100% {
+    opacity: 1;
+    top: 200px; } }
+@-moz-keyframes appear-full {
+  0% {
+    opacity: 0;
+    top: 400px; }
+  100% {
+    opacity: 1;
+    top: 200px; } }
+@keyframes appear-full {
+  0% {
+    opacity: 0;
+    top: 400px; }
+  100% {
+    opacity: 1;
+    top: 200px; } }
+img {
+  max-width: 100%;
+  height: auto; }
+
+.diagonalBG {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  background-color: #140c3b;
+  background-image: -webkit-linear-gradient(30deg, #140c3b 50%, #ff4473 50%);
+  font-weight: normal;
+  position: relative;
+  min-height: 750px; }
+
+.white {
+  color: #fff; }
+
+.gray {
+  color: #333; }
+
+.appButton {
+  color: #333;
+  border: solid 2px #fff;
+  border-radius: 40px;
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: #fff; }
+
+.width50 {
+  width: 50%;
+  float: left; }
+
+.leftColumn {
+  margin-top: 170px;
+  padding: 25px;
+  border-top: solid 3px white;
+  border-left: solid 3px white; }
+
+.rightColumn {
+  background: url(../img/dots.png) bottom right no-repeat; }
+
+.leftColumn h1 {
+  padding-top: 0;
+  margin-top: 0;
+  font-size: 3em; }
+
+@media all and (max-width: 991px) {
+  .width50 {
+    width: 100%; }
+
+  .rightColumn {
+    background: none; } }
+.btn-fill2 {
+  color: #140c3b;
+  border: solid 2px #fff;
+  border-radius: 40px;
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: #fff; }
+
+.btn-fill2:hover, .btn-fill2:focus {
+  color: #fff;
+  background-color: #140c3b;
+  border: solid 2px #fff; }
+
+section#wireframes {
+  background: #f3f4f8; }
+
+section#video {
+  background: #fff; }
+
+.features-extra .wireframes-wrap2 {
+  position: absolute;
+  width: 602px;
+  height: 473px;
+  bottom: 100px;
+  z-index: 4;
+  right: 60px; }
+
+@media all and (max-width: 991px) {
+  .features-extra .wireframes-wrap2, .device-showcase2 {
+    display: none; } }
+section#ourservices {
+  background: url(../img/hero.jpg) no-repeat center center;
+  background-size: 100% 100%;
+  color: #fff; }
+
+.margin30 {
+  margin-bottom: 30px; }

@@ -1,0 +1,528 @@
+<html>
+<head>
+<title>Mortgage Calculator: Loan Comparison</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<SCRIPT language=Javascript>
+function checkInput(input, min, max, msg)
+{   
+	msg = msg + " field has invalid data: " + input.value;
+	var lField = ltrim(rtrim(String(input.value)));
+    myReg=new RegExp("^[$]?[0-9]*\\.?[0-9]"); 
+	if (!(myReg.test(lField) && lField!='.'))
+	{          
+		alert(msg);
+		input.focus();
+		input.select();
+		return false;
+	}   	
+	var num = parseFloat(input.value);
+	if (num < min || max < num)
+	{        
+		alert(msg + " not in range [" + min + ".." + max + "]"); 
+		return false;    
+	}      
+		return true;
+}
+function rtrim(argvalue) {
+  while (1) {
+    if (argvalue.substring(argvalue.length - 1, argvalue.length) != " ")
+      break;
+    argvalue = argvalue.substring(0, argvalue.length - 1);
+  }
+  return argvalue;
+}
+
+function ltrim(argvalue) {
+  while (1) {
+    if (argvalue.substring(0, 1) != " ")
+      break;
+    argvalue = argvalue.substring(1, argvalue.length);
+  }
+    return argvalue;
+}
+// Round a field two (2) decimals
+function round(number)	// no decimals
+{
+  return Math.round(number*Math.pow(10,2))/Math.pow(10,2);
+}
+function trim(str)
+{
+     return str.replace(/^\s+/g, '').replace(/\s+$/g, '');
+}
+
+function calculateForm(form)
+{
+if ((trim(form.payments.value)!= "") && (trim(form.interest.value)!= "") && (trim(form.principal.value)!= ""))
+{
+	   var i = form.interest.value;   
+			if (i > 1.0) 
+				{       
+					i = i / 100.0;        
+					form.interest.value = i;    
+				}   
+			i /= 12;   
+			var counter = 1;  
+			for (var j = 0; j < form.payments.value; j++)  
+				counter = counter * (1 + i);    
+				form.payment.value = round(form.principal.value * counter * i) / (counter - 1);
+				form.payment.value  = round(form.payment.value );    
+				form.totalint.value =(form.payment.value * form.payments.value)-form.principal.value;
+				form.totalint.value  = round(form.totalint.value ) 
+		}
+	}
+</SCRIPT>
+</HEAD>
+<BODY>
+<TABLE width=600 
+border=0 align="center" cellPadding=3 cellSpacing=0 class=mainText>
+  <TBODY>
+  <TR valign="top" bgColor=#FFFFFF>
+    <TD height="30" colSpan=8><font size="2" face="Arial, Helvetica, sans-serif"><img src="images/debtConsolidationCalculator.gif" width="250" height="15"></font></TD>
+  </TR>
+  <TR bgColor=#efefef>
+    <TD colSpan=8><font size="2" face="Arial, Helvetica, sans-serif"><STRONG>Your Current Debt Arrangement</STRONG></font></TD></TR>
+  <TR vAlign=top bgColor=#ffffff>
+    <TD width="57">&nbsp;</TD>
+    <TD width="71"><font size="2" face="Arial, Helvetica, sans-serif"># of Payments</font></TD>
+    <TD width="67"><font size="2" face="Arial, Helvetica, sans-serif">Interest Rate</font></TD>
+    <TD width="62"><font size="2" face="Arial, Helvetica, sans-serif">Principal</font></TD>
+    <TD width="81"><font size="2" face="Arial, Helvetica, sans-serif">Monthly Payment</font></TD>
+    <TD width="64"><font size="2" face="Arial, Helvetica, sans-serif">Total Interest</font></TD>
+    <TD width="61">&nbsp;</TD>
+    <TD width="89">&nbsp;</TD></TR>
+  <TR vAlign=middle bgColor=efefef>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #1</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=middle>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #2</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=middle bgColor=efefef>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #3</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=middle>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #4</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=middle bgColor=efefef>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #5</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=middle>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #6</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=middle bgColor=efefef>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #7</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=middle>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #8</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=middle bgColor=efefef>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #9</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=middle>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Debt #10</font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD>
+    </FORM></TR>
+  <TR vAlign=top bgColor=#ffffff>
+    <TD colSpan=8>&nbsp;</TD></TR>
+  <TR vAlign=top bgColor=#efefef>
+    <TD colSpan=8><font size="2" face="Arial, Helvetica, sans-serif"><STRONG>Compare Your Savings with a Consolidation 
+      Loan</STRONG></font></TD></TR>
+  <TR vAlign=top bgColor=#ffffff>
+    <TD>&nbsp;</TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif"># of Payments</font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Interest Rate</font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Total<br>
+      Debt</font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Monthly Payment</font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">Total Interest</font></TD>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;</TD></TR>
+  <TR vAlign=middle bgColor=#efefef>
+    <FORM>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">      Loan </font></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payments 
+      onchange="if (checkInput(form.payments, 1, 480, '# of payments')) calculateForm(this.form); " 
+      size=7 name=payments> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=interest 
+      onchange="if (checkInput(form.interest, .001, 99, 'Interest')) calculateForm(this.form) ;" 
+      size=7 name=interest> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=principal 
+      onchange="if (checkInput(form.principal, 100, 10000000, 'Principal')) calculateForm(this.form);" 
+      size=7 name=principal> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=payment onchange=calculateForm(this.form) 
+      size=7 name=payment> 
+        </font></DIV></TD>
+    <TD>
+      <DIV align=center><font size="2" face="Arial, Helvetica, sans-serif">
+        <INPUT id=totalint onchange=calculateForm(this.form) 
+      size=7 name=totalint> 
+        </font></DIV></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText type=reset value=Reset name=reset>
+    </font></TD>
+    <TD><font size="2" face="Arial, Helvetica, sans-serif">
+      <INPUT class=tableText onclick=calculateForm(this.form) type=button value= Calculate  name=button>
+    </font></TD></FORM></TR>
+</TBODY></TABLE>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Mortgage Calculator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+html { font-family:Arial, sans-serif; font-size:13px; }
+</style>
+</head>
+<body leftmargin="20">
+<p><img src="images/mortgagePaymentCalculator.gif" width="240" height="19">
+  <script language="JavaScript">
+<!--
+function showpay() {
+ if ((document.calc.loan.value == null || document.calc.loan.value.length == 0) ||
+     (document.calc.months.value == null || document.calc.months.value.length == 0)
+||
+     (document.calc.rate.value == null || document.calc.rate.value.length == 0))
+ { document.calc.pay.value = "Incomplete data";
+ }
+ else
+ {
+ var princ = document.calc.loan.value;
+ var term  = document.calc.months.value;
+ var intr   = document.calc.rate.value / 1200;
+ document.calc.pay.value = princ * intr / (1 - (Math.pow(1/(1 + intr), term)));
+ }
+
+// payment = principle * monthly interest/(1 - (1/(1+MonthlyInterest)*Months))
+
+}
+
+// -->
+  </script>
+
+</p>
+<p>The results of this loan payment calculator are for comparison purposes only.
+  Enter values
+  for the
+  Loan Amount, Number of Months for Loan, and the Interest Rate. Click the Calculate button to view your estimated monthly payment.</p>
+<center>
+<form name=calc method=POST>
+<table border=0 cellpadding="5" cellspacing="2">
+<tr><td bgcolor="#E1E1E1" style="font-size: 13px">Loan Amount</td><td align=right bgcolor="#E1E1E1" style="font-size: 13px"><input
+type=text name=loan
+size=10></td></tr>
+<tr><td bgcolor="#E1E1E1" style="font-size: 13px">Loan Length in Months</td><td
+align=right bgcolor="#E1E1E1" style="font-size: 13px"><input type=text
+name=months size=10></td></tr>
+<tr><td bgcolor="#E1E1E1" style="font-size: 13px">Interest Rate</td><td align=right bgcolor="#E1E1E1" style="font-size: 13px"><input
+type=text name=rate
+size=10></td></tr>
+<tr><td bgcolor="#ccc" style="font-size: 13px">Monthly Payment</td>
+  <td
+align=right bgcolor="#ccc" style="font-size: 13px"><em>Calculated:</em> $
+    <input
+type=text name=pay size=10></td></tr>
+</table>
+<p>
+  <input type=button onClick='showpay()'
+value=Calculate>
+   &nbsp;
+   <input type=reset
+value=Reset>
+</p>
+</form>
+<font size=1><em>Enter only numeric values (no commas), using decimal points
+where needed.</em></font>
+</center>
+</body>
+</html>

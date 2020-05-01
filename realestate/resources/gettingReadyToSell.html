@@ -1,0 +1,452 @@
+<html>
+<head>
+<title>Seller's Guide - Getting Your Home Ready To Sell</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+.style2 {font-size: medium}
+.style3 {
+	font-size: 13px;
+	font-weight: bold;
+}
+.style4 {font-size: 13px}
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/sellersGuideTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151"><div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;">
+            <div align="center"><!--#include file="sellersLinks.html"--></div>
+          </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td><p><img src="images/gettingReadyToSell.gif" width="299" height="21"> </p>
+                  <p align="justify"><b><font size="2">Selling Your Home? Add  Appeal with a Few Simple Touches</font></b></p>
+                  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="top">
+                      <td><p align="justify"><font size="2">A few simple touches can make a powerful
+                            impact in the eyes of potential buyers. But not to
+                            worry -- these quick projects are easy -- and affordable
+                            -- to tackle before putting your home on the market. </font></p>
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr valign="middle">
+                          <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#1</font></span></td>
+                          <td width="0" height="25" class="style1"><span class="style3">You Only
+                              Get One Chance to Make a First Impression</span></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25" class="style2">&nbsp;</td>
+                          <td width="0" height="25" class="style1">
+                            <p align="justify" class="style4">As soon as a potential buyer turns
+                              into your driveway, the selling process begins.
+                              Make sure your lawn is well-manicured and the entry
+                              to your home is clean and clutter-free. If paint
+                              is beginning to chip from shutters and siding,
+                              add a quick coat of paint -- you'll be surprised
+                              at what a difference it can make. Always check
+                              your gutters and also wash your windows -- inside
+                              and out. To add a nice touch to your entryway,
+                              add a seasonal pot of flowers or plants near the
+                              front door -- it will welcome guests right from
+                            the start. </p></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25" class="style2">&nbsp;</td>
+                          <td width="0" height="25" class="style4">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#2</font></span></td>
+                          <td width="0" height="25" class="style1"><span class="style4"><b>Clean,
+                              Clean, Clean</b></span></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25" class="style2">&nbsp;</td>
+                          <td width="0" height="25" class="style1"><p align="justify" class="style4">No
+                              matter how nice your home is, if it's dusty and
+                              cluttered, potential buyers will remember the clutter
+                              -- not the quality underneath. Clean up all areas
+                              -- from the baseboards of the kitchen to the blades
+                              of your ceiling fans. If time is of the essence,
+                              hire professional cleaners to get your home ready
+                              in time for selling. For a minimal cost, a team
+                              of professionals can scrub your entire house in
+                              no time.                       </td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25" class="style2">&nbsp;</td>
+                          <td width="0" height="25" class="style4">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#3</font></span></td>
+                          <td width="0" height="25" class="style1"><span class="style4"><b>Fix Drips
+                              and Burnt Out Bulbs</b></span></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25" class="style2">&nbsp;</td>
+                          <td width="0" height="25" class="style1">
+                            <p align="justify" class="style4">If you're annoyed by a faucet
+                              that keeps drip-drip-dripping, just think what
+                              potential buyers will think of the situation. Be
+                              sure to repair leaking or worn-out faucets to give
+                              your bathroom a new look. Likewise, check all lamps
+                              and light fixtures to ensure they are in proper
+                            working order. </p></td>
+                        </tr>
+                        <tr>
+                          <td width="35" height="25" class="style2">&nbsp;</td>
+                          <td width="0" height="25" class="style4">&nbsp;</td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                  </table>                  
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="middle">
+                      <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#4</font></span></td>
+                      <td width="0" height="25"><span class="style4"><b>Bathrooms and
+                          Kitchens Sell Homes -- Make them Shine!</b></span></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25">
+                        <p align="justify" class="style4">According to Senior Product Manager
+                          Jennifer Rowell of Creative Specialties International,
+                          a division of Moen, the two areas potential buyers
+                          check out first are bathrooms and kitchens. But don't
+                          fret -- these two rooms are also some of the easiest
+                          to fix up. In the kitchen start with simple jobs --
+                          clean off countertops, hide waste containers and make
+                          sure all of your appliances are freshly cleaned. In
+                          the bath, Rowell recommends checking and repairing
+                          damaged caulking in the bath tub and shower, washing
+                          floor mats and rugs and placing fresh towels on towel
+                      bars and rings. </p></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><span class="style4"></span></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#5</font></span></td>
+                      <td width="0" height="25"><span class="style4"><b>Update Your
+                          Accessories for a Fresh Look in the Bath</b></span></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25">
+                        <p align="justify" class="style4">While you're in the bathroom, a simple
+                          way to give it a fresh, new look is by updating the
+                          accessories. “Replacing items such as towel rings,
+                          towel bars and paper holders can dramatically change
+                          the appearance of your bath with minimal expense,” says
+                          Rowell. In fact, for less than $100, you can install
+                          an entire set of new bath accessories. To complement
+                          a country-themed bath, Creative Specialties International's
+                          new Emery collection of bath accessories is the ideal
+                          choice. Featuring charmingly fresh styling with soft
+                          beaded detail, the line is available in a complete
+                          suite of products -- from robe hooks and towel rings
+                          to towel bars and an innovative pivoting paper holder.
+                          The company also makes a number of accessory lines
+                          in modern and traditional themes to compliment any
+                          bath. </p>
+                        <p align="justify" class="style4">Make sure your bathroom is also free
+                          of clutter -- lots of toiletries and bottles sitting
+                          on the sink and countertop makes the room appear smaller.
+                          If you don't have a large medicine cabinet to store
+                          these items, Rowell suggests installing a shelf or
+                          two. Many of Creative Specialties International's lines
+                          of themed bath accessories include glass shelves that
+                          are perfect for such use. </p></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><span class="style4"></span></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#6</font></span></td>
+                      <td width="0" height="25"><span class="style4"><b>A Little Bit
+                          of Light Goes a Long Way</b></span></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><p align="justify" class="style4">Homebuyers
+                          don't want a dark and dreary home -- they want one
+                          filled with a lot of light and sunshine. Be sure to
+                          dust blinds and wash curtains so they are fresh and
+                          bright, and if your curtains are outdated; consider
+                          replacing them with inexpensive blinds. Before hosting
+                          an open house, open blinds and pull back curtains so
+                          your house is bright and cheery.                       </td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><span class="style4"></span></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#7</font></span></td>
+                      <td width="0" height="25"><span class="style4"><b>Get Rid of
+                          Excess Furniture</b></span></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><p align="justify" class="style4">You
+                          might like that extra chair and ottoman in the family
+                          room, but to a potential home buyer it could look crowded.
+                          Keep only necessary furniture on hand and place any
+                          extra pieces in an off-site storage facility. (Don't
+                          place too many things in an attic or crawl space, as
+                          home buyers are looking for storage space, too.)                       </td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><span class="style4"></span></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#8</font></span></td>
+                      <td width="0" height="25"><span class="style4"><b>Organize Cabinets
+                          and Closets</b></span></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><p align="justify" class="style4">Speaking
+                          of storage space, make sure your cabinets and closets
+                          are clean and free of unnecessary items. The better
+                          organized your closets and cabinets are, the larger
+                          they will appear to potential home buyers. But if you
+                          simply can't find room for certain items, such as your
+                          perfumes and toiletries in the bath, consider installing
+                          a glass shelf. Many shelves, such as the Emery glass
+                          shelf from Creative Specialties International, are
+                          available in beautiful Old World finishes, including
+                          polished nickel and antique nickel, to complement lighting,
+                          faucets and other products available in these on-trend
+                          finishes.                       </td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><span class="style4"></span></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#9</font></span></td>
+                      <td width="0" height="25"><span class="style4"><b>Paint the Perfect
+                          Scene</b></span></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><p align="justify" class="style4">Nothing
+                          says “fresh” like a new coat of paint. Painting is
+                          one of the most affordable -- and beneficial -- ways
+                          to spruce up your home. Start with the most used areas
+                          of your home, such as the family room, kitchen and
+                          bathroom, and use neutral colors that will open up
+                          these rooms. If you can't paint in time for selling,
+                          you can still make a difference by washing walls and
+                          simply touching up areas that might have chips or scratches.
+                          Likewise, consider adding a wallpaper border to freshen
+                          a room's d&eacute;cor.                       </td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="25" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><span class="style4"></span></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#10</font></span></td>
+                      <td width="0" height="25"><span class="style4"><b>Set the Mood
+                          to Buy</b></span></td>
+                    </tr>
+                    <tr>
+                      <td width="35" height="35" class="style2">&nbsp;</td>
+                      <td width="0" height="25"><p align="justify" class="style4">Finally,
+                          make your house feel like a home. Welcome potential
+                          buyers with fresh flowers in key focal areas, or place
+                          scented potpourri in the bathrooms. For a special touch,
+                          bake fresh bread or simply place refrigerated cinnamon
+                          rolls in the oven to give your home a welcoming aroma
+                          reminiscent of holiday baking.
+                                                            <p align="justify" class="style4">In
+                                                              sprucing up your
+                                                              home, remember
+                                                              that home buyers
+                                                              aren't looking
+                                                              for plasma TV screens
+                                                              and brand-new furniture.
+                                                              Rather, they are
+                                                              looking for a home
+                                                              that has been carefully
+                                                              maintained and
+                                                              cared for. A little
+                                                              bit of “TLC” goes
+                                                              a long way -- so
+                                                              give your home
+                                                              the extra effort
+                                                              -- it will be well
+                                                              worth your time
+                                                              and energy.                      </td>
+                    </tr>
+                  </table>                  
+                  <p align="justify"><font size="2">For more information
+                      on accessory products available from Creative Specialties
+                      International, write 25300 Al Moen Drive, North Olmsted,
+                      OH 44070-8022, call toll free (800) 882-0116, or visit their
+                      Web site at www.moen.com.</font></p>
+                  <p align="center" class="style1"><i>                    This Article is Courtesy
+                  of ARA Content</i></p>
+                  <p align="center" class="style1"><i><font size="2"><a href="index.html"><b>&lt;&lt; Go
+                            Back to the Real Estate Resource Center Home Page</b></a></font><font size="1"><br>
+Content by <font size="1">4
+Site USA, LLC</font>
+                          </font><br>
+                  </i></p></td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+<map name="Map">
+  <area shape="rect" coords="3,149,144,185" href="glossary.asp">
+  <area shape="rect" coords="4,109,145,147" href="buyingWhileSelling.html">
+  <area shape="rect" coords="4,52,146,106" href="gettingReadyToSell.html">
+  <area shape="rect" coords="4,2,142,45" href="sellersGuide.html">
+</map>
+</body>
+</html>

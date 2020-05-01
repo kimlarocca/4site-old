@@ -1,0 +1,257 @@
+<html>
+<head>
+<title>Real Estate Resources - Buying While Selling Tips on Juggling Two Escrows</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/buyersGuideTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151">
+<div align="center"> 
+              <div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;"> 
+                <div align="right">
+                  <p align="center"><img src="images/templateLinks.gif" width="148" height="183" border="0" usemap="#Map">
+<p>&nbsp;</p>
+                </div>
+              </div>
+              <map name="Map">
+                <area shape="rect" coords="4,52,146,106" href="sellersGuide.html"><area shape="rect" coords="6,109,145,146" href="mortgage.html"><area shape="rect" coords="7,150,144,182" href="shortsales.html">
+                <area shape="rect" coords="4,2,142,45" href="buyersGuide.html">
+              </map>
+              <p>&nbsp;</p>
+             
+              <p align="center">&nbsp; </p>
+              <p align="right">&nbsp; </p>
+              <p>&nbsp;</p>
+            </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td><p><span class="style5"><img src="images/buyingWhileSelling.gif" width="453" height="21"></span></p>
+                  <p align="justify" class="style5">(ARA)
+                    Buying a new home is often one of the most exhilarating
+                    events a family experiences. But this excitement can be
+                    replaced by anxiety for buyers who are selling a home at
+                    the same time. </p>
+                  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="top">
+                      <td class="style5"><div align="justify">
+                          <p> Buyers who are purchasing a new home while selling their old one try to close
+                            on both properties at the same time to ensure a smooth move. Although all parties
+                            may have the best of intentions, the properties may not close concurrently. Buyers
+                            fear the idea of paying for two mortgages at the same time, or moving the family
+                            after school starts. </p>
+                        <p><b>What can home owners do to mitigate this problem? </b></p>
+                      </div></td>
+                      <td width="265" height="202" align="right" class="style5"><img src="images/buyingWhileSellingPic.gif" width="250" height="187" border="1"></td>
+                    </tr>
+                  </table>
+                  <p align="justify" class="style5">"Many borrowers do not think of buying and selling a home as one full transaction,
+                    and therefore, they tend to think of the "buy" and then they are chasing the "sell" transaction," says
+                    Tony Meola, executive vice president of home loans production for Washington
+                    Mutual. "We recommend several strategies to people who are buying and selling
+                    a home at the same time. If a buyer plans properly, he or she should be able
+                    to ease out of the old home and into the new one without too much difficulty." <br>
+                    <br>
+                    <b>Selling Strategies</b> <br>
+                    <br>
+                    Meola said that people should first find a qualified real estate agent and
+                    a mortgage expert. <br>
+                    <br>
+"A mortgage loan consultant from Washington Mutual will pre-approve prospective
+                    buyers for you. As a seller, you should negotiate only with buyers who are pre-approved
+                    to purchase your house," says Meola. "And, have the loan consultant pre-approve
+                    you. As a buyer, you want to know how much house you can afford, so you can present
+                    yourself to sellers as a qualified buyer to purchase the house you want." <br>
+                    <br>
+                    Meola also says that it's important to allow extra time in the home buying
+                    and selling schedule if you are buying and selling at the same time. "This
+                    advice seems obvious, but list your house for sale long before you plan on
+                    buying, if possible. When you get an offer, negotiate the escrow period to
+                    accommodate your purchasing needs," says Meola. "If that's not possible, ask
+                    to rent your old house if you haven't closed on your new one -- then you won't
+                    have to move twice." <br>
+                    <br>
+                    Sellers may be able to mitigate their concerns by accepting a lower offer
+                    that allows more flexibility on the closing date. "For example, if the high bidder
+                    has to sell his or her house first, you might be better off selling to a first-time
+                    homebuyer," Meola points out. <br>
+                    <br>
+                    <b>Buying Strategies</b> <br>
+                    <br>
+                    If you are planning to buy in a competitive market, you may need to make
+                    your purchase before selling your current home. In this case, buyers can
+                    borrow a down payment until their existing home sells. This is called "bridge financing." There
+                    are also common and necessary contingencies that should be included in a purchase
+                    offer. <br>
+                    <br>
+"For example, consider adding a clause stating that your offer is contingent
+                    upon the successful sale of the property you currently own," says Meola. This
+                    contingency prevents the buyer from forfeiting their earnest money deposit, or
+                    making two mortgage payments at once. <br>
+                    <br>
+"In some competitive markets, buyers make contingency-free offers in order to
+                    be more attractive to sellers," says Meola. "Anyone using this strategy should
+                    plan to obtain interim financing. We advise doing this even if the former home
+                    is sold, but not yet closed. If you make a non-contingent offer and the sale
+                    of your existing home falls out of escrow, you could lose the deposit you placed
+                    on the new home." <br>
+                    <br>
+                  <i>Courtesy of ARA Content</i></p>
+                  <p align="center"><span class="style5"><a href="index.html"><b>&lt;&lt; Go
+                            Back to the Real Estate Resource Center Home Page</b></a><br>
+                    Content by 4
+Site USA, LLC
+                </span></p></td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<html>
+<head>
+<title>Short Sales FAQs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: 13px }
+.style2 {font-size: 13px; font-weight: bold; }
+.style3 {font-size: 13px; font-style: italic; }
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/ShortSales.jpg" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151">
+<div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;"> 
+                
+              <div align="right"><img src="images/shortSalesLinks.gif" width="148" height="453" border="0" usemap="#Map">
+<br>
+<br></div>
+            </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td><p class="style2"><img src="images/ssFAQs.gif" width="357" height="21"></p>
+                  <ul>
+                    <li class="style1">       What is a Short Sale? </li>
+                    <li class="style1"> Is a Short Sale my best option?</li>
+                    <li class="style1"> If I do a Short Sale, what will it cost me to sell my home? </li>
+                    <li class="style1"> How do I get started with a Short Sale?</li>
+                    <li class="style1"> What is I just deed my property to someone another party and walk away? </li>
+                    <li class="style1"> What type of hardship(s) are considered legitimate by lenders?</li>
+                    <li class="style1"> My mortgage payment(s) are current, will my lender consider a Short Sale?</li>
+                    <li class="style1"> Why would  any bank/mortgage company agree to a Short Sale?</li>
+                    <li class="style1"> Are all Short Sales approved by Lenders?</li>
+                    <li class="style1"> Can I do a Short Sale if I have two loans?</li>
+                    <li class="style1"> My property is in need of repairs, can I still do a Short Sale?</li>
+                    <li class="style1"> How will a Short Sale affect my credit?</li>
+                    <li class="style1">My income problem was only temporary. Do I still need to sell my home? </li>
+                    <li class="style1"> What is a Forbearance Agreement?</li>
+                  </ul>
+                  <hr size="1" noshade>
+                  <p align="justify" class="style1">What is a Short Sale?</p>
+                  <p align="justify" class="style1">A Short Sale is when a lender(s), through negiotiations, accepts less than what is owed on the property to satisfy the note and release the lien.</p>
+                  <p align="justify" class="style1">Is a Short Sale my best option?</p>
+                  <p align="justify" class="style1">Possibilby.  Consider the fact that banks do NOT want to own your home!  Lenders are increasingly more willing to work with homeowners faced with &quot;legimate&quot; financial hardship and to accept a discounted payoff on a mortgage balance. If you are faced with a &quot;legimate&quot; hardship that makes it likely you will be unable to meet your obligation on your mortgage payments, the lender would prefer to settle the matter with you as opposed to taking the property through foreclosure.</p>
+                  <p align="justify" class="style1">As you consider the option of pursuing a Short Sale, keep in mind that your lender is looking to limit any potential loss on the loan. By successfuly completing a Short Sale, your lender has arrived at a solution that is, for them, much better than a foreclosure.</p>
+                  <p align="justify" class="style1">If I do a Short Sale, what will it cost me to sell my home?<br>
+                  </p>
+                  <p align="justify" class="style1">Nothing. It&rsquo;s true, in most cases you will NOT have to pay any sales costs, if your lender approves the Short Sale. All commissions, title and escrow fees, and even most repair expenses are paid by the lender as part of the Short Sale approval.  Our standard procedure is to include the *following clause in the sales contract.<br>
+                  </p>
+                  <p align="justify" class="style1">&quot;Agreement to sell is subject to approval by existing lender(s) of a Short Sale at no cost to Seller(s). Seller(s) are not required to deposit and funds to close the transaction.&quot;<br>
+                  </p>
+                  <p align="justify" class="style1">Remember, lenders approve Short Sales and accept the resulting loss in an effort to avoid bigger losses through foreclosure.<br>
+                  </p>
+                  <p align="justify" class="style1">How do I get started with a Short Sale?<br>
+                  </p>
+                  <p align="justify" class="style1">The first step is to get prequalified for a Short Sale.  We can help you with this and there is no charge to you to get started.  There's no problem at all if your later decide that a Short Sale is not right for you<br>
+                  </p>
+                  <p align="justify" class="style1">What is I just deed my property to someone another party and walk away? <br>
+                  </p>
+                  <p align="justify" class="style1">There is no &quot;walking away&quot;.  If you Deed your property to someone else without paying off the loan(s), if just about every case, is a BAD idea.  Why?  The lender(s) still considers you primarily responsible for payment on the loan. If loan payments are not paid, or if the lender ultimately forecloses, this will show on your credit report.  Also, when you deed over your property to another party, you give up control of the property. Along with the deed comes the ability to control the property.<br>
+                  </p>
+                  <p align="justify" class="style1">DO NOT deed over your property to someone else, without paying off the loan, unless you have consulted with an attorney.<br>
+                  </p>
+                  <p align="justify" class="style1">What type of hardship(s) are considered legitimate by lenders?<br>
+                  </p>
+                  <p align="justify" class="style1">Ultimately, that will depend upon the lender(s) considering the Short Sale request. Generally, as long as the hardship is real and the lenders(s) believes the loan is likely to become delinquent as a result, the Short Sale request will be processed by the Loss Mitigation Department.  A MAJOR factor to getting Loss Mitigation to accept a hardship is to submit a strong hardship letter. The hardship letter sets the tone for the entire file.<br>
+                  </p>
+                  <p align="justify" class="style1">Below you will find a list of the most common &ldquo;hardships&rdquo; that frequently accepted by mortgage lenders.</p>
+                  <p align="justify" class="style1">*       Loss of employment or significant loss of income<br>
+                    *       Divorce or separation of domestic partners<br>
+                    Family illness or injury<br>
+                    Illness or injury within the extended family</p>
+                  <p align="justify" class="style1">*       Employment relocation, but there's no or enough equity in the property<br>
+                    *       Increase in mortgage payment(s), insurance or other unexpected increases in living expenses<br>
+                  </p>
+                  <p align="justify" class="style1">My mortgage payment(s) are current, will my lender consider a Short Sale?<br>
+                  </p>
+                  <p align="justify" class="style1">The answer is, maybe. There are lenders that will accept a Short Sale file for approval on loans that are not yet delinquent. Other lenders will not accept the file until the loan is fact delinquent. We can put your Short Sale file together within 2-3 days  and submit it for approval. (Remember, there is no charge for this). This is best way to determine if your lender(s) will accept a file for approval on a loan that is not delinquent.<br>
+                  </p>
+                  <p align="justify" class="style1">Why would  any bank/mortgage company agree to a Short Sale?<br>
+                  </p>
+                  <p align="justify" class="style1">Several reasons why a mortgage company would approve a Short Sale payoff, including the following;<br>
+                  </p>
+                  <p align="justify" class="style1">Legal Issues &ndash; Lenders have come under increasing legal pressure to work with borrowers to equitably resolve situations where borrowers are unable to meet their mortgage obligation, particularly when the borrower makes an effort to arrive at a compromise solution.<br>
+                  </p>
+                  <p align="justify" class="style1">Wall Street &ndash; Mortgage lenders rely heavily on the ability to package and sell loans on the secondary mortgage market. They must sell these bundles of loans in order to raise funds which they in turn put back to workin the form of new loans.  If mortgages perform poorly after they are sold it could impact the lender's ability to sell their loans on the secondary market. A successful Short Sale gets the loan payoff resolved quickly.<br>
+                  </p>
+                  <p align="justify" class="style1">Asset Management Expenses- If a lender acquires a property through foreclosure, the property will be managed until it is repaired and resold. It is expensive to manage real property assets - homes &ndash; spread throughout the region, the state and possibly even the nation. Keeping properties maintained, keeping utilities on, making repairs and the administrative costs attached to these activities are all costs the lender would prefer to avoid. A successful Short Sale eliminates most of these costs<br>
+                  </p>
+                  <p align="justify" class="style1">Reserve Requirement- Delinquent and non-performing loans place a huge burden on mortgage lenders. For all delinquent and non-performing loans lenders must set aside funds in reserve to deal with potential losses. These funds cannot be put to work generating new loan fees until the bad loans are resolved. A successful Short Sale lets the lender put more money to work.<br>
+                  </p>
+                  <p align="justify" class="style1">Are all Short Sales approved by Lenders?<br>
+                  </p>
+                  <p align="justify" class="style1">NO!  There are no guarantees. That is why it is in your best interest to to work with professionals with extensive experience at getting Short Sales approved.   It begins with the presentation of the Short Sale package to the lender(s) and then working with the lenders Loss Mitigations Department, we know how to keep these files moving towards final approval.  The first step is to get pre-qualified for a Short Sale. There is no charge for this, and it&rsquo;s easy.<br>
+                  </p>
+                  <p align="justify" class="style1">Can I do a Short Sale if I have two loans?<br>
+                  </p>
+                  <p align="justify" class="style1">Yes. We can work with both lenders (it's quite commom for the same lender to hold the 1st and the 2nd loans) to put together a Short Sale transaction. Even if the home is worth less than the  balance of the 1st mortgage, we can normally get the two lenders to cooperate.  Just keep in mind that,  banks do NOT want to own your home!<br>
+                  </p>
+                  <p align="justify" class="style1">My property is in need of repairs, can I still do a Short Sale?<br>
+                  </p>
+                  <p align="justify" class="style1">Yes!  In fact, lenders are actually more motivated to do a Short Sale on a property that needs work than on a property that do not. Lenders know the risk of loss increases when they foreclose on a property in need of substantial repairs.  Aside from expense of completing the work, lenders are simply not set up to get the work done. Lenders are in the home loan NOT the home improvement business. <br>
+                  </p>
+                  <p align="justify" class="style1">How will a Short Sale affect my credit?<br>
+                  </p>
+                  <p align="justify" class="style1">A forclosure has a devastating affect on credit score, which can  plunge by as much as 200 to 300 points.  However, short sales have a far less damaging affect on a homeowner's credit report.  A homeowner who successfully aviods foreclosure through a Short Sale may oly lose between 80 to 100 points off of their credit scores.</p>
+                  <p align="justify" class="style1">What happens to a homeonwer's credit down the road? It can take from 3 to 5 years or more after a foreclosure before a bank or mortgage company will offer the homeowner an affordable interest rate.  Not to mention the ramifications of a looming &quot;deficiency judgment&quot;.</p>
+                  <p align="justify" class="style1">A homeowner who successfully negotiates a Short Sale can usually qualify for a new mortgage, at more favorable interest rates, in as little as 18 months with the establishment of new credit. <br>
+                  </p>
+                  <p align="justify" class="style1">My income problem was only temporary. Do I still need to sell my home?<br>
+                  </p>
+                  <p align="justify" class="style1">Maybe not.  Keeping yur home is a possibility.  However, you will need to convince your lender(s) of two things:<br>
+                  </p>
+                  <p align="justify" class="style1">The problem that caused the mortgage payment disruption was beyond your control &ndash; illness, injury, temporary disability or forced job change are a few examples<br>
+                  </p>
+                  <p align="justify" class="style1">You are now solidly in a position to stay current on your mortgage payments and make some progress towards making up the delinquent amount.<br>
+                  </p>
+                  <p align="justify" class="style1">Getting lender approval on a Forbearance or Loan Modification Agreement<br>
+                  </p>
+                  <p align="justify" class="style1">What is a Forbearance Agreement?<br>
+                  </p>
+                  <p align="justify" class="style1">An agreement by the lender not to exercise the legal right to foreclose in exchange for an agreement by the borrower to a payment plan that will cure the borrowers delinquency.Some plan for making up the delinquent interest and other charges. It may mean making additional payments to the mortgage company or the delinquent amount could be added to the loan to be paid later. </p>
+                  <div align="center">
+                    <p>&nbsp;</p>
+                    <p>&quot;<strong>Disclaimer</strong>&quot;                    </p>
+                    <p align="justify" class="size13"> 
+                      All the information on this short sales module is published in good faith and for general information purposes only. &nbsp;The publishers and providers of this content do not make any warranties about the completeness, reliability and accuracy of this information. &nbsp;Any action you take upon using the information on this module is strictly at your own risk and the publishers and providers will not be liable for any losses and damages in connection with the use of our website. &nbsp;The information is not intended to serve as legal or financial advice.  
+                    <p><font size="2"><a href="index.html"><b>&lt;&lt; Go
+                      back to the Real Estate Resource Center Home Page</b></a></font><font size="1"><br>
+                      Content by <span class="style1"><font size="1">4
+                          Site USA, LLC</font></span>
+                        </font></p>
+                  </div></td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+<map name="Map">
+  <area shape="rect" coords="2,-4,144,50" href="#1">
+  <area shape="rect" coords="4,375,145,411" href="shortSalesFAQ.html">
+  <area shape="rect" coords="3,317,145,371" href="#7">
+  <area shape="rect" coords="4,262,146,316" href="#6">
+  <area shape="rect" coords="3,205,145,259" href="#5">
+  <area shape="rect" coords="2,150,144,204" href="#4">
+  <area shape="rect" coords="3,415,144,451" href="mortgageGlossary.asp">
+  <area shape="rect" coords="2,92,144,146" href="#3">
+  <area shape="rect" coords="4,2,142,45" href="#7"
+  <area shape="rect" coords="3,53,144,86" href="#2">
+</map>
+</body>
+</html>

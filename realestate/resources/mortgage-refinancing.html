@@ -1,0 +1,189 @@
+<html>
+<head>
+<title>Mortgage Guide - Refinancing Your Adjustable-Rate Mortgage into a Fixed Rate Mortgage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+.style3 {font-size: 13px}
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/mortgageTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151"><div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;">
+            <div align="center"><!--#include file="mortgageLinks.html"-->          
+            </div>
+          </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td align="left" valign="top"> <p align="left" class="style1"><img src="images/mortgage-refi.gif" width="331" height="48"></p>
+                  <p align="justify"> <span class="size13">(ARA) - If you are among the millions of homeowners with an adjustable-rate mortgage (ARM), you may be facing increasing interest rates as your loan adjusts. Refinancing might be the solution to your problem.</span></p>
+                  <p align="justify" class="size13">Homeowners refinance for a variety of reasons including taking cash out of their home's equity to make home improvements, consolidating debt, and of course to obtain a more favorable interest rate. However, many Americans are now refinancing primarily to move from an adjustable rate to a predictable, fixed-rate mortgage to avoid future interest rate adjustments.</p>
+                  <p align="justify" class="size13">&quot;There are many factors to consider when refinancing your mortgage depending on your particular situation,&quot; says Jim Ferriter, executive vice president for GMAC Mortgage. &quot;If you have been living in your home for several years or if you're facing a rate reset on an adjustable-rate mortgage, you may find that refinancing pays for itself from the resulting lower monthly payment or from feeling the comfort of having a fixed monthly payment.&quot;</p>
+                  <p align="justify" class="size13">Here are some tips from GMAC Mortgage to help you consider whether refinancing is an appropriate option for you.</p>
+                  <p align="justify" class="size13"><strong>Know the terms of your current mortgage. </strong></p>
+                  <p align="justify" class="size13">                  How often will your mortgage adjust? How much will it adjust? These are both important factors to consider when determining if refinancing is a viable option. Contact your lender now so that you are fully aware of the terms of your ARM loan to avoid any surprises when your mortgage adjusts.</p>
+                  <p align="justify" class="size13"><strong>Think about how long you will live in your home. </strong></p>
+                  <p align="justify" class="size13">                  A big factor in deciding to refinance is calculating how long you will continue to live in your house. The longer you live in your home, the more money you can potentially save in interest costs from refinancing. GMAC Mortgage has several helpful tools on its Web site, http://www.gmacmortage.com, including a break-even calculator that will tell you how many years you will need to live in your home to recoup the cost of refinancing.</p>
+                  <p align="justify" class="size13"><strong>Maintain a good credit score.</strong></p>
+                  <p align="justify" class="size13">A good credit score is one factor that could enable you to obtain more favorable financing terms. Paying bills on time and keeping credit card debt low are easy ways to maintain good credit. Check your credit report every year to ensure there are no negative marks on your credit history, such as missed credit card payments or large account balances.</p>
+                  <p align="justify" class="size13"><strong>Determine refinancing costs.</strong></p>
+                  <p align="justify" class="size13">Consult a loan officer to figure out what fees are involved with refinancing. You may have to pay an application fee as well as closing costs. You also may choose to pay discount points to buy down the interest rate. By knowing the upfront costs for refinancing, you can determine exactly how much time it will take to recover the expense.</p>
+                  <p align="justify" class="size13"><strong>Roll-in refinancing. </strong></p>
+                  <p align="justify" class="size13">You can avoid paying fees upfront and immediately enjoy lower monthly payments, by rolling-in your closing costs into the new loan. Rolling-in your costs is particularly appropriate if you will sell your home or refinance again in a few years because having a higher loan balance will likely matter less than being able to enjoy the immediate benefit of lower monthly payments.</p>
+                  <p align="justify" class="size13">Every homeowner has a different scenario for determining if refinancing is a good option. Here's the bottom line: it might make sense to refinance if you have the opportunity to save money by lowering the cost of your monthly payment -- or the opportunity to seek the comfort of knowing your mortgage payment will remain fixed.</p>
+                  <p align="justify" class="size13">For more information on refinancing options, call (800) 888-GMAC (4622).</p>
+                  <p align="center" class="style3"><i><i>This Article is Courtesy
+                  of ARA Content</i></i></p>
+                  <p align="center" class="style1"><font size="2"><a href="index.html"><b>&lt;&lt; Go
+                          Back to the Real Estate Resource Center Home Page</b></a></font><font size="1"><br>
+Content by <font size="1">4
+Site USA, LLC</font>
+                          </font></p></td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

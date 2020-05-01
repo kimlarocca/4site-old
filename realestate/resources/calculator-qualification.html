@@ -1,0 +1,230 @@
+<html>
+<head>
+<title>Mortgage Calculator: Loan Comparison</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<div align="center"></div>
+
+<table width="500" border="0" align="center">
+  <tr>
+    <td height="25" valign="top"> 
+    <div align="left"><font size="2" face="Arial, Helvetica, sans-serif"><b><img src="images/mortgageQualificationCalcul.gif" width="274" height="19"></b></font></div></td>
+  </tr>
+  <tr>
+    <td height="0"> 
+      <div align="left"><font size="2" face="Arial, Helvetica, sans-serif">Enter
+          the information requested: Salary/Wages, Other Income, Property Taxes,
+           Insurance, Car Payment, Other Debts or loans outstanding, Term of
+          loan,  and Interest Rate. Click on the &quot;Calculate&quot; button for your
+          estimates.
+          <script language="JavaScript">
+function clearForm(form) {
+  form.income.value = "";
+  form.other.value = "";
+  form.taxes.value = "";
+  form.insurance.value = "";
+  form.auto.value = "";
+  form.cards.value = "";
+  form.term.value = "";
+  form.rate.value="";
+  form.payment.value = "";
+  form.amount.value = "";
+}
+function housingRatio(income, other, taxes, insurance) {
+  housing = eval(income * .28) + eval(other * .28) - taxes - insurance;
+  return housing;
+}
+function debtRatio(income, other, taxes, insurance, auto, cards) {
+  debt = eval(income * .36) + eval(other * .36) - taxes - insurance - auto - cards;
+  return debt;
+}
+function checkForm(toCheck) {
+  isNum = true;
+  for (j = 0; j < toCheck.length; j++) {
+    if (((toCheck.substring(j,j+1) < "0") || (toCheck.substring(j,j+1) > "9")) && (toCheck.substring(j,j+1) != ".")) {
+      isNum = false;
+      }
+    }
+  if ((isNum == false) || (toCheck.length == 0) || (toCheck == null)) {
+  alert("Please enter valid numerical data in all fields.");
+  return false;
+  }
+  else {
+  return true;
+  }
+}     
+function computeForm(form) {
+  if (checkForm(form.income.value) && checkForm(form.other.value) && checkForm(form.taxes.value) && checkForm(form.insurance.value) && checkForm(form.auto.value) && checkForm(form.cards.value) && checkForm(form.term.value) && checkForm(form.rate.value)){
+    housingRatioResult = Math.round(housingRatio(form.income.value, form.other.value, form.taxes.value, form.insurance.value));
+    debtRatioResult = Math.round(debtRatio(form.income.value, form.other.value, form.taxes.value, form.insurance.value, form.auto.value, form.cards.value));
+      if (housingRatioResult>debtRatioResult) {
+      form.payment.value = debtRatioResult
+      }
+      else {
+      form.payment.value = housingRatioResult
+      }
+    var a = form.rate.value;
+    var b = form.term.value;
+    var c = form.payment.value;
+    var d = parseFloat(a / 1200); 
+    var e = parseFloat(b * 12);
+    var f = parseFloat(1 + d);
+    var g = parseFloat(Math.pow(f, e));
+    var h = parseFloat(1 / g);
+    var i = parseFloat(1 - h);
+    var j = parseFloat(i / d);
+    var k = parseFloat(c * j);
+    form.amount.value = Math.round(k);
+    }
+return;
+}
+function newWindow() {     window.open("instructions.htm","Window4","toolbar=0,location=0,directories=0,status=0,menubar=1,scrollbars=1,resizable=0,copyhistory=0,width=500,height=250");    }
+//--> 
+          </script> 
+        <br>
+    </font></div></td>
+  </tr>
+  <tr>
+    <td height="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="0"> 
+        <form name="form1" method="post" action="">
+          <table width="100%" border="0" align="center"  cellpadding="0">
+            <tr align="CENTER">
+              <td>
+                <center>
+                  <table border="0" width="100%" cellpadding="3" cellspacing="0">
+                    <tr align="CENTER" bgcolor="efefef">
+                      <td height="25" colspan="6" valign="top"><div align="left"><font face="Arial, Helvetica, sans-serif" size="2"><b>Monthly
+                              Income:</b></font></div></td>
+                    </tr>
+                    <tr>
+                      <td align="right"><font size="2" face="Arial, Helvetica, sans-serif">Salary/Wages:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">$</font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input type="TEXT" name="income" size="7">
+                      </font></td>
+                      <td align="right"><font size="2" face="Arial, Helvetica, sans-serif">Other
+                          Income:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">$</font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input type="TEXT" name="other" size="7">
+                      </font></td>
+                    </tr>
+                    <tr>
+                      <td align="right">&nbsp;</td>
+                      <td align="CENTER">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td align="right">&nbsp;</td>
+                      <td align="CENTER">&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr align="CENTER" bgcolor="efefef">
+                      <td height="25" colspan="6" valign="top"><div align="left"><font face="Arial, Helvetica, sans-serif" size="2"><b>Monthly
+                              Housing Expenses:</b></font></div></td>
+                    </tr>
+                    <tr>
+                      <td align="right"><font size="2" face="Arial, Helvetica, sans-serif">Property
+                          Taxes:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">$</font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input type="TEXT" name="taxes" size="7">
+                      </font></td>
+                      <td align="right"><font size="2" face="Arial, Helvetica, sans-serif">Hazard
+                          Insurance:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">$</font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input type="TEXT" name="insurance" size="7">
+                      </font></td>
+                    </tr>
+                    <tr>
+                      <td align="right">&nbsp;</td>
+                      <td align="CENTER">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td align="right">&nbsp;</td>
+                      <td align="CENTER">&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr align="CENTER" bgcolor="efefef">
+                      <td height="25" colspan="6" valign="top"><div align="left"><font face="Arial, Helvetica, sans-serif" size="2"><b>Other
+                              Monthly Expenses:</b></font></div></td>
+                    </tr>
+                    <tr>
+                      <td align="right"><font size="2" face="Arial, Helvetica, sans-serif">Auto
+                          Payment:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">$</font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input type="TEXT" name="auto" size="7">
+                      </font></td>
+                      <td align="right"><font size="2" face="Arial, Helvetica, sans-serif">Credit
+                          Cards and Other Payments:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">$</font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input type="TEXT" name="cards" size="7">
+                      </font></td>
+                    </tr>
+                    <tr>
+                      <td align="right">&nbsp;</td>
+                      <td align="CENTER">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td align="right">&nbsp;</td>
+                      <td align="CENTER">&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr align="CENTER" bgcolor="efefef">
+                      <td height="25" colspan="6" valign="top"><div align="left"><font face="Arial, Helvetica, sans-serif" size="2"><b>Loan
+                              Term and Interest Rate:</b></font></div></td>
+                    </tr>
+                    <tr>
+                      <td align="right"><font size="2" face="Arial, Helvetica, sans-serif">Loan
+                          Term:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">Yrs.</font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input name="term" size="7">
+                      </font></td>
+                      <td align="right"><font size="2" face="Arial, Helvetica, sans-serif">Interest
+                          Rate:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">% </font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input name="rate" size="7">
+                      </font></td>
+                    </tr>
+                    <tr align="CENTER">
+                      <td colspan="6"> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input type="BUTTON" name="submit" value=" Calculate " onClick="computeForm(this.form);">
+                        <input type="BUTTON" name="reset" value=" Reset " onClick="clearForm(this.form);">
+                      </font></td>
+                    </tr>
+                    <tr align="CENTER">
+                      <td colspan="6">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td colspan="4" align="right"> <font face="Arial, Helvetica, sans-serif" size="2">You
+                          may qualify for a maximum monthly mortgage payment
+                          of:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">$</font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input type="TEXT" name="payment" size="7">
+                      </font></td>
+                    </tr>
+                    <tr>
+                      <td colspan="4" align="right"> <font face="Arial, Helvetica, sans-serif" size="2">You
+                          may qualify for a maximum loan amount of:</font></td>
+                      <td align="CENTER"><font size="2" face="Arial, Helvetica, sans-serif">$</font></td>
+                      <td> <font size="2" face="Arial, Helvetica, sans-serif">
+                        <input type="TEXT" name="amount" size="7">
+                      </font></td>
+                    </tr>
+                  </table>
+              </center></td>
+            </tr>
+          </table>
+        </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

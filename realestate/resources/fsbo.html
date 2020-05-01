@@ -1,0 +1,369 @@
+<html>
+<head>
+<title>Real Estate Resources - Attention For Sale By Owners! Why You Need a REALTOR</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+.style3 {font-size: 13px; font-weight: bold; }
+.style4 {font-size: 13px; }
+.style2 {font-size: medium}
+.style5 {font-size: 1px}
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/fsboTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151">
+<div align="center"> 
+              <div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;"> 
+                <div align="right">
+                  <p align="center"><img src="images/templateLinks.gif" width="148" height="183" border="0" usemap="#Map">
+<p>&nbsp;</p>
+                </div>
+              </div>
+              <map name="Map">
+                <area shape="rect" coords="4,52,146,106" href="sellersGuide.html"><area shape="rect" coords="6,109,145,146" href="mortgage.html"><area shape="rect" coords="7,150,144,182" href="shortsales.html">
+                <area shape="rect" coords="4,2,142,45" href="buyersGuide.html">
+              </map>
+              <p>&nbsp;</p>
+             
+              <p align="center">&nbsp; </p>
+              <p align="right">&nbsp; </p>
+              <p>&nbsp;</p>
+            </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td><p><span class="style1"><img src="images/FSBOtitle.gif" alt="Attention FSBOs! Why You Need a REALTOR" width="427" height="21"></span></p>
+                  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="top">
+                      <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr valign="middle">
+                            <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#1</font></span></td>
+                            <td width="0" height="25" class="style1"><p class="style3">Get
+                              More Exposure for Your Property</p></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4">Your
+                              home must be listed by a REALTOR&reg; in order
+                              to be included in the Multiple Listing Service
+                              (MLS). The MLS a massive database of homes, that
+                              is now available to the public in most states via
+                              the Internet. According to the National Association
+                              of REALTORS&reg; the majority of buyers find their
+                              REALTOR&reg; and their home using the MLS. Statistics
+                              show 86% of buyers use a real estate agent during
+                              their search, 75% of buyers bought their home with
+                              the assistance of a REALTOR&reg;, and 83% of sellers
+                              sold their home with the assistance of a REALTOR&reg;*.
+                              Most REALTORS&reg; are hesitant to show buyers &ldquo;for
+                              sale by owner&rdquo; (FSBO) properties because they risk
+                              not getting paid. Why limit yourself to the small
+                              percentage of buyers <u>not</u> using a REALTOR&reg;?</div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify"><span class="style5"><span class="style4"></span></span></div></td>
+                          </tr>
+                          <tr valign="middle">
+                            <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#2</font></span></td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4"><b>Save Valuable Time</b></div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4">The
+                              process of attracting buyers, being available to
+                              show your house, providing property disclosures
+                              and making the sale requires many hours of work.
+                              In addition, if you are not well versed in writing
+                              real estate contracts you risk having legal issues.
+                              Why spend your valuable time when a REALTOR&reg; can
+                              do it for you and do it more efficiently? They
+                              are well worth the fee you pay at closing. </div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify"><span class="style5"><span class="style4"></span></span></div></td>
+                          </tr>
+                          <tr valign="middle">
+                            <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#3</font></span></td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4"><b>REALTORS&reg; Price Your
+                              Home Competitively</b></div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4">Sellers may be aware of a few
+                              nearby homes that have sold, but they don't have
+                              access to the area market data nor do they possess
+                              any professional knowledge of real estate transactions.
+                              A REALTOR&reg; will utilize a Competitive Market
+                              Analysis (CMA) which is an invaluable tool when
+                              pricing property. </div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify"><span class="style5"><span class="style4"></span></span></div></td>
+                          </tr>
+                          <tr valign="middle">
+                            <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#4</font></span></td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4"><b>Contracts and Disclosures</b></div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4">A
+                              REALTOR&reg; knows how to complete the required
+                              contracts, forms and disclosure statements necessary
+                              for each sales transaction. All of the legal documents
+                              must be completed properly and in a timely manner.
+                              REALTORS&reg; are very familiar with the process
+                              and can ensure it goes smoothly. You can also take
+                              advantage of an agent's expertise to make sure
+                              that you don't sign anything that is not in your
+                              best interest and prevent legal trouble after the
+                              sale. Nearly one third of FSBO sellers felt understanding
+                              and completing the necessary paperwork was the
+                              most difficult task when selling a home themselves*. </div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify"><span class="style5"><span class="style4"></span></span></div></td>
+                          </tr>
+                          <tr valign="middle">
+                            <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#5</font></span></td>
+                            <td width="0" height="25" class="style1"><p align="justify" class="style4"><b>Make
+                              More Profit with a REALTOR&reg;</b></p></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4">It
+                              pays to use a real estate agent! A typical FSBO
+                              home sold for $175,000 when sold by a REALTOR&reg;,
+                              compared to $145,000 when sold by the owner*. Even
+                              with a commission, the seller made significantly
+                              more money.</div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify"><span class="style5"><span class="style4"></span></span></div></td>
+                          </tr>
+                          <tr valign="middle">
+                            <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#6</font></span></td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4"><b>Insulate Yourself from Potential
+                              Buyers</b></div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4">Sellers
+                              have an emotional attachment to their home and
+                              may only emphasize the features they consider most
+                              desirable. However, as trained professional, a
+                              REALTOR&reg; is more attuned to the buyers' needs
+                              and will highlight the most appealing features
+                              to each buyer. A REALTOR&reg; also insulates you
+                              from potential buyers who try and under cut your
+                              price. Plus, many buyers feel intimidated when
+                              dealing directly with the seller. </div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify"><span class="style5"><span class="style4"></span></span></div></td>
+                          </tr>
+                          <tr valign="middle">
+                            <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#7</font></span></td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4"><b>A REALTOR&reg; Qualifies
+                              Buyers with Pre-Approvals from a Lender</b></div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4">Using
+                              a REALTOR&reg; can save you the headache of dealing
+                              with unqualified buyers. REALTORS&reg; are experienced
+                              in dealing with pre-qualifications and can help
+                              you avoid wasting time in negotiations with buyers
+                              who cannot afford your home. Buyers seek assistance
+                              with obtaining a mortgage that best suits their
+                              needs. A REALTOR&reg; is associated with a multitude
+                              of lenders and can help expedite the sale process
+                              by assisting a buyer with appropriate financing. </div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify"><span class="style5"><span class="style4"></span></span></div></td>
+                          </tr>
+                          <tr valign="middle">
+                            <td width="35" height="25" class="style1"><span class="style2"><font color="#CC0000">#8</font></span></td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4"><b>REALTORS&reg; are Experienced
+                              Negotiators</b></div></td>
+                          </tr>
+                          <tr>
+                            <td width="35" height="25" class="style2">&nbsp;</td>
+                            <td width="0" height="25" class="style1"><div align="justify" class="style4">Many
+                              sellers are hesitant to bargain with buyers or
+                              are just uncomfortable with negotiating. REALTORS&reg; are
+                              experienced negotiators and can be a powerful ally
+                              when negotiating a contract with a prospective
+                              buyer. Your REALTOR&reg; will help you obtain the
+                              highest price for your property, review all of
+                              the terms and conditions stated in the contract,
+                              assist you with inspection reports and coordinate
+                              all the closing details. </div></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                  </table>
+                  <p align="center"><font size="2">*
+                    According to the 2003 NATIONAL ASSOCIATION OF REALTORS&reg;<br>
+                        <i>Profile
+                  of Home Buyers and Sellers.</i></font></p>
+                  <p align="center"><span class="style4"><a href="index.html"><b>&lt;&lt; Go
+                            Back to the Real Estate Resource Center Home Page</b></a><br>
+                    Content by 4
+Site USA, LLC
+                </span></p></td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

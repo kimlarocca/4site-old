@@ -1,0 +1,19 @@
+<?php
+ini_set('session.save_path',getcwd(). '/../tmp/');
+session_start();
+?>
+<?php require_once('Connections/cms.php'); ?>
+<?php
+  $host = $hostname_cms;
+  $user = $username_cms;
+  $pass = $password_cms;
+  $databaseName = $database_cms;
+   $con = mysql_connect($host,$user,$pass);
+  $dbs = mysql_select_db($databaseName, $con);
+  $result = mysql_query("SELECT * FROM photos WHERE albumID = ".$_GET['albumID']." AND id >= ".$_GET['lastID']." ORDER BY id");
+  $data = array();
+  while($row = mysql_fetch_row($result)){
+	$data[] = $row;
+  }
+  echo json_encode($data);
+?>

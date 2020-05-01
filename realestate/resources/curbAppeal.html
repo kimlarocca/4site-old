@@ -1,0 +1,261 @@
+<html>
+<head>
+<title>Tips for Creating Curb Appeal on a Budget</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+.style2 {font-size: medium}
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/sellersGuideTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151">
+            <div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;">
+              <div align="center"><!--#include file="sellersLinks.html"--></div>
+            </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td><p><img src="images/curbAppeal.gif" width="385" height="21"></p>
+                  <p align="justify"><font size="2">(ARA) - If improving your home's curb appeal tops your list of projects to do   around the house, take note: creating curb appeal doesn't have to be extensive   or expensive. <BR>
+                    <BR>
+                    For instance, replacing old, worn-out garage doors with   something dressier like a carriage-house style door can change the look of a   home, almost more than any other improvement to the exterior -- especially one   with a front-facing garage. And the project takes less than a day to complete. <BR>
+                    <BR>
+                    Celebrity designer Chayse Dacoda from the hit TLC home improvement   series, "While You Were Out" has built her reputation on helping homeowners   refresh worn-out spaces. Here are her suggestions for minor cosmetic changes   that yield big impact on a home's exterior appearance on a not-so-extreme   budget. <BR>
+                    <strong><BR>
+                    Top Ten Things You Can Do to Add "Curb Appeal"</strong></font></p>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="middle">
+                      <td width="35" height="25" valign="top" class="style1"><span class="style2"><font color="#CC0000">#1</font></span></td>
+                      <td width="0" height="25" valign="top" class="style1"><div align="justify"><font size="2">Paint   your house! This may be an obvious one, so I have to get it out of the way   first. Even so, not enough people do it. Most houses need it anyway. Go crazy,   do what you have always wanted. Many tones of the same hue can really add   dimension to the house. And remember, decorative moldings on older houses give   license to use more than one color. Good prep work, like sanding off worn and   chipping areas and priming, can make an exterior paint job last a lot longer and   look better.</font></div></td>
+                    </tr>
+
+                    <tr>
+                      <td width="35" height="25" valign="top" class="style2">&nbsp;</td>
+                      <td width="0" height="25" valign="top" class="style1"><div align="justify"></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25" valign="top" class="style1"><span class="style2"><font color="#CC0000">#2</font></span></td>
+                      <td width="0" height="25" valign="top" class="style1"><div align="justify"><font size="2">Change out-dated light fixtures -- or add lights if you   don't have some already. Light up your doorways and walkways. Better to have   more lights at lower wattages than one, very bright one.</font></div></td>
+                    </tr>
+
+                    <tr>
+                      <td width="35" height="25" valign="top" class="style2">&nbsp;</td>
+                      <td width="0" height="25" valign="top" class="style1"><div align="justify"></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" height="25" valign="top" class="style1"><span class="style2"><font color="#CC0000">#3</font></span></td>
+                      <td width="0" height="25" valign="top" class="style1"><div align="justify"><font size="2">Add   landscaping. Consult your local nursery for plants and shrubs that work best in   your area. If you're an urban dweller, don't let cement stop you -- add potted   planters. The right landscaping around a property will make all the difference   in the world.</font></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" valign="top" class="style2">&nbsp;</td>
+                      <td height="25" valign="top" class="style1"><div align="justify"></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" valign="top" class="style1"><span class="style2"><font color="#CC0000">#4</font></span></td>
+                      <td height="25" valign="top" class="style1"><div align="justify"><font size="2">Replace a worn-out garage door with a new, decorative   model. This will have a big impact especially if you have a front-facing garage.   Manufacturers offer many designs and decorative accessories so it's easy to find   a door that will complement the architecture of your home.</font></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" valign="top" class="style2">&nbsp;</td>
+                      <td height="25" valign="top" class="style1"><div align="justify"></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td width="35" valign="top" class="style1"><span class="style2"><font color="#CC0000">#5</font></span></td>
+                      <td height="25" valign="top" class="style1"><div align="justify"><font size="2">Illuminate   your landscape. This will completely change the look of your property at night.   Angle low lights to point up at trees and bushes and point down along a pathway   for safety. Keep it simple. Use solar lights that charge during the day and you   won't have to run wires. </font></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td valign="top" class="style2">&nbsp;</td>
+                      <td height="25" valign="top" class="style1"><div align="justify"></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td valign="top" class="style1"><span class="style2"><font color="#CC0000">#6</font></span></td>
+                      <td height="25" valign="top" class="style1"><div align="justify"><font size="2">Resurface your driveway. Instead of a tarred   or cement driveway, consider installing one with a woven stone and grass   pattern. This can do wonders for curb appeal.</font></div></td>
+                    </tr>
+                    
+                    <tr valign="middle">
+                      <td valign="top" class="style2">&nbsp;</td>
+                      <td height="25" valign="top" class="style1"><div align="justify"></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td valign="top" class="style1"><span class="style2"><font color="#CC0000">#7</font></span></td>
+                      <td height="25" valign="top" class="style1"><div align="justify"><font size="2">Add details such as   shutters, decorative moldings and fun elements like weathervanes to the outside   of your house. Make bland windows come alive and define the architecture of your   house with mullions, moldings, decorative eaves, fixed shutters or iron   scrollwork.</font></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td valign="top" class="style1">&nbsp;</td>
+                      <td height="25" valign="top" class="style1"><div align="justify"></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td valign="top" class="style1"><span class="style2"><font color="#CC0000">#8</font></span></td>
+                      <td height="25" valign="top" class="style1"><div align="justify"><font size="2">Add a stone walkway or path going to the house instead of   grass or a wide berth of cement. </font></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td valign="top" class="style2">&nbsp;</td>
+                      <td height="25" valign="top" class="style1"><div align="justify"></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td valign="top" class="style1"><span class="style2"><font color="#CC0000">#9</font></span></td>
+                      <td height="25" valign="top" class="style1"><div align="justify"><font size="2">Replace a chain-link fence with a   wood one. Be unpredictable. Instead of a picket fence - put in one that has   slanted multiple-height wood slats - like the kind found commonly in Carmel,   Calif.</font></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td valign="top" class="style2">&nbsp;</td>
+                      <td height="25" valign="top" class="style1"><div align="justify"></div></td>
+                    </tr>
+                    <tr valign="middle">
+                      <td valign="top" class="style1"><span class="style2"><font color="#CC0000">#10</font></span></td>
+                      <td height="25" valign="top" class="style1"><div align="justify"><font size="2">Plant a tree. Nothing will appreciate more in value than what   this tree will look like 10 years from now.</font></div></td>
+                    </tr>
+                  </table>
+                  <p align="center"><span class="style1"><i>This Article is Courtesy
+                  of ARA Content</i></span></p>
+                  <p align="center" class="style1">                  <font size="2"><a href="index.html"><b>&lt;&lt; Go
+                          Back to the Real Estate Resource Center Home Page</b></a></font><font size="1"><br>
+Content by <font size="1">4
+Site USA, LLC</font>
+                          </font></p>                  </td>
+                <td width="20">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

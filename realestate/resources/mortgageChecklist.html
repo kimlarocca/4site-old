@@ -1,0 +1,500 @@
+<html>
+<head>
+<title>Mortgage Center - Loan Application Checklist</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/mortgageTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151"><div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;">
+           <div align="center"><!--#include file="mortgageLinks.html"-->          
+            </div>
+          </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td align="left" valign="top"> <p align="left"><img src="images/loanAppChecklist.gif" width="238" height="21"></p>
+                  <table width="100%"  border="0" cellpadding="0" cellspacing="0">
+                    <tr valign="top" bgcolor="f0f0f0">
+                      <td height="25" valign="middle" bgcolor="CCCCCC"><div align="justify"><font size="2"><b><font size="2">&nbsp;Purchase</font></b></font></div></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="20" valign="middle">
+                        <table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                          <tr valign="top">
+                            <td width="20" height="0"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td height="0"><font size="2">Signed purchase agreement</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you are selling your current
+                                home: Copy of listing contract</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you have sold your current
+                                home: Copy of settlement statement (HUD-1)</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you are currently renting:
+                                Name, address and phone number of landlords for
+                                the past 24 months</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you own more than 1 property:
+                                Property address, mortgage statements and estimated&nbsp;property
+                                value for each property</font></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="30" valign="middle">&nbsp;</td>
+                    </tr>
+                    <tr valign="top" bgcolor="f0f0f0">
+                      <td height="25" valign="middle" bgcolor="CCCCCC"><div align="justify"><font size="2"><b><font size="2">&nbsp;<b>Refinance</b></font></b></font></div></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="20" valign="middle">
+                        <table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                          <tr valign="top">
+                            <td width="20" height="0"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td height="0"><font size="2">Property Survey - If
+                                changes to the property have been made, a new
+                                survey must be ordered</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Prior title policy with schedules
+                                A &amp; B </font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Mortgage Statement of loan we
+                                are paying off </font></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="30" valign="middle">&nbsp;</td>
+                    </tr>
+                    <tr valign="top" bgcolor="f0f0f0">
+                      <td height="25" valign="middle" bgcolor="CCCCCC"><div align="justify"><font size="2"><b><font size="2">&nbsp;<b>Income &amp; Assets</b></font></b></font></div></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="20" valign="middle">
+                        <table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                          <tr valign="top">
+                            <td width="20" height="0"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td height="0"><font size="2">Pay stubs for the last
+                                30 days</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Bank Information: Name of bank
+                                and your average balance</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Statements for each bank, mutual
+                                fund, and/or investment account for the last
+                                three months</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Estimated value of personal property</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you have made any large deposits
+                                to your accounts:</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td>&nbsp;</td>
+                            <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                                <tr valign="top">
+                                  <td width="5">*</td>
+                                  <td height="0"><font size="2">Explanation and
+                                      source for deposit</font></td>
+                                </tr>
+                                <tr valign="top">
+                                  <td width="5">*</td>
+                                  <td height="0"><font size="2">If large deposit
+                                      was a gift:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. </font><font size="2">Signed gift letter (lender
+can supply)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. </font><font size="2">Copy of gift check<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. </font><font size="2">Copy of deposit receipt</font></td>
+                                </tr>
+                                <tr valign="top">
+                                  <td width="5">*</td>
+                                  <td height="0"><font size="2"><i>Note: </i> Not
+                                      all loan programs allow gifts to be part
+                                      of your down payment</font></td>
+                                </tr>
+                            </table></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you own a rental property:
+                                Tax returns for the last two years &amp; current
+                                rental agreements</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you are retired: Pension Award
+                                Letter</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you receive Social Security:
+                                Social Security Award Letter</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you are counting child support
+                                as income:</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td>&nbsp;</td>
+                            <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                                <tr valign="top">
+                                  <td width="5">*</td>
+                                  <td height="0"><font size="2">Complete executed
+                                      divorce decree and settlement agreement</font></td>
+                                </tr>
+                                <tr valign="top">
+                                  <td width="5">*</td>
+                                  <td height="0"><font size="2">Copy of twelve
+                                      months of cancelled child support checks
+                                      and/or bank statements reflecting income
+                                      deposits</font></td>
+                                </tr>
+                            </table></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="30" valign="middle">&nbsp;</td>
+                    </tr>
+                    <tr valign="top" bgcolor="f0f0f0">
+                      <td height="25" valign="middle" bgcolor="CCCCCC"><div align="justify"><font size="2"><b><font size="2">&nbsp;<b>Employment</b></font></b></font></div></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="20" valign="middle">
+                        <table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                          <tr valign="top">
+                            <td width="20" height="0"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td height="0"><font size="2">Two (2) years history:</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td>&nbsp;</td>
+                            <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                                <tr valign="top">
+                                  <td width="5">*</td>
+                                  <td height="0"><font size="2">Names, addresses,
+                                      phone number, employment dates and income
+                                      of each employer</font></td>
+                                </tr>
+                                <tr valign="top">
+                                  <td width="5">*</td>
+                                  <td height="0"><font size="2">W-2s </font></td>
+                                </tr>
+                            </table></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you own more than 25% of a
+                                business: Corporate or partnership tax returns</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If self-employed:</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td>&nbsp;</td>
+                            <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                                <tr valign="top">
+                                  <td width="5">*</td>
+                                  <td height="0"><font size="2">Tax returns for
+                                      the last three years (with schedules)</font></td>
+                                </tr>
+                                <tr valign="top">
+                                  <td width="5">*</td>
+                                  <td height="0"><font size="2">Year-to-Date
+                                      Profit and Loss Statement prepared by an
+                                      accountant</font></td>
+                                </tr>
+                            </table></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you earn Commission, Overtime,
+                                Bonus, Partnership, Rental Property, Trust,&nbsp;Notes
+                                Receivable, Interest/Dividends: Two years' personal
+                                federal tax returns</font></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="30" valign="middle">&nbsp;</td>
+                    </tr>
+                    <tr valign="top" bgcolor="f0f0f0">
+                      <td height="25" valign="middle" bgcolor="CCCCCC"><div align="justify"><font size="2"><b><font size="2">&nbsp;<b>Debts</b></font></b></font></div></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="20" valign="middle">
+                        <table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                          <tr valign="top">
+                            <td width="20" height="0"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td height="0"><font size="2">Names, addresses, account
+                                numbers, balances and monthly payments on all
+                                current loans</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Explanation of credit report anomalies,
+                                including:</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td>&nbsp;</td>
+                            <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                                <tr valign="top">
+                                  <td width="5" height="0">*</td>
+                                  <td height="0"><font size="2">Late payments,
+                                      credit inquiries in the last 90 days, charge-offs,
+                                      collections, judgments and/or liens</font></td>
+                                </tr>
+                                <tr valign="top">
+                                  <td width="5" height="0">*</td>
+                                  <td height="0"><font size="2">Bankruptcy filed
+                                      within last seven years (bring a copy of
+                                      your bankruptcy papers)</font></td>
+                                </tr>
+                            </table></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="30" valign="middle">&nbsp;</td>
+                    </tr>
+                    <tr valign="top" bgcolor="f0f0f0">
+                      <td height="25" valign="middle" bgcolor="CCCCCC"><div align="justify"><font size="2"><b><font size="2">&nbsp;<b>Miscellaneous</b></font></b></font></div></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="20" valign="middle">
+                        <table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                          <tr valign="top">
+                            <td width="20" height="0"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td height="0"><font size="2">Photo ID and proof
+                                of Social Security number</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Residence addresses for the past
+                                two years</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Homeowners Insurance declaration
+                                page: Company, Agent Name, Phone Number&amp; Policy
+                                Number</font></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="30" valign="middle">&nbsp;</td>
+                    </tr>
+                    <tr valign="top" bgcolor="f0f0f0">
+                      <td height="25" valign="middle" bgcolor="CCCCCC"><div align="justify"><font size="2"><b><font size="2">&nbsp;<b>If
+                      Applicable</b></font></b></font></div></td>
+                    </tr>
+                    <tr valign="top">
+                      <td height="20" valign="middle">
+                        <table width="100%"  border="0" cellspacing="0" cellpadding="3">
+                          <tr valign="top">
+                            <td width="20" height="0"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td height="0"><font size="2">A copy of your complete
+                                executed divorce decree and settlement agreement</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">If you are not a citizen, a copy
+                                of the front and back of your green card</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Flood Insurance declaration page:
+                                Company, Agent Name, Phone Number &amp; Policy
+                                Number</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Bankruptcy discharge papers (all
+                                pages)</font></td>
+                          </tr>
+                          <tr valign="top">
+                            <td width="20"><img src="images/checkbox.gif" width="20" height="20"></td>
+                            <td><font size="2">Homeowner's Association Name and
+                                Phone Number</font></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                  </table>                  
+                  <p align="center"><span class="style1"><font size="2"><a href="index.html"><b>&lt;&lt; Go
+                            Back to the Real Estate Resource Center Home Page</b></a></font><font size="1"><br>
+Content by <font size="1">4
+Site USA, LLC</font>
+                          </font></span></p>
+                </td>
+                <td width="20">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

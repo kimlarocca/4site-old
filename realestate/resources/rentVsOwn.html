@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>Real Estate Resources - Renting Vs. Owning: Building Equity in Your Future</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style5 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+-->
+</style>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/buyersGuideTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151">
+<div align="center"> 
+              <div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;"> 
+                <div align="center"><!--#include file="buyersLinks.html"-->
+<p>&nbsp;</p>
+                </div>
+              </div>
+              <p>&nbsp;</p>
+             
+              <p align="center">&nbsp; </p>
+              <p align="right">&nbsp; </p>
+              <p>&nbsp;</p>
+            </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td class="style5"><p><span class="style5"><img src="images/RentVsOwn.gif" width="440" height="21"></span></p>
+                  <p align="justify"> (ARA) - For many Americans, owning a home is the cornerstone of their financial wealth. In fact, building equity in a home, combined with tax advantages offered by both federal and state governments, has driven home ownership to record levels.</p>
+                  <p align="justify">However, millions of renters continue to have misconceptions about the home-buying process, often delaying a home purchase by saying &quot;it's too complicated.&quot; Buying a home is not as complicated as it may seem. With a thorough understanding of the process, owning a home can be a very real possibility for many renters.</p>
+                  <p align="justify">One of the key steps in determining whether you should be a homeowner versus a renter is understanding what happens to the money you pay each month for rent or a mortgage. For example, let's consider a renter with a monthly payment of $600. Over five years, that person will have spent $36,000 on rent. In 10 years, that number rises to $72,000. That would be $72,000 without building any equity, or ownership, in return.</p>
+                  <p align="justify">If the same monthly payment were applied to a mortgage, a portion of each month's payment would go toward paying down the principal (the price at which you purchased the home less a down payment), which would allow you to build ownership in the property. In addition, the interest that you pay each month, as well as any property taxes, may be deductible on your federal income taxes -- a tax advantage not available to many renters (consult a tax advisor or the Internal Revenue Service regarding the deductibility of interest).</p>
+                  <p align="justify"> &quot;What renters often don't realize is that in the long-term, they can't afford to not buy a home, particularly as rent starts to increase in many parts of the country,&quot; says Jim Ferriter, executive vice president for GMAC Mortgage.</p>
+                  <p align="justify">&quot;Market conditions are very favorable for first-time homebuyers,&quot; adds John Bearden, president of GMAC Real Estate. &quot;If you have been thinking about making the move to owning a home versus renting, now is the time to start seriously looking at homes.&quot;</p>
+                  <p align="justify">On the flip side, probably the greatest advantage of renting is the flexibility it offers in terms of moving. Also, the ease of knowing you are not responsible for many repairs that might arise or for the upkeep of a yard is appealing to many people of all ages. Renting is a good step towards homeownership because it helps a person understand the discipline of meeting a monthly obligation, and it can possibly improve a person's credit score when payments are made on time.</p>
+                  <p align="justify">If you decide to move forward on the process of buying a home, consider these tips from GMAC Mortgage and GMAC Real Estate:</p>
+                    <ul>
+                      <li>Attend a first-time buyer workshop to learn about the home buying and financing process. You can find one in your neighborhood sponsored by a real estate professional, mortgage lender, a non-profit or a government agency such as the Department of Housing and Urban Development.</li>
+                      <li> Check your credit. Be aware that your credit history may affect the interest rate, and the type of mortgage program for which you may qualify. You may want to work on improving your credit before purchasing a home. There are several services available that will give you access to a free copy of your credit report.</li>
+                      <li> Find an experienced real estate professional. A real estate agent can be invaluable in helping you through the process of buying your first home. They have resources to find a wide variety of homes for sale and can guide you through the process of making an offer, negotiation, and closing on your new home.</li>
+                      <li> Get pre-approved for a mortgage. It is one of the best ways to determine how large of a monthly mortgage payment you can afford and will give you an indication of your price range as you shop for homes. You will want a pre-approval letter when you bid on a home, as some sellers may not accept offers from buyers who have not demonstrated some ability to finance the purchase.</li>
+                    </ul>
+                  <p align="justify">&quot;Owning a home is a great opportunity to begin building equity and it can offer numerous other advantages,&quot; adds Ferriter. &quot;No one should be intimidated by the process involved with buying a home. Using these tips, you can be in your new home sooner than you think.&quot;</p>
+                  <p align="justify">For more information and useful online tools on renting versus owning, please go to www.gmacmortgage.com or www.gmacrealestate.com or call (800) 888-GMAC (4622).<br>
+                    <br>
+                    <i>Courtesy of ARA Content</i></p>
+                  <p align="center"><span class="style5"><a href="index.html"><b>&lt;&lt; Go
+                            Back to the Real Estate Resource Center Home Page</b></a><br>
+                    Content by 4
+Site USA, LLC
+                </span></p></td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

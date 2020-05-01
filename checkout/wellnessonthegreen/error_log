@@ -1,0 +1,135 @@
+[20-Jul-2015 20:45:12 UTC] PHP Warning:  require(/home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/sample/bootstrap.php): failed to open stream: No such file or directory in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 13
+[20-Jul-2015 20:45:12 UTC] PHP Fatal error:  require(): Failed opening required '/home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/sample/bootstrap.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 13
+[21-Jul-2015 15:27:04 UTC] PHP Notice:  Undefined index: shipping_email in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 48
+[21-Jul-2015 15:27:04 UTC] PHP Notice:  Undefined index: billing_name in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 49
+[21-Jul-2015 15:27:04 UTC] PHP Notice:  Undefined index: billing_email in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 54
+[21-Jul-2015 15:27:04 UTC] PHP Notice:  Undefined variable: details in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 132
+[21-Jul-2015 15:30:22 UTC] PHP Notice:  Undefined index: shipping_email in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 48
+[21-Jul-2015 15:30:22 UTC] PHP Notice:  Undefined index: billing_name in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 49
+[21-Jul-2015 15:30:22 UTC] PHP Notice:  Undefined index: billing_email in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 54
+[21-Jul-2015 15:30:22 UTC] PHP Notice:  Undefined variable: details in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 132
+[21-Jul-2015 20:07:04 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Total is not a valid numeric value' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Amount.php(55): PayPal\Validation\NumericValidator::validate(Object(PayPal\Api\Amount), 'Total')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/test.php(133): PayPal\Api\Amount->setTotal(Object(PayPal\Api\Amount))
+#2 {main}
+  thrown in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[21-Jul-2015 20:35:57 UTC] date: 2016-11 | today: 2015-07 | month: 11 | year: 2016 | #: 5108050122619161 | type: mastercard | ccv: 853
+[21-Jul-2015 20:35:57 UTC] PHP Fatal error:  Uncaught exception 'InvalidArgumentException' with message 'Total is not a valid numeric value' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php:23
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Amount.php(55): PayPal\Validation\NumericValidator::validate(Object(PayPal\Api\Amount), 'Total')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/test.php(108): PayPal\Api\Amount->setTotal(Object(PayPal\Api\Amount))
+#2 {main}
+  thrown in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Validation/NumericValidator.php on line 23
+[21-Jul-2015 20:44:41 UTC] date: 2016-11 | today: 2015-07 | month: 11 | year: 2016 | #: 5108050122619161 | type: mastercard | ccv: 853
+[21-Jul-2015 20:48:40 UTC] date: 2016-11 | today: 2015-07 | month: 11 | year: 2016 | #: 5108050122619161 | type: mastercard | ccv: 853
+[21-Jul-2015 20:50:09 UTC] date: 2016-11 | today: 2015-07 | month: 11 | year: 2016 | #: 5108050122619161 | type: mastercard | ccv: 853
+[21-Jul-2015 20:50:09 UTC] exception 'PayPal\Exception\PayPalConnectionException' with message 'Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token.' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php:176
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(243): PayPal\Core\PayPalHttpConnection->execute('grant_type=clie...')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(267): PayPal\Auth\OAuthTokenCredential->getToken(Array, 'AWYWg1CT-qywkc-...', 'EIeP68X0ZG5NQiV...', 'grant_type=clie...')
+#2 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(212): PayPal\Auth\OAuthTokenCredential->generateAccessToken(Array, NULL)
+#3 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(164): PayPal\Auth\OAuthTokenCredential->updateAccessToken(Array)
+#4 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Handler/RestHandler.php(80): PayPal\Auth\OAuthTokenCredential->getAccessToken(Array)
+#5 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php(71): PayPal\Handler\RestHandler->handle(Object(PayPal\Core\PayPalHttpConfig), '{"intent":"sale...', Array)
+#6 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php(103): PayPal\Transport\PayPalRestCall->execute(Array, '/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL)
+#7 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php(424): PayPal\Common\PayPalResourceModel::executeCall('/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL, Object(PayPal\Rest\ApiContext), NULL)
+#8 /home/kim/public_html/checkout/wellnessonthegreen/test.php(145): PayPal\Api\Payment->create(Object(PayPal\Rest\ApiContext))
+#9 {main}
+[21-Jul-2015 20:55:01 UTC] date: 2016-11 | today: 2015-07 | month: 11 | year: 2016 | #: 5108050122619161 | type: mastercard | ccv: 853
+[21-Jul-2015 20:55:02 UTC] exception 'PayPal\Exception\PayPalConnectionException' with message 'Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token.' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php:176
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(243): PayPal\Core\PayPalHttpConnection->execute('grant_type=clie...')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(267): PayPal\Auth\OAuthTokenCredential->getToken(Array, 'AWYWg1CT-qywkc-...', 'EIeP68X0ZG5NQiV...', 'grant_type=clie...')
+#2 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(212): PayPal\Auth\OAuthTokenCredential->generateAccessToken(Array, NULL)
+#3 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(164): PayPal\Auth\OAuthTokenCredential->updateAccessToken(Array)
+#4 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Handler/RestHandler.php(80): PayPal\Auth\OAuthTokenCredential->getAccessToken(Array)
+#5 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php(71): PayPal\Handler\RestHandler->handle(Object(PayPal\Core\PayPalHttpConfig), '{"intent":"sale...', Array)
+#6 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php(103): PayPal\Transport\PayPalRestCall->execute(Array, '/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL)
+#7 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php(424): PayPal\Common\PayPalResourceModel::executeCall('/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL, Object(PayPal\Rest\ApiContext), NULL)
+#8 /home/kim/public_html/checkout/wellnessonthegreen/test.php(145): PayPal\Api\Payment->create(Object(PayPal\Rest\ApiContext))
+#9 {main}
+[22-Jul-2015 12:23:34 UTC] date: 2016-11 | today: 2015-07 | month: 11 | year: 2016 | #: 5108050122619161 | type: mastercard | ccv: 853
+[22-Jul-2015 12:23:35 UTC] exception 'PayPal\Exception\PayPalConnectionException' with message 'Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token.' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php:176
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(243): PayPal\Core\PayPalHttpConnection->execute('grant_type=clie...')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(267): PayPal\Auth\OAuthTokenCredential->getToken(Array, 'AWYWg1CT-qywkc-...', 'EIeP68X0ZG5NQiV...', 'grant_type=clie...')
+#2 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(212): PayPal\Auth\OAuthTokenCredential->generateAccessToken(Array, NULL)
+#3 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Auth/OAuthTokenCredential.php(164): PayPal\Auth\OAuthTokenCredential->updateAccessToken(Array)
+#4 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Handler/RestHandler.php(80): PayPal\Auth\OAuthTokenCredential->getAccessToken(Array)
+#5 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php(71): PayPal\Handler\RestHandler->handle(Object(PayPal\Core\PayPalHttpConfig), '{"intent":"sale...', Array)
+#6 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php(103): PayPal\Transport\PayPalRestCall->execute(Array, '/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL)
+#7 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php(424): PayPal\Common\PayPalResourceModel::executeCall('/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL, Object(PayPal\Rest\ApiContext), NULL)
+#8 /home/kim/public_html/checkout/wellnessonthegreen/test.php(145): PayPal\Api\Payment->create(Object(PayPal\Rest\ApiContext))
+#9 {main}
+[22-Jul-2015 12:28:32 UTC] date: 2016-11 | today: 2015-07 | month: 11 | year: 2016 | #: 5108050122619161 | type: mastercard | ccv: 853
+[22-Jul-2015 13:02:06 UTC] PHP Notice:  Undefined index: billing_name in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 47
+[22-Jul-2015 13:02:06 UTC] PHP Notice:  Undefined offset: 1 in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 50
+[22-Jul-2015 13:02:06 UTC] date: 2016-11 | today: 2015-07 | month: 11 | year: 2016 | #: 5108050122619161 | type: mastercard | ccv: 853
+[22-Jul-2015 14:27:54 UTC] PHP Notice:  Undefined index: firstName in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 7
+[22-Jul-2015 14:27:54 UTC] PHP Notice:  Undefined index: lastName in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 8
+[22-Jul-2015 14:27:54 UTC] PHP Notice:  Undefined index: emailAddress in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 9
+[22-Jul-2015 14:29:08 UTC] PHP Notice:  Undefined index: firstName in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 6
+[22-Jul-2015 14:29:08 UTC] PHP Notice:  Undefined index: lastName in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 7
+[22-Jul-2015 14:29:08 UTC] PHP Notice:  Undefined index: emailAddress in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 8
+[22-Jul-2015 17:01:53 UTC] PHP Notice:  Undefined index: billing_name in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 44
+[22-Jul-2015 17:01:53 UTC] PHP Notice:  Undefined offset: 1 in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 47
+[22-Jul-2015 17:01:53 UTC] amount: 20 | order_number: 14
+[22-Jul-2015 17:03:42 UTC] PHP Notice:  Undefined index: billing_name in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 44
+[22-Jul-2015 17:03:42 UTC] PHP Notice:  Undefined offset: 1 in /home/kim/public_html/checkout/wellnessonthegreen/test.php on line 47
+[22-Jul-2015 17:03:42 UTC] amount: 75 | order_number: 15
+[22-Jul-2015 17:07:07 UTC] amount: 120 | order_number: 16
+[22-Jul-2015 22:50:41 UTC] amount: 20 | order_number: 37
+[22-Jul-2015 23:10:45 UTC] amount: 20 | order_number: 38
+[04-Aug-2015 19:39:32 UTC] amount: 20 | order_number: 87
+[05-Aug-2015 15:24:12 UTC] amount: 20 | order_number: 106
+[05-Aug-2015 15:24:16 UTC] exception 'PayPal\Exception\PayPalConnectionException' with message 'Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment.' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php:176
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php(74): PayPal\Core\PayPalHttpConnection->execute('{"intent":"sale...')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php(103): PayPal\Transport\PayPalRestCall->execute(Array, '/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL)
+#2 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php(424): PayPal\Common\PayPalResourceModel::executeCall('/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL, Object(PayPal\Rest\ApiContext), NULL)
+#3 /home/kim/public_html/checkout/wellnessonthegreen/test.php(156): PayPal\Api\Payment->create(Object(PayPal\Rest\ApiContext))
+#4 {main}
+[05-Aug-2015 15:32:38 UTC] amount:  | order_number: 1
+[05-Aug-2015 15:32:39 UTC] exception 'PayPal\Exception\PayPalConnectionException' with message 'Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment.' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php:176
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php(74): PayPal\Core\PayPalHttpConnection->execute('{"intent":"sale...')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php(103): PayPal\Transport\PayPalRestCall->execute(Array, '/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL)
+#2 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php(424): PayPal\Common\PayPalResourceModel::executeCall('/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL, Object(PayPal\Rest\ApiContext), NULL)
+#3 /home/kim/public_html/checkout/wellnessonthegreen/test.php(156): PayPal\Api\Payment->create(Object(PayPal\Rest\ApiContext))
+#4 {main}
+[06-Aug-2015 15:12:13 UTC] amount: 20 | order_number: 108
+[06-Aug-2015 15:12:17 UTC] exception 'PayPal\Exception\PayPalConnectionException' with message 'Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment.' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php:176
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php(74): PayPal\Core\PayPalHttpConnection->execute('{"intent":"sale...')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php(103): PayPal\Transport\PayPalRestCall->execute(Array, '/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL)
+#2 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php(424): PayPal\Common\PayPalResourceModel::executeCall('/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL, Object(PayPal\Rest\ApiContext), NULL)
+#3 /home/kim/public_html/checkout/wellnessonthegreen/test.php(156): PayPal\Api\Payment->create(Object(PayPal\Rest\ApiContext))
+#4 {main}
+[13-Aug-2015 03:42:39 UTC] PHP Notice:  Undefined index: amount in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 5
+[13-Aug-2015 03:42:39 UTC] PHP Notice:  Undefined index: firstName in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 6
+[13-Aug-2015 03:42:39 UTC] PHP Notice:  Undefined index: lastName in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 7
+[13-Aug-2015 03:42:39 UTC] PHP Notice:  Undefined index: emailAddress in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 8
+[13-Aug-2015 03:42:39 UTC] PHP Notice:  Undefined index: studioID in /home/kim/public_html/checkout/wellnessonthegreen/buy.php on line 9
+[15-Aug-2015 22:04:07 UTC] amount: 20 | order_number: 147
+[15-Aug-2015 22:04:13 UTC] exception 'PayPal\Exception\PayPalConnectionException' with message 'Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment.' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php:176
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php(74): PayPal\Core\PayPalHttpConnection->execute('{"intent":"sale...')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php(103): PayPal\Transport\PayPalRestCall->execute(Array, '/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL)
+#2 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php(424): PayPal\Common\PayPalResourceModel::executeCall('/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL, Object(PayPal\Rest\ApiContext), NULL)
+#3 /home/kim/public_html/checkout/wellnessonthegreen/test.php(156): PayPal\Api\Payment->create(Object(PayPal\Rest\ApiContext))
+#4 {main}
+[15-Aug-2015 22:16:23 UTC] date: 2016-12 | today: 2015-08 | month: 12 | year: 2016 | #: 5466160200486783 | type: mastercard | ccv: 888
+[15-Aug-2015 22:16:27 UTC] exception 'PayPal\Exception\PayPalConnectionException' with message 'Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment.' in /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Core/PayPalHttpConnection.php:176
+Stack trace:
+#0 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Transport/PayPalRestCall.php(74): PayPal\Core\PayPalHttpConnection->execute('{"intent":"sale...')
+#1 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Common/PayPalResourceModel.php(103): PayPal\Transport\PayPalRestCall->execute(Array, '/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL)
+#2 /home/kim/public_html/checkout/wellnessonthegreen/PayPalSDK/paypal/rest-api-sdk-php/lib/PayPal/Api/Payment.php(424): PayPal\Common\PayPalResourceModel::executeCall('/v1/payments/pa...', 'POST', '{"intent":"sale...', NULL, Object(PayPal\Rest\ApiContext), NULL)
+#3 /home/kim/public_html/checkout/wellnessonthegreen/test.php(146): PayPal\Api\Payment->create(Object(PayPal\Rest\ApiContext))
+#4 {main}
+[28-Aug-2015 13:12:44 UTC] date: 2016-10 | today: 2015-08 | month: 10 | year: 2016 | #: 4737024013514189 | type: visa | ccv: 088
+[28-Aug-2015 13:14:48 UTC] date: 2016-10 | today: 2015-08 | month: 10 | year: 2016 | #: 4737024013514189 | type: visa | ccv: 088
+[31-Aug-2015 14:05:25 UTC] date: 2018-06 | today: 2015-08 | month: 06 | year: 2018 | #: 4784332001919795 | type: visa | ccv: 514
+[31-Aug-2015 14:07:20 UTC] date: 2018-06 | today: 2015-08 | month: 06 | year: 2018 | #: 4784332001919795 | type: visa | ccv: 514
+[31-Aug-2015 14:09:24 UTC] date: 2018-06 | today: 2015-08 | month: 06 | year: 2018 | #: 4784332001919795 | type: visa | ccv: 514
+[31-Aug-2015 14:10:53 UTC] date: 2018-06 | today: 2015-08 | month: 06 | year: 2018 | #: 4784332001919795 | type: visa | ccv: 514

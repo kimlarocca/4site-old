@@ -1,0 +1,10 @@
+[11-May-2019 05:40:42 UTC] PHP Warning:  require_once(simpleimage.php): failed to open stream: No such file or directory in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1
+[11-May-2019 05:40:42 UTC] PHP Fatal error:  require_once(): Failed opening required 'simpleimage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1
+[11-May-2019 06:31:18 UTC] PHP Warning:  require_once(simpleimage.php): failed to open stream: No such file or directory in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1
+[11-May-2019 06:31:18 UTC] PHP Fatal error:  require_once(): Failed opening required 'simpleimage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1
+[11-May-2019 06:31:18 UTC] PHP Warning:  require_once(simpleimage.php): failed to open stream: No such file or directory in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1
+[11-May-2019 06:31:18 UTC] PHP Fatal error:  require_once(): Failed opening required 'simpleimage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1
+[11-May-2019 06:31:19 UTC] PHP Warning:  require_once(simpleimage.php): failed to open stream: No such file or directory in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1
+[11-May-2019 06:31:19 UTC] PHP Fatal error:  require_once(): Failed opening required 'simpleimage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1
+[11-May-2019 06:44:46 UTC] PHP Warning:  require_once(simpleimage.php): failed to open stream: No such file or directory in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1
+[11-May-2019 06:44:46 UTC] PHP Fatal error:  require_once(): Failed opening required 'simpleimage.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/kim/public_html/ckeditor/plugins/upload-ck.php on line 1

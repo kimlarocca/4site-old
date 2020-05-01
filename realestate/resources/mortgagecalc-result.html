@@ -1,0 +1,178 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="1252"%>
+<%
+'set variables
+dim totalPrice, downPayment, principle, interestRate, monthlyInterest, termYears, termMonths, monthlyPayment, monthlyRate
+totalPrice = int(Request.Form("totalPrice"))
+downPayment = int(Request.Form("downPayment"))
+interestRate = CLng(Request.Form("interestRate"))
+termYears = int(Request.Form("termYears"))
+termMonths = termYears * 12
+monthlyInterest = interestRate / (12 * 100)
+principle = totalPrice - downPayment
+monthlyPayment = principle * (monthlyInterest/(1-(1+monthlyInterest)^(-termMonths)))
+
+response.write("<img src='images/mortgagePaymentCalculator.gif'><br><br>")
+response.write("<table>")
+response.write("<tr><td><font face='arial' size=2>Cost of the Home:</td><td width='10'></td><td><font face='arial' size=2>$" & Request.Form("totalPrice") &"</td></tr>")
+response.write("<tr><td><font face='arial' size=2>Down Payment:</td><td width='10'></td><td><font face='arial' size=2>$" & Request.Form("downPayment") &"</td></tr>")
+response.write("<tr><td><font face='arial' size=2>Interest Rate:</td><td width='10'></td><td><font face='arial' size=2>" & Request.Form("interestRate") &"%</td></tr>")
+response.write("<tr><td><font face='arial' size=2>Term of Loan:</td><td width='10'></td><td><font face='arial' size=2>" & Request.Form("termYears") &" years</td></tr>")
+response.write("<tr><td><br><font face='arial' size=2>Your monthly payment would be:</td><td width='10'></td><td><br><b><font face='arial' size=2>$" & round(monthlyPayment,2)&"</b></td></tr>")
+response.write("</table>")
+
+dim H, C, Q, P, J, M, IP, C5, C10, C15, C20, C25, C30, Count
+J = monthlyInterest
+P = principle
+M = monthlyPayment
+Q = 1
+Count = 1
+
+while(Q > 0) 'while Q (and hence P) is > than 0
+H = P * J
+C = M - H 'monthly pymt - monthly interest = principle paid that month
+IP = M - C
+'If Count = 60 Then response.write("Principle Paid = $" & round(C,0)&" Interest Paid = $" & round(IP,0)&"<br><br>") End If
+If Count = 60 Then C5 = C End If
+'If Count = 120 Then response.write("Principle Paid = $" & round(C,0)&" Interest Paid = $" & round(IP,0)&"<br><br>") End If
+If Count = 120 Then C10 = C End If
+'If Count = 180 Then response.write("Principle Paid = $" & round(C,0)&" Interest Paid = $" & round(IP,0)&"<br><br>") End If
+If Count = 180 Then C15 = C End If
+'If Count = 240 Then response.write("Principle Paid = $" & round(C,0)&" Interest Paid = $" & round(IP,0)&"<br><br>") End If
+If Count = 240 Then C20 = C End If
+'If Count = 300 Then response.write("Principle Paid = $" & round(C,0)&" Interest Paid = $" & round(IP,0)&"<br><br>") End If
+If Count = 300 Then C25 = C End If
+'If Count = 360 Then response.write("Principle Paid = $" & round(C,0)&" Interest Paid = $" & round(IP,0)&"<br><br>") End If
+If Count = 360 Then C30 = C End If
+Q = P -C 'new balance of principle of loan
+P = Q
+Count = Count + 1
+wend
+
+%>
+<html>
+<head>
+<title>Mortgage Calculator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<body text="#000000" link="669acc" vlink="669acc" alink="669acc" leftmargin="20">
+<p> 
+  <% 
+   'calculate columns
+   dim c1a, c1b
+   c1a = (C5/M)*100
+   c1b = ((M-C5)/M)*100
+   
+   dim c2a, c2b
+   c2a = (C10/M)*100
+   c2b = ((M-C10)/M)*100
+   
+   dim c3a, c3b
+   c3a = (C15/M)*100
+   c3b = ((M-C15)/M)*100
+   
+   dim c4a, c4b
+   c4a = (C20/M)*100
+   c4b = ((M-C20)/M)*100
+   
+   dim c5a, c5b
+   c5a = (C25/M)*100
+   c5b = ((M-C25)/M)*100
+   
+   dim c6a, c6b
+   c6a = (C30/M)*100
+   c6b = ((M-C30)/M)*100
+%>
+</p>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="30" valign="bottom"> <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td height="200"><img src="images/mortgageCalcPayments.gif" width="13" height="115"></td>
+        </tr>
+        <tr> 
+          <td height="20">&nbsp;</td>
+        </tr>
+      </table></td>
+    <td width="350" valign="bottom"> <table width="350" border="0" cellspacing="0" cellpadding="0">
+        <tr align="center" valign="bottom"> 
+          <td><table width="100%" height="200" border="0" cellpadding="0" cellspacing="0" bgcolor="669acc">
+              <tr> 
+                <td height="<%= c1b %>%" bgcolor="cccccc">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td height="<%= c1a %>%">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td>&nbsp;</td>
+          <td>
+            <% if c2a > 0 then response.Write("<table width='100%' height='200' border='0' cellpadding='0' cellspacing='0' bgcolor='669acc'><tr><td height='"&c2b&"%' bgcolor='cccccc'>&nbsp;</td></tr><tr><td height='"&c2a&"%'>&nbsp;</td></tr></table>") end if %>
+          </td>
+          <td>&nbsp;</td>
+          <td>
+            <% if c3a > 0 then response.Write("<table width='100%' height='200' border='0' cellpadding='0' cellspacing='0' bgcolor='669acc'><tr><td height='"&c3b&"%' bgcolor='cccccc'>&nbsp;</td></tr><tr><td height='"&c3a&"%'>&nbsp;</td></tr></table>") end if %>
+          </td>
+          <td>&nbsp;</td>
+          <td>
+            <% if c4a > 0 then response.Write("<table width='100%' height='200' border='0' cellpadding='0' cellspacing='0' bgcolor='669acc'><tr><td height='"&c4b&"%' bgcolor='cccccc'>&nbsp;</td></tr><tr><td height='"&c4a&"%'>&nbsp;</td></tr></table>") end if %>
+          </td>
+          <td>&nbsp;</td>
+          <td>
+            <% if c5a > 0 then response.Write("<table width='100%' height='200' border='0' cellpadding='0' cellspacing='0' bgcolor='669acc'><tr><td height='"&c5b&"%' bgcolor='cccccc'>&nbsp;</td></tr><tr><td height='"&c5a&"%'>&nbsp;</td></tr></table>") end if %>
+          </td>
+          <td>&nbsp;</td>
+          <td>
+		  <% if c6a > 0 then response.Write("<table width='100%' height='200' border='0' cellpadding='0' cellspacing='0' bgcolor='669acc'><tr><td height='"&c6b&"%' bgcolor='cccccc'>&nbsp;</td></tr><tr><td height='"&c6a&"%'>&nbsp;</td></tr></table>") end if %>
+		  </td>
+        </tr>
+        <tr align="center" valign="bottom"> 
+          <td width="50" height="20"><font size="2" face="Arial, Helvetica, sans-serif">5</font></td>
+          <td width="10" height="20"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+          <td width="50" height="20"><font size="2" face="Arial, Helvetica, sans-serif">10</font></td>
+          <td width="10" height="20"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+          <td width="50" height="20"><font size="2" face="Arial, Helvetica, sans-serif">15</font></td>
+          <td width="10" height="20"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+          <td width="50" height="20"><font size="2" face="Arial, Helvetica, sans-serif">20</font></td>
+          <td width="10" height="20"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+          <td width="50" height="20"><font size="2" face="Arial, Helvetica, sans-serif">25</font></td>
+          <td width="10" height="20"><font size="2" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+          <td width="50" height="20"><font size="2" face="Arial, Helvetica, sans-serif">30</font></td>
+        </tr>
+      </table></td>
+    <td width="20" valign="bottom">&nbsp;</td>
+    <td width="0" align="left" valign="top"> <table width="100" border="0" cellspacing="5" cellpadding="0">
+        <tr align="left" valign="middle"> 
+          <td width="20" height="20" bgcolor="cccccc">&nbsp;</td>
+          <td height="20"><font size="2" face="Arial, Helvetica, sans-serif">Interest</font></td>
+        </tr>
+        <tr align="left" valign="middle"> 
+          <td width="20" height="20" bgcolor="669acc">&nbsp;</td>
+          <td height="20"><font size="2" face="Arial, Helvetica, sans-serif">Principal</font></td>
+        </tr>
+      </table>
+      <p align="center">&nbsp;</p></td>
+  </tr>
+  <tr> 
+    <td width="30" height="30">&nbsp;</td>
+    <td height="30" valign="bottom"> <div align="center"><font size="2" face="Arial, Helvetica, sans-serif"><img src="images/mortgageCalcYears.gif" width="24" height="10"></font></div></td>
+    <td width="20" valign="bottom">&nbsp;</td>
+    <td width="0" valign="bottom">&nbsp;</td>
+  </tr>
+  <tr>
+    <td height="45">&nbsp;</td>
+    <td height="45" valign="bottom"> 
+      <div align="center"><a href="mortgagecalc.html"><font size="2" face="Arial, Helvetica, sans-serif">Click 
+        Here to Re-Calculate!</font></a><br>
+        <i><font size="2" face="Arial, Helvetica, sans-serif">Note: Does not include 
+        property taxes and insurance.</font></i></div></td>
+    <td height="45" valign="bottom">&nbsp;</td>
+    <td height="45" valign="bottom">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="10">&nbsp;</td>
+    <td height="10" valign="bottom"><div align="center"></div></td>
+    <td height="10" valign="bottom">&nbsp;</td>
+    <td height="10" valign="bottom">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

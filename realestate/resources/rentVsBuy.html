@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Rent vs. Buy Calculator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+<!--
+.style2 {
+	font-size: small;
+	font-family: Arial, Helvetica, sans-serif;
+}
+-->
+</style>
+</head>
+
+<body>
+<form NAME="ss" class="style2">
+  <table width="500" border="0" cellpadding="3" cellspacing="0">
+    <tr valign="middle">
+      <td colspan="3"><img src="images/rentVsBuy.gif" width="188" height="19"></td>
+    </tr>
+    <tr valign="middle">
+      <td colspan="3">Fill out the form below  and click &quot;<i>calculate
+          now</i>&quot; to
+        find out if you should rent or buy!</td>
+    </tr>
+    <tr valign="middle">
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr valign="middle" bgcolor="f0f0f0">
+      <td>Down Payment</td>
+      <td>$</td>
+      <td><input type="text" name="DP" size=10 value=10000></td>
+    </tr>
+    <tr valign="middle">
+      <td>Points or Loan Origination Fees</td>
+      <td>$</td>
+      <td><input type="text" name="pt" size=10 value=1000></td>
+    </tr>
+    <tr valign="middle" bgcolor="f0f0f0">
+      <td>Closing Costs</td>
+      <td>$</td>
+      <td><input type="text" name="cc" size=10 value=1500></td>
+    </tr>
+    <tr valign="middle">
+      <td>Purchase Price</td>
+      <td>$</td>
+      <td><input type="text" name="P" size=10 value=300000></td>
+    </tr>
+    <tr valign="middle" bgcolor="f0f0f0">
+      <td>Length of Mortgage</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="l" size=10 value=30> 
+      years</td>
+    </tr>
+    <tr valign="middle">
+      <td>Interest Rate of Mortgage</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="i" size=10 value=8>
+      %</td>
+    </tr>
+    <tr valign="middle" bgcolor="f0f0f0">
+      <td>Expected Rate of Real Estate Appreciation</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="g" size=10 value=8>
+      %</td>
+    </tr>
+    <tr valign="middle">
+      <td>Expected Rate of Return On Investments</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="r" size=10 value=10>
+      %</td>
+    </tr>
+    <tr valign="middle" bgcolor="f0f0f0">
+      <td>Property Tax Rate</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="tp" size=10 value=1.5>
+      %</td>
+    </tr>
+    <tr valign="middle">
+      <td>Income Tax Rate (Federal &amp; State)</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="t" size=10 value=35>
+      %</td>
+    </tr>
+    <tr valign="middle" bgcolor="f0f0f0">
+      <td> Time Before Moving Again </td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="TH" size=10 value=5> 
+        years</td>
+    </tr>
+    <tr valign="middle">
+      <td>Additional Insurance, PMI,  Maintenance, etc. </td>
+      <td>$</td>
+      <td><input type="text" name="x" size=10 value=3600> 
+      per year</td>
+    </tr>
+    <tr valign="middle" bgcolor="f0f0f0">
+      <td>Broker Commission When Selling</td>
+      <td>&nbsp;</td>
+      <td><input type="text" name="com" size=10 value=6>
+      %</td>
+    </tr>
+    <tr valign="middle">
+      <td></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr valign="middle" bgcolor="f0f0f0">
+      <td>Monthly Rent Payment</td>
+      <td>$</td>
+      <td><input type="text" name="RT" size=10 value=800></td>
+    </tr>
+    <tr valign="middle">
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr valign="middle">
+      <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><input type="button" name="Submit" value="Calculate Now!" onClick="javascript:
+answer.value = calculate(); if (answer.value >= 0){answer2.value = 'You Should Buy!'} else {answer2.value = 'You Should Rent!'}"></td>
+          <td><div align="right"><b>Should You Rent or Buy?</b></div></td>
+        </tr>
+      </table>        </td>
+      <td>&nbsp;</td>
+      <td><input name="answer2" STYLE="color:red" type="value" id="answer2" value=" " size=15></td>
+    </tr>
+    <tr valign="middle">
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr valign="middle">
+      <td><div align="justify">Here is the amount by which you will
+          be better off<br>
+          (or
+            
+          worse off, if negative) <b><i>today </i></b> by purchasing a home:</div></td>
+      <td>&nbsp;</td>
+      <td><input type="value" name="answer" size=15 value=" "></td>
+    </tr>
+  </table>
+  <script language="javascript">
+
+function calculate(){
+var DP = parseFloat(ss.DP.value)
+var pt = parseFloat(ss.pt.value)
+var cc = parseFloat(ss.cc.value)
+var P = parseFloat(ss.P.value)
+var l = parseFloat(ss.l.value)
+var i = parseFloat(ss.i.value)/(12*100)
+var g = parseFloat(ss.g.value)/100
+var r = parseFloat(ss.r.value)/(12*100)
+var tp = parseFloat(ss.tp.value)/100
+var t = parseFloat(ss.t.value)/100
+var RT = parseFloat(ss.RT.value)
+var xmon = parseFloat(ss.x.value)/12
+var TH = parseFloat(ss.TH.value)
+var com = parseFloat(ss.com.value)/100
+
+var NPV = -(cc+pt+DP) + ( (t*pt) / (power(1+r,m) ) );
+
+pmt = (P-DP) / ( (1/i) * (1 - (1 / power((1+i),(l*12))  )));
+
+var sum_int = new Array();
+sum_int[0]=0;
+var out_mort = P-DP;
+
+for (var m = 1; m <= (TH*12); m++){
+var int = out_mort * (i);
+sum_int[m] = sum_int[m-1] + int;
+out_mort = out_mort - int;
+NPV = NPV - (pmt + xmon - RT)/(power(1+r,m));
+
+if (m%12 == 0){
+NPV = NPV + (t * (sum_int[m] - sum_int[m-12])    / (power(1+r,m) ) )
+          - (( (1-t)* tp * P * power(1+g,m/12) ) / (power(1+r,m) ) )
+
+              } // end if
+
+                                  }  // end for loop
+
+     // add sale proceeds less paying off outstanding mortgage to NPV-->
+NPV = NPV + ( (1-com)*P*power(1+g,TH) - out_mort ) / (power(1+r,m));
+	//test:
+	//alert("NPV="+NPV);
+NPV = (window.Math.round(NPV*100)/100); //round decimals
+return(NPV);
+}  // end calculate function
+
+function power(a,b){
+var d= 1;
+for (var c = 1; c <= b; c++) {
+d = d*a;
+}
+return(d);
+}
+
+
+        </script>
+</form>
+</body>
+</html>

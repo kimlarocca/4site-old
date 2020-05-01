@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Mortgage Calculator: Should I Refinance?</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<script language='Javascript'>
+
+//By Daniel C. Peterson
+//Web Winder Website Services, 1997-2005  All Rights Reserved.
+//Distribution, editing or reselling of this script is strictyly prohibited
+//without expressed written permission from Daniel C. Peterson.
+//For commercial grade (professional) versions of this and many other
+//calculators, visit http://www.webwinder.com.
+
+function computeForm(form) {
+
+    var pmt1 = form.payment.value;
+
+    var prin1 = form.principal.value;
+
+    var intPort1 = 0;
+
+    var prinPort1 = 0;
+
+    var accumInt1 = 0;
+
+    var accumPrin1 = 0;
+
+    var i1 = form.intRate.value;
+
+    if (i1 > 1.0) {
+
+        i1 = i1 / 100.0;
+
+        form.intRate.value = i1;
+
+    }
+
+    var i1  = i1  / 12;
+
+    var i2 = form.intRate2.value;
+
+       if (i2 > 1.0) {
+
+           i2 = i2 / 100.0;
+
+           form.intRate2.value = i2;
+
+       }
+
+       var i2  = i2  / 12;
+
+    var count1 = 0;
+
+    while(prin1 > 0) {
+
+        intPort1 = prin1 * i1;
+
+        prinPort1 = pmt1 - intPort1;
+
+        prin1 = prin1 - prinPort1;
+
+        accumPrin1 = accumPrin1 + prinPort1;
+
+        accumInt1 = accumInt1 + intPort1;
+
+        count1 = count1 + 1;
+
+        if(count1 > 600) {break; } else {continue; }
+
+       }
+
+    form.origInt.value = "$" + parseInt(accumInt1,10);
+
+    var pow = 1;
+
+    for (var j = 0; j < form.nper2.value *12; j++)
+
+        pow = pow * (1 + i2);
+
+    var fpayment2 = (form.principal.value * pow * i2) / (pow - 1);
+
+    form.payment2.value = "$" + parseInt(fpayment2,10) + "." + parseInt(fpayment2 % 1 * 100,10);
+
+   var fmoSave = form.payment.value - fpayment2;
+
+   form.moSave.value = "$" + parseInt(fmoSave,10) + "." + parseInt(fmoSave % 1 *100,10);
+		
+		var ftotInt2 = (fpayment2 * form.nper2.value *12)
+    - form.principal.value;
+
+   form.totInt2.value = "$" + parseInt(ftotInt2,10);
+
+   var fintSave = accumInt1 - ftotInt2;
+
+    form.intSave.value = "$" + parseInt(fintSave,10);
+
+    form.closeMo.value = parseInt(form.closingCost.value / fmoSave,10);
+
+   var fnetSave = fintSave - form.closingCost.value;
+
+   form.netSave.value = "$" + parseInt(fnetSave,10);
+
+    form.summary.value = "If you refinance your current " + parseInt(form.intRate.value *100,10) + "." + parseInt(form.intRate.value *100 % 1 *100,10) + "% mortgage to a " + parseInt(form.intRate2.value *100,10) + "." + parseInt(form.intRate2.value *100 % 1 *100,10) + "% mortgage, your monthly payment will drop by " + form.moSave.value + " and you will save " + form.intSave.value + " in interest charges over the life of the mortgage.  However, in order for this refinancing to yield any savings at all you will need to stay in your current home for at least " + form.closeMo.value + " months.  That's how long it will take for your monthly payment savings to offset the closing costs attributable to refinancing.";
+		
+}
+
+
+
+function clearForm(form)
+
+{
+
+    form.principal.value = "";
+    form.payment.value = "";
+    form.intRate.value = "";
+    form.intRate2.value = "";
+    form.nper2.value = "";
+    form.closingCost.value = "";
+    form.payment2.value = "";
+    form.moSave.value = "";
+    form.closeMo.value = "";
+    form.intSave.value = "";
+    form.origInt.value = "";
+    form.netSave.value = "";
+    form.totInt2.value = "";
+    form.summary.value = "";
+
+}</script>
+<form name="form1" method="post" action="">
+  <table BORDER="0" align="center" CELLPADDING="3" CELLSPACING="3">
+    <tr valign="top">
+      <td height="25" COLSPAN="2" align="center">
+      <div align="left"><font size="2" face='Arial, Helvetica, sans-serif'><big><img src="images/shouldIRefinance.gif" width="154" height="15"></big></font></div></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>Enter the
+            current principal balance of your mortgage:</small><br>
+                <small></small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="principal" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>Enter the
+            amount of your monthly mortgage payment:</small><br>
+            <small></small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="payment" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>Enter the
+            your mortgage's current interest rate:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="intRate" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>Enter the
+            interest rate you will be refinancing at:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="intRate2" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>Enter the
+            number of years you will be refinancing for:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="nper2" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>Enter the
+            closing costs that will be required for refinancing:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="closingCost" SIZE="15">
+      </font></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="button" VALUE=" Calculate " onClick="computeForm(this.form)">
+        <input TYPE="reset" VALUE=" Reset " onClick="clearForm(this.form)">
+      </font></td>
+    </tr>
+    <tr>
+      <td height="10" colspan="2" align="center">&nbsp;</td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>This is how
+            much your monthly payment will be if you refinance:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="payment2" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>Monthly savings:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="moSave" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>Number of
+            months to break even on closing costs:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="closeMo" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>This is how
+            much interest you will pay under your current monthly payment plan:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="origInt" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>This is how
+            much interest you will pay under your refinanced monthly payment
+            plan:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="totInt2" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small>This is how
+            much interest you will save if you refinance:</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="intSave" SIZE="15">
+      </font></td>
+    </tr>
+    <tr bgcolor="efefef">
+      <td><font size="2" face='Arial, Helvetica, sans-serif'><small><b>Total
+            Refinancing Savings</b> (less closing costs):</small></font></td>
+      <td><font size="2" face="Arial, Helvetica, sans-serif">
+        <input TYPE="text" NAME="netSave" SIZE="15">
+      </font></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

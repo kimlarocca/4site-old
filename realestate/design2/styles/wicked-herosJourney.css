@@ -1,0 +1,368 @@
+/**
+* Wicked Framework :: Hero's Journey Responsive Layout
+* ----------------- 
+* Copyright 2014 KimLaRocca.com
+* Licensed under MIT (https://github.com/kimlarocca/WickedFramework/blob/master/LICENSE)
+**/
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+
+/* Meyer Reset */
+html,body,div,span,applet,object,iframe,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,label,legend,blockquote,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}body{line-height:1;color:black;background:white;}:focus{outline:0;}table{border-collapse:collapse;border-spacing:0;}caption,th,td{text-align:left;font-weight:normal;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}blockquote:before,blockquote:after,q:before,q:after{content:"";}blockquote,q{quotes:"" "";}abbr,acronym{border:0;}
+
+html, body{
+  height:100%;
+	font-family: 'Raleway', sans-serif; font-size:16px; color:#444;
+}
+a, a:visited, a:active {
+	color: #8c8fa0;
+	text-decoration: none;
+}
+a:hover {
+	opacity: .8;
+}
+a img {
+	border: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+hr {
+	border: 0;
+    height: 1px;
+    background: #999;
+    background-image: linear-gradient(to right, #ccc, #999, #ccc);
+	margin:20px 0 20px 0;
+}
+iframe {
+	border:none;
+	width:100%; height:100%; min-height:800px;	
+}
+li {
+	padding:5px 0 5px 0;	
+}
+/* Header */
+.header {
+	 width:100%; height:100%;
+	background-size:cover!important;
+	-webkit-background-size: cover!important;
+	-moz-background-size: cover!important;
+	-o-background-size: cover!important;
+	background-size: cover!important;
+	position:relative;
+}
+@media all and (min-width: 769px) {
+.header {
+	background: url(../images/HerosJourney.jpg) no-repeat center fixed;
+}
+}
+.headerContent {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+}
+.banner {
+	margin-top:75px;
+	 width:100%; height:200px;
+	background: url(../images/banner.jpg) no-repeat center center;
+	background-size:cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position:relative;
+}
+.bannerContent {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+}
+.header h1, .banner h1 {
+	font-size:3.5em;
+	width:75%; margin:auto;
+	text-align:center;
+	color:#fff;
+	font-weight:700;
+	padding:10px;
+}
+.headerContent a {
+	border:2px #fff solid;
+	color:#fff;
+	text-transform:uppercase;
+	cursor:pointer;
+	padding:10px; margin:10px;
+	font-weight:700; letter-spacing: 0.08em;	
+}
+.headerContent a:hover {
+	border:2px #e0e0e0 solid;
+	color:#e0e0e0;
+}
+h2 {
+	font-family: 'Raleway', sans-serif;
+	font-size:2.0em;
+	padding:10px 0 10px 0;	
+}
+/* Zebra striping */
+tr:nth-of-type(odd) {
+	background: #e7e8ee;
+}
+tr:nth-of-type(even) {
+	background: #eee;
+}
+td {
+	padding: 10px;
+	text-align: left;
+	vertical-align:middle;
+}
+.mainContent { margin:auto; width:90%; padding-bottom:30px; }
+/* Navigation */
+.navigation {
+	z-index:50; top:0;
+	background-color:#8c8fa0; width:100%; position:fixed; height:75px;
+}
+.navigationContent {
+	float:right;
+}
+.navigationContentItem {
+	float: right;
+	margin:0 10px 10px 15px;
+	line-height:75px;
+}
+.navigationContentItem a {
+	text-decoration:none; color:#fff; text-transform:uppercase; font-weight:700; letter-spacing: 0.08em; 
+}
+.navigationContentItem a:hover {
+	opacity:.8;
+	border-bottom:#fff 2px solid;
+}
+.menu {
+	z-index:50;
+	position:fixed; top:10px; left:10px; text-align:center; cursor:pointer; font-weight:700; letter-spacing: 0.08em; color:#fff;
+}
+.menu:hover {
+	opacity:.8;
+}
+/* navigation overlay */
+/* from codrops.com! */
+.overlay {
+	z-index: 75;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(137,143,159,0.95);
+}
+.overlay .overlay-close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: url(../images/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+	z-index: 100;
+	cursor: pointer;
+}
+.overlay nav {
+	text-align: center;
+	position: relative;
+	top: 50%;
+	height: 60%;
+	font-size: 54px;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+.overlay ul li {
+	display: block;
+	height: 20%;
+	height: calc(100% / 6);
+	min-height: 54px;
+}
+.overlay ul li a {
+	font-weight: 300;
+	display: block;
+	color: #fff;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #e3fcb1;
+}
+.overlay-hugeinc {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+}
+.overlay-hugeinc.open {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+.overlay-hugeinc nav {
+	-webkit-perspective: 1200px;
+	perspective: 1200px;
+}
+.overlay-hugeinc nav ul {
+	opacity: 0.4;
+	-webkit-transform: translateY(-25%) rotateX(35deg);
+	transform: translateY(-25%) rotateX(35deg);
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+}
+.overlay-hugeinc.open nav ul {
+	opacity: 1;
+	-webkit-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+.overlay-hugeinc.close nav ul {
+	-webkit-transform: translateY(25%) rotateX(-35deg);
+	transform: translateY(25%) rotateX(-35deg);
+}
+@media screen and (max-height: 30.5em) {
+	.overlay nav {
+		height: 70%;
+		font-size: 34px;
+	}
+	.overlay ul li {
+		min-height: 34px;
+	}
+}
+
+/* content */
+.pageTitles {
+	color:#333;
+	font-size:2em;
+	text-align:center; padding:20px;	
+}
+
+/* footer */
+.footer {
+	background-color: #333;
+	color: #fff;
+	padding: 30px;
+	clear: both;
+}
+.footer a, .footer a:visited, .footer a:active {
+	color: #fff;
+	text-decoration: none;
+}
+.footer h2 {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+}
+.footer p {
+	margin-bottom: 10px;
+	color: #ccc;
+}
+
+/* MOBILE & SMALL SCREENS */
+@media all and (max-width: 479px) {
+.header h1, .banner h1 {
+	font-size:1.5em;
+}
+}
+/* TABLET */
+@media all and (max-width: 768px) {
+.header {
+	background: url(../images/HerosJourney768.jpg) no-repeat center;
+	background-size:cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.header h1, .banner h1 {
+	font-size:2.5em;
+}
+}
+/* MOBILE */
+@media all and (max-width: 480px) {
+.header {
+	background: url(../images/HerosJourney480.jpg) no-repeat top center;
+	background-size:cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.header h1, .banner h1 {
+	font-size:1.75em;
+}
+.footer .wf_text_right, .footer {
+text-align:center!important;
+}
+.mainContent { margin:auto; width:95%; }
+}
+@media all and (max-width: 320px) {
+.header {
+	background: url(../images/HerosJourney320.jpg) no-repeat no-repeat top center;
+	background-size:cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+}
+/* form styles */
+form { margin:auto; padding-top:20px; }
+.wickedForm input[type="text"], .wickedForm textarea {
+	background-color:#f0f0f0;
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  padding: 10px;
+  border: none;
+  border-bottom: solid 3px #8c8fa0;
+  transition: border 0.3s;
+}
+.wickedForm input[type="text"]:focus, .wickedForm textarea:focus {
+  outline: none;
+  border-bottom: solid 3px #333;
+}
+.wickedForm input[type=submit], .button {
+	border:2px #8c8fa0 solid;
+	color:#8c8fa0;
+	text-transform:uppercase;
+	cursor:pointer; display:inline-block;
+	padding:10px; margin:10px;
+	font-weight:700; letter-spacing: 0.08em; background-color: transparent;	
+}
+.wickedForm input[type=submit]:hover, .button:hover {
+	opacity:.7;
+}
+.crop-height {
+  max-height: 180px;
+  overflow: hidden; 
+}
+.scale {
+  display: block;
+  max-width: 100%; min-width:300px!important;
+  height: auto !important;
+  -ms-interpolation-mode: bicubic; 
+}

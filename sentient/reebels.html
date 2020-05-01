@@ -1,0 +1,135 @@
+<html lang='en' class=''>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+  </head>
+  <body>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/annotations.js"></script>
+    <!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+
+    <div id="container"></div>
+    <style>
+      #container {
+        min-width: 310px;
+        /* max-width: 800px; */
+         height: 400px;
+        margin: 0 auto
+      }
+    </style>
+
+    <script> 
+
+
+      Highcharts.chart('container', {
+        chart: {
+          type: 'area'
+        },
+        colors: [
+          '#007AA9',
+          '#CC6633',
+          '#669999',
+          '#999900',
+          '#990000',
+          '#CC9966'
+        ],
+        title: {
+          text: 'Historic and Estimated Worldwide Population Distribution by Region',
+          style: {
+            display: 'none'
+          }
+        },
+        subtitle: {
+          text: 'Source: Wikipedia.org',
+          style: {
+            display: 'none'
+          }
+        },
+        credits: {
+          enabled: false
+        },
+        legend: {
+            
+                  // backgroundColor: '#FFFFFF',
+                  // layout: 'horizontal',
+                  // floating: true,
+                  // align: 'left',
+                  // verticalAlign: 'middle',
+                  // shadow: true
+        },
+        xAxis: {
+          categories: ['Aug 2017', 'Sept 2017', 'Oct 2017', 'Nov 2017', 'Dec 2017', 'Jan 2018', 'Feb 2018'],
+          tickPosition: 'inside',
+          title: {
+            enabled: false
+          }
+        },
+        yAxis: {
+          tickmarkPlacement: 'between',
+          tickPosition: 'inside',
+          title: {
+            text: 'Percentage of mentions'
+          }
+        },
+        tooltip: {
+          pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f})<br/>',
+          split: true
+        },
+        plotOptions: {
+          area: {
+            stacking: 'percent',
+            lineColor: '#ffffff',
+            lineWidth: 1,
+            marker: {
+              lineWidth: 1,
+              lineColor: '#ffffff'
+            }
+          }
+        },
+        series: [{
+          name: 'Patient Safety',
+          data: [502, 635, 809, 947, 1002, 634, 868]
+        }, {
+          name: 'Interchangability',
+          data: [106, 107, 411, 233, 702, 2535, 766]
+        }, {
+          name: 'Approval Pathways and Increased Access',
+          data: [163, 523, 476, 408, 547, 729, 628]
+        }, {
+          name: 'General Education',
+          data: [120, 391, 549, 456, 399, 818, 1299]
+        }, {
+          name: 'Oncology Discussion',
+          data: [282, 85, 80, 200, 432, 300, 600]
+        }, {
+          name: 'Immunology Discussion',
+          data: [299, 500, 130, 60, 200, 400, 600]
+        }]
+        
+        // ORIGINAL DESKTOP NUMBERS. FUDGED ABOVE FOR MOBILE LAYOUT
+        // series: [{
+        //   name: 'Patient Safety',
+        //   data: [502, 635, 809, 947, 1402, 3634, 3268]
+        // }, {
+        //   name: 'Interchangability',
+        //   data: [106, 107, 411, 133, 702, 2535, 766]
+        // }, {
+        //   name: 'Approval Pathways and Increased Access',
+        //   data: [163, 523, 276, 408, 547, 729, 628]
+        // }, {
+        //   name: 'General Education',
+        //   data: [120, 391, 549, 156, 339, 818, 1299]
+        // }, {
+        //   name: 'Oncology Discussion',
+        //   data: [282, 85, 80, 200, 432, 300, 600]
+        // }, {
+        //   name: 'Immunology Discussion',
+        //   data: [299, 500, 130, 60, 200, 400, 600]
+        // }]
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script type="text/javascript">
+    var paydunkInit = {
+        appID: '7k2f9w57LmFfzU7eP3AQEZW19H5qj8XRwEE73VfB',
+        version: '1.0.0'
+    };
+
+    window.onload = function() {
+        (function(d, s, id, st, r) {
+            var js,
+            stylesheet,
+            fjs = d.getElementsByTagName(s)[0];
+
+            // check if element with id="paydunk-jssdk" already exist
+            if (d.getElementById(id)) {return;}
+
+            // create new DOM elements
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://api.paydunk.com/js/paydunkSignin.js";
+
+            stylesheet = d.createElement(st);
+            stylesheet.rel = r;
+            stylesheet.href = "https://api.paydunk.com/css/login.css";
+
+            // insert DOM elements
+            fjs.parentNode.insertBefore(js, fjs);
+            fjs.parentNode.insertBefore(stylesheet, fjs);
+        }(document, 'script', 'paydunk-jssdk', 'link', 'stylesheet'));
+    }
+</script>
+	</head>
+	<body>
+		<button type="button" id="pd-paydunkButton"></button>
+
+    <form>
+        <input type="hidden" id="pd-client_id" name="client_id" value="7k2f9w57LmFfzU7eP3AQEZW19H5qj8XRwEE73VfB"/>
+        <input type="hidden" id="pd-order_number" name="order_number" value="1234"/>
+        <input type="hidden" id="pd-price" name="price" value="19.99"/>
+        <input type="hidden" id="pd-tax" name="tax" value="1" />
+        <input type="hidden" id="pd-shipping" name="shipping" value="0"/>
+    </form>
+	</body>
+</html>

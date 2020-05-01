@@ -1,0 +1,105 @@
+
+@import 'partials/_iphonesvg.scss';
+img { max-width: 100%; height: auto}
+$dark: #140c3b;
+$light: #ff4473;
+$gray: #333;
+.diagonalBG {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	background: none;
+  background-color: $dark;
+  background-image: -webkit-linear-gradient(30deg, $dark 50%, $light 50%);
+  font-weight: normal;
+  position: relative;
+  min-height: 750px;
+}
+.white { color: #fff }
+.gray { color: $gray }
+.appButton { 
+    color: #333;
+    border: solid 2px #fff;
+    border-radius: 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+.width50 {
+	width: 50%;
+	float: left;
+}
+.leftColumn {
+	margin-top: 170px; padding: 25px;
+	border-top: solid 3px white;
+	border-left: solid 3px white;
+}
+.leftColumnHome {
+	margin-top: 120px; padding: 25px;
+	border-top: solid 3px white;
+	border-left: solid 3px white;
+}
+.rightColumn {
+	background: url(../img/dots.png) bottom right no-repeat;
+}
+.leftColumn h1, .leftColumnHome h1 {
+	padding-top: 0; margin-top: 0; font-size: 3.5em;
+}
+@media all and (max-width: 991px) {
+.width50 {
+	width: 100%;
+}
+.rightColumn {
+	background: none;
+}
+.features .responsive-feature-img, .features-extra .responsive-feature-img {
+	width:100%; margin: 0 auto; padding-top: 30px;
+}
+}
+
+.btn-fill2 {
+    color: $dark;
+    border: solid 2px #fff;
+    border-radius: 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+.btn-fill2:hover, .btn-fill2:focus {
+	color: #fff;
+	background-color: $dark;
+    border: solid 2px #fff;
+}
+
+section#wireframes {
+  background: #f3f4f8}
+
+section#video {
+    background: #fff;}
+.features-extra .wireframes-wrap2 {
+    position: absolute;
+    width: 602px;
+    height: 473px;
+    bottom: 100px;
+    z-index: 4;
+    right: 60px;
+}
+@media all and (max-width: 991px) {
+	.features-extra .wireframes-wrap2, .device-showcase2 { display: none}
+	iframe { margin: auto }
+	.responsive-feature-img { text-align: center}
+}
+section#ourservices{
+    background: url(../img/hero.jpg) no-repeat center center;
+    background-size: 100% 100%; color: #fff;
+}
+.margin30 { margin-bottom: 30px }
+.clearBoth { clear: both}
+.logosContainer { margin: auto; width: 900px}
+.logoItem { float:left; border: 1px solid #f3f4f8; padding: 30px; width: 300px; height: 100px;}
+@media all and (max-width: 990px) {
+.logosContainer { margin: auto; width: 600px}
+}
+@media all and (max-width: 600px) {
+.logosContainer { margin: auto; width: 300px}
+}

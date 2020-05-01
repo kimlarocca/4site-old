@@ -1,0 +1,226 @@
+<html>
+<head>
+<title>Real Estate Resources Home Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/resourceCenterTop.gif" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151">
+<div align="center"> 
+              <div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;"> 
+                <div align="right">
+                  <p align="center"><img src="images/templateLinks.gif" width="148" height="183" border="0" usemap="#Map">
+<p>&nbsp;</p>
+                </div>
+              </div>
+              <map name="Map">
+                <area shape="rect" coords="4,52,146,106" href="sellersGuide.html"><area shape="rect" coords="6,109,145,146" href="mortgage.html"><area shape="rect" coords="7,150,144,182" href="shortsales.html">
+                <area shape="rect" coords="4,2,142,45" href="buyersGuide.html">
+              </map>
+              <p>&nbsp;</p>
+             
+              <p align="center">&nbsp; </p>
+              <p align="right">&nbsp; </p>
+              <p>&nbsp;</p>
+            </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td><p align="left"><img src="images/welcome.gif" width="412" height="21"></p>
+                  <p align="justify"><font size="2">Here you will find a wealth of 
+                    information for both the prospective home buyer and seller. 
+                    Home buying guides, home selling guides, mortgage information, 
+                    and more will help your buying or selling experience be as 
+                    smooth and rewarding as possible!</font></p>
+                  <p><font face="Arial, Helvetica, sans-serif" size="2"><strong>Resources For Buyers</strong></font></p>
+                  <ul>
+                    <li><font face="Arial, Helvetica, sans-serif" size="2"><a href="buyersGuide.html">Guide
+                      to Buying a Home</a></font></li>
+                    <li><font face="Arial, Helvetica, sans-serif" size="2"><a href="buyersMistakes.html">Avoid
+                      the Top 10 Buyer's Mistakes</a></font></li>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="buyingWhileSelling.html">Buying
+                      While Selling? Tips on Juggling Two Escrows</a></font></li>
+                    <li><a href="7tips.html" class="size13">7 Tips for First-time Homebuyers</a></li>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="rentVsOwn.html">Renting Vs. Owning: Building Equity in Your Future</a></font></li>
+                    <li><a href="buyers-insurance.html" class="size13">Not All Homeowners Insurance Is Created Equal</a></li>
+                  </ul>
+                  <p><font face="Arial, Helvetica, sans-serif" size="2"><strong>Resources For Sellers</strong></font></p>
+                  <ul>
+                    <li><font face="Arial, Helvetica, sans-serif" size="2"><a href="sellersGuide.html">Seller's
+                      Guide: What's Your Home Worth?</a></font></li>
+                    <li><font face="Arial, Helvetica, sans-serif" size="2"><a href="gettingReadyToSell.html">Getting Your Home Ready
+                      To Sell</a></font></li>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="curbAppeal.html">Tips for Creating Curb Appeal on a Budget</a></font></li>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="buyingWhileSelling.html">Buying
+                      While Selling? Tips on Juggling Two Escrows</a></font></li>
+                    <li><a href="sellers-smallUpdates.html" class="size13">Small Updates Help a House Sell</a></li>
+                  </ul>
+                  <p><font size="2" face="Arial, Helvetica, sans-serif"><strong><a href="shortsales.html">About Short Sales</a></strong></font>                  </p>
+                  <p><font face="Arial, Helvetica, sans-serif" size="2"><b>Mortgage Center</b></font></p>
+                  <ul>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="calculators.html">Mortgage Calculators</a> </font>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="mortgageGuide.html">Guide
+                      To Getting a Mortgage</a> </font>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="choosingMortgage.html">Fixed
+                      Rate vs. Variable Rate Mortgages</a> </font>
+                    <li><a href="mortgage-top10tips.html" class="size13">Top Ten Tips for Financing a Home</a>                    
+                    <li><a href="mortgage-refinancing.html" class="size13">Refinancing Your Adjustable-Rate Mortgage into a Fixed Rate Mortgage</a>
+                    <li><a href="mortgage-timeToRefi.html" class="size13">How to Determine if it's Time to Refinance                                        
+                    </a>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="FirstTimeHomeBuyers.html">Financial Tips for First-Time Home Buyers </a></font>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="mortgageChecklist.html">Loan Application Checklist</a></font>                                        
+                  </ul>
+                  <p><font face="Arial, Helvetica, sans-serif" size="2"><strong>For Sale By Owners</strong></font></p>
+                  <ul>
+                    <li><font size="2" face="Arial, Helvetica, sans-serif"><a href="fsbo.html">Attention
+                      FSBOs! Why you need a REALTOR&reg;</a></font></li>
+                  </ul>
+                  <p align="center" class="style1"><span class="style4">  Content by 4
+Site USA, LLC
+                  </span></p>
+                </td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top">&nbsp;</td>
+  </tr>
+</table>
+<noscript>
+<h1>4 Site USA delivers high quality professional <a href="http://www.4siterealestate.com" title="Real Estate WebSites and Designs by 4 Site">Real Estate Websites & designs</a>, for your competitive advantage. 4 Site provides top quality, professional <a href="http://www.4siteusa.com" title="4 Site; web design, web programming and web hosting services" target="_blank">web designs and web hosting services</a>.</h1>
+</noscript>
+</body>
+</html>

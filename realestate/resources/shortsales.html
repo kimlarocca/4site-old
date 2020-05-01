@@ -1,0 +1,411 @@
+<html>
+<head>
+<title>About Short Sales</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function actFloatLayer(Margin, slideTime, layerName, Type, browser)
+{  
+   //===== initial the properties ===== begin =====
+   
+   switch(browser)
+   {
+      case (1):
+                  find = (Type < 3) ? document.body.clientHeight : document.body.clientWidth;
+                  current = (Type < 3) ? eval(layerName + ".style.pixelTop") : eval(layerName + ".style.pixelLeft");
+                  scrollAt = (Type < 3) ? document.body.scrollTop : document.body.scrollLeft;
+                  break;
+
+      case (2): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? eval("document." + layerName + ".top") : eval("document." + layerName + ".left");
+                  scrollAt = (Type < 3) ? window.pageYOffset : window.pageXOffset;
+                  break;
+
+      case (3): 
+                  find = (Type < 3) ? window.innerHeight : window.innerWidth;
+                  current = (Type < 3) ? parseInt(eval("document.getElementById('" + layerName + "').style.top")) : parseInt(eval("document.getElementById('" + layerName + "').style.left")); 
+                  scrollAt = (Type < 3) ? window.scrollY : window.scrollX;
+                  break;
+   }
+
+   //===== initial the properties ===== end =====
+ 
+
+   //========== Main Trigger ========== begin =====
+   
+   switch(Type)
+   {
+      case (1): case (3): //Type : top and left
+         newTarget = scrollAt + Margin;
+         break;
+      case (2): case (4): //Type : bottom and right
+         newTarget = scrollAt + find - Margin;
+         break;
+   }
+   
+   if ( current != newTarget ) 
+   {        
+      if (newTarget !=  this.target ) 
+      { 
+         //========== Start Float ========== begin =====
+
+         target = newTarget;
+
+         now = new Date();
+         Mul = target - current;
+         Wave = Math.PI / ( 2 * slideTime );
+         Pass = now.getTime();
+
+         if (Math.abs(Mul) > find) 
+         { 
+            
+            Dis = (Mul > 0) ? target - find : target + find ;
+            Mul = (Mul > 0) ? find : -find ;
+         }
+   
+         else 	 
+            Dis = current 
+
+         //========== Start Float ========== end =====
+      } 
+      
+      //========== Animator ========== begin =====
+
+      now = new Date();
+      newPosition = Mul * Math.sin( Wave * ( now.getTime() - Pass ) ) + Dis;
+
+      newPosition = Math.round(newPosition);
+
+      if (( Mul > 0 && newPosition > current ) || ( Mul < 0 && newPosition < current )) 
+      { 
+         switch(browser)
+         {
+            case (1):
+                        (Type < 3) ? eval(layerName + ".style.pixelTop = newPosition;") : eval(layerName + ".style.pixelLeft = newPosition;");
+                        break;
+            case (2):
+                        (Type < 3) ? eval("document." + layerName + ".top = newPosition;") : eval("document." + layerName + ".left = newPosition;");
+                        break;
+            case (3):
+                        (Type < 3) ? eval("document.getElementById('" + layerName + "').style.top = newPosition + 'px';") : eval("document.getElementById('" + layerName + "').style.left = newPosition + 'px';");
+                        break;
+         }         
+      }       
+
+      //========== Animator ========== end =====
+   } 
+
+   //========== Main Trigger ========== end =====
+}
+
+function startFloatLayer(layerName, x, Margin, slideTime, Type) 
+{
+   //===== verify the Type ===== begin =====
+   var browser;
+
+   if (document.all)
+      browser = 1;  //ie4
+
+   if (document.layers)
+      browser = 2;  //ns4
+
+   if (!document.all && document.getElementById)
+      browser = 3 ; //ns6
+   
+   setInterval("actFloatLayer(" + Margin + ", " + slideTime + ", '" + layerName + "', " + Type + ", " + browser + ")", 10);
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {font-size: 13px }
+.style2 {font-size: 13px; font-weight: bold; }
+.style5 {font-size: 15px; font-weight: bold; }
+-->
+</style>
+<SCRIPT LANGUAGE="JavaScript1.1">
+<!-- Original:  Martin Webb (martin@irt.org) -->
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+
+<!-- Begin
+function right(e) {
+if (navigator.appName == 'Netscape' && 
+(e.which == 3 || e.which == 2))
+return false;
+else if (navigator.appName == 'Microsoft Internet Explorer' && 
+(event.button == 2 || event.button == 3)) {
+alert("Sorry, you do not have permission to right click.");
+return false;
+}
+return true;
+}
+
+document.onmousedown=right;
+document.onmouseup=right;
+if (document.layers) window.captureEvents(Event.MOUSEDOWN);
+if (document.layers) window.captureEvents(Event.MOUSEUP);
+window.onmousedown=right;
+window.onmouseup=right;
+//  End -->
+</script>
+</head>
+
+<body onLoad="startFloatLayer('Layer1', '', 100, 1200, 1)" ondragstart="return false" onselectstart="return false">
+<table width="710" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td height="80" align="left" valign="top"><img src="images/ShortSales.jpg" width="710" height="80"></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top" background="images/guideBG.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="151">
+<div id="Layer1" style="position:absolute; width:148px; height:338px; z-index:1; left: 3; top: 97px;"> 
+                
+              <div align="right"><img src="images/shortSalesLinks.gif" width="148" height="453" border="0" usemap="#Map">
+<br>
+<br></div>
+            </div></td>
+          <td> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td><p class="style2"><img src="images/aboutShortSales.jpg" width="161" height="17"></p>
+                  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                    <tr valign="top">
+                      <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr valign="middle">
+                          <td width="0" height="25" bgcolor="#CCCCCC"><span class="style5"><a name="1"></a>What Are Your Options?</span></td>
+                        </tr>
+                        <tr>
+                          <td height="10">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">
+                            <p align="justify" class="style1"><strong>You DO Have Options</strong></p>
+                            <p align="justify" class="size13">If you have become delinquent on your mortgage(s) you will receive tons of information, some not so subtle suggestions, from many people who want to take advantage of your temporary misfortune. &nbsp;They will attempt to scare you by telling you that time is your enemy and that you must act immediately to save your credit. &nbsp;This will normally be followed by a proposal to solve your problem by suggesting that you sell or deed your property to them.</p>
+                            <p align="justify" class="size13">                                <strong>BEWARE! &nbsp;Don&#8217;t do anything until you understand ALL of your options. &nbsp;Here are some of your options: </strong></p>
+                            <p align="justify" class="size13"><strong> * Reinstatement<BR>
+                                </strong><BR>
+&middot; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If your situation was temporary and you have the funds necessary to bring your mortgage up to date, the lender(s) will typically allow you to reinstate your mortgage(s) and end the foreclosure process.<BR>
+  <BR>
+  <strong>* Refinance<BR>
+  </strong></p>
+                            <UL>
+                              <LI><span class="size13">You can refinance the property and pay off existing loans. &nbsp;However, you must have sufficient equity in the property. &nbsp;We do work with lenders that can assist you with refinancing your property. <BR>
+                                                        </span>
+                              </UL>
+                            <p class="size13"><strong>* Deed in Lieu
+ </strong></p>
+                            <ul>
+                              <li class="size13">
+                                <div align="justify">In a Deed in lieu of foreclosure, the borrower conveys all interest in the property to the lender to satisfy a loan that is in default in order to avoid foreclosure proceedings. &nbsp;This is not a popular option for lenders given the depressed value of properties in many markets. &nbsp;The lender may also want you to agree to pay a certain amount in addition to giving up your property. </div>
+                              </li>
+                            </ul>
+                            <p class="size13"><strong>* Loan Modification</strong></p>
+                            <ul>
+                              <li>
+                                <div align="justify" class="size13">In an effort to help distressed homeowners keep their homes, lenders are more willing to consider loan modifications. &nbsp;A loan modification, or &quot;workout&quot;, is a permanent change in one or all of the terms of an existing mortgage(s),<em> i.e., a lower interest rate, an adjustable to a fixed rate loan, longer amortization period</em>. &nbsp;The past amounts owed, including penalties and attorney fees, can be added to the balance of the new loan. &nbsp;In some cases, the lender(s) may agree to waive these fees or even lower the principle balance, in what has come to be known as a &quot;Short Re-Fi&quot;.</div>
+                              </li>
+                            </ul>
+                            <p class="size13"><strong>* Sell Your Property</strong></p>
+                            <UL>
+                              <LI>
+                                <div align="justify"><span class="size13">You can sell the property if you have enough equity to cover all of the costs associated with the sale or are able to bring cash to the closing table to cover any shortfalls. &nbsp;As full service real estate professionals, we can assist you with the sale of your property. &nbsp;&nbsp;</span></div>
+                              </UL>
+                            <span class="size13"><strong>* A Short Sale<BR>
+                            </strong>                            </span>
+                            <UL>
+                              <LI>
+                                <div align="justify"><span class="size13">If you owe more than your home is worth, you can look at negotiating a discounted payoff with your mortgage company. &nbsp;We can negotiate with the lender(s) on your behalf to get an approval for a Short Sale. &nbsp;Keep in mind that the lender(s) almost always pays all the sales costs, including title and escrow fees, commissions and most repairs. </span></div>
+                              </UL>
+                            <span class="size13"><strong>* Negotiate a Forbearance Agreement<BR>
+                            </strong>                            </span>
+                            <UL>
+                              <LI><span class="size13">For borrowers who have experienced a temporary event that has caused them to fall behind on their mortgage(s), a Forbearance Agreement with the lender(s) is a viable option. &nbsp;In most cases, the lender(s) look(s) for two things when considering a forbearance agreement: <BR>
+                                                        </span>
+                              </UL>
+                            <blockquote>
+                              <p align="justify" class="size13">1. &nbsp;&nbsp;&nbsp;Why the loan became delinquent in the first place. &nbsp;It helps greatly if the problem was something beyond the control of the borrower &#8211; serious illness or injury, temporary disability or a one-time disruption in income.<BR>
+                                  <BR>
+                                2. &nbsp;&nbsp;&nbsp;That the borrower&#8217;s financial difficulties have been corrected. &nbsp;The mortgage company wants to know that the borrower is now on a solid footing and can be counted upon to make regular loan payments as agreed. &nbsp;The new payment will probably include a set amount that will count towards the delinquent amount.</p>
+                            </blockquote>
+                            <p class="size13"><strong>* Do Absolutely Nothing </strong></p>
+                            <ul>
+                              <li>
+                                <div align="justify" class="size13">This is always an option but not recommended. &nbsp;Sadly many borrowers do exactly that, nothing. &nbsp;In fact, in a large percentage of homes foreclosed on, the sellers never even attempted to sell the property. &nbsp;We understand that you can become overwhelmed and intimidated by your situation and although it is a daunting burden, the ramifications of a foreclosure are very serious. &nbsp;That being said, at the very least you owe it to yourself to consider all of the potential solutions that can help you avoid foreclosure. </div>
+                              </li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="0" height="25" bgcolor="#CCCCCC"><strong class="style5"><a name="2" id="2"></a>What is a Short Sale?</strong></td>
+                        </tr>
+                        <tr>
+                          <td height="10">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25"><div align="justify">
+                            <p class="style1">A Short Sale is an alternative to foreclosure. If the sellers have a legitimate and verifiable hardship, the lender(s) agree to sell the property for less than the amount owed and the bank/lender agrees to release the lien(s). &nbsp;A Short Sale is NOT a get out of my mortgage free card. &nbsp;Simply owing more than the property is worth is not a valid hardship.<BR>
+</p>
+                            </div></td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="0" height="25" bgcolor="#CCCCCC"><span class="style5"><a name="3" id="3"></a>How Does it Benefit the Seller?</span></td>
+                        </tr>
+                        <tr valign="middle">
+                          <td height="10">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">
+                            <p align="justify" class="style1">A &quot;Short Sale&quot; offers significant benefits to the homeowner, such as:<BR>
+                              <BR>
+1. A short sale will allow the homeowner to eliminate the mortgage debt(s) without the expense of needed repairs to get the property sold.<BR>
+<BR>
+2. The sellers is able to stay in the property until the process is completed.<BR>
+<BR>
+3. No up front fees are required. &nbsp;<strong>YOU SHOULD NOT PAY UPFRONT FEES TO ANYONE!<BR>
+</strong><BR>
+4. Closing costs and commissions are usually paid for by the lender(s).<BR>
+<BR>
+5. The seller avoids the negative effect of a foreclosure on his/her credit report.<BR>
+<BR>
+6. May help avoid a bankruptcy.<BR>
+<BR>
+7. Less stress, more Peace of Mind! </p>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="0" height="25" bgcolor="#CCCCCC"><span class="style5"><a name="4" id="4"></a>How Does it Benefit the Lender/Bank?</span></td>
+                        </tr>
+                        <tr>
+                          <td height="10">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">
+                            <p align="justify" class="style1">For the mortgage holder, there are real advantages to getting the property sold, even at a discount, while the borrower is still in the home:<BR>
+                              <BR>
+1. The costs to maintain the property are paid by the borrower and the borrower has an incentive to keep the property in good shape. <BR>
+<BR>
+2. The foreclosure process can get very unpleasant, particularly towards the end of the process.<BR>
+<BR>
+3. The lender(s) avoids paying the considerably high fees associated with a foreclosure such as; attorney, court, processing and handling fees. &nbsp;Not to mention the insurance, taxes and repair costs.<BR>
+<BR>
+Bottom line, banks do NOT want to own your home! </p>
+                            </td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="0" height="25" bgcolor="#CCCCCC"><span class="style5"><a name="5" id="5"></a>How Does it Benefit the Buyer?</span></td>
+                        </tr>
+                        <tr>
+                          <td height="10">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">
+                            <p align="justify" class="size13">1. &nbsp;Buyers are able to purchase a property, in most cases, substantially below market prices resulting in immediate equity. &nbsp;<BR>
+                              <BR>
+2. &nbsp;These properties are typically much better maintained than a foreclosure property and in need of fewer repairs. </p>                            </td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="0" height="25" bgcolor="#CCCCCC"><span class="style5">&nbsp;<a name="6" id="6"></a>The Short Sale Process</span></td>
+                        </tr>
+                        <tr>
+                          <td height="10">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25"><div align="justify" class="style1">1. Find out if a Short Sale is a viable option for you based on your circumstances. &nbsp;We can help you with this and there's <strong>NO COST</strong> <strong>TO YOU</strong>.<BR>
+                              <BR>
+2. If you qualify, the property is listed and placed on the market for sale. Many factors go into the proper pricing and marketing of your home for maximum exposure. &nbsp;Time is not on your side, so it's important to get your property sold quickly.<BR>
+<BR>
+3. All the necessary forms and documents are prepared and gathered. The Hardship Package can make or break a Short Sale. &nbsp;It must be complete and convey a viable financial argument as to why the lender(s) should accept less than what is owed on the loan(s).<BR>
+<BR>
+4. Once an offer is received and accepted by the sellers, it's submitted to the lender(s), along with the Hardship Package, for approval. <BR>
+<BR>
+5. Upon approval, and the receipt of the acceptance letter, the file moves to closing.<BR>
+<BR>
+<strong>You get to go on with your life!</strong> </div></td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25">&nbsp;</td>
+                        </tr>
+                        <tr valign="middle">
+                          <td width="0" height="25" bgcolor="#CCCCCC"><span class="style5"><a name="7" id="7"></a>Why Work With A REALTOR?</span></td>
+                        </tr>
+                        <tr>
+                          <td height="10">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td width="0" height="25"><div align="justify">
+                            <p class="style1">A. Lender(s) typically prefer to work with a REALTOR&reg; as opposed to working directly with the buyers. &nbsp;Getting a Short Sale approved by the existing lender(s) is a very complicated, multi-step process. &nbsp;This requires a high level of patience, persistence and, most importantly, experience. &nbsp;The lender(s) realizes that it is in their best interest, as well as that of the borrower, to the have the Short Sale file packaged properly from the very beginning, by a real estate professional that does not have a conflict of interest.<BR>
+                              <BR>
+B. <strong>PROTECT</strong> your personal information, that's why you do NOT want the buyers working directly with the lender(s). &nbsp;Why? &nbsp;In order to get a Short Sale approved you must provide the lender(s) with a great deal of personal financial information and documentation. &nbsp;Do you want the buyers to have access to all this personal information? <BR>
+<BR>
+C. The buyers are concerned with closing the deal in accordance with their best interests, NOT yours! You need a professional that is committed to representing your best interests.<BR>
+<BR>
+D. You get Professional Representation, at <strong>NO COST TO YOU</strong> - &nbsp;The lender(s) pays the real estate commission, so professional representation is free to you. &nbsp;In essence, the lender(s) pays the real estate fees, along with most other sales costs, so that the Short Sale file can be handled by a professional.<BR>
+<BR>
+If you decide that a Short Sale is the best option for you, make sure that a highly qualified Real Estate Professional, such as myself, is representing you. </p>
+                            </div></td>
+                        </tr>
+                        <tr>
+                          <td height="25">&nbsp;</td>
+                        </tr>
+                      </table>
+                      </td>
+                    </tr>
+                  </table>                  
+                  <div align="center">
+                    <p><br>                  
+                      &quot;<strong>Disclaimer</strong>&quot; </p>
+                    <p align="justify" class="size13"> All the information on this short sales module is published in good faith and for general information purposes only. &nbsp;The publishers and providers of this content do not make any warranties about the completeness, reliability and accuracy of this information. &nbsp;Any action you take upon using the information on this module is strictly at your own risk and the publishers and providers will not be liable for any losses and damages in connection with the use of our website. &nbsp;The information is not intended to serve as legal or financial advice.  
+                    <p><font size="2"><a href="index.html"><b>&lt;&lt; Go
+                      back to the Real Estate Resource Center Home Page</b></a></font><font size="1"><br>
+                      Content by RE Web Solutions <span class="style1"></span>
+                        </font></p>
+                  </div></td>
+                <td width="30">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td height="20" align="left" valign="top" background="images/guideBG.gif">&nbsp;</td>
+  </tr>
+</table>
+<map name="Map">
+  <area shape="rect" coords="2,-4,144,50" href="#1">
+  <area shape="rect" coords="4,375,145,411" href="shortSalesFAQ.html">
+  <area shape="rect" coords="3,317,145,371" href="#7">
+  <area shape="rect" coords="4,262,146,316" href="#6">
+  <area shape="rect" coords="3,205,145,259" href="#5">
+  <area shape="rect" coords="2,150,144,204" href="#4">
+  <area shape="rect" coords="2,92,144,146" href="#3">
+  <area shape="rect" coords="4,2,142,45" href="#7"
+  <area shape="rect" coords="3,53,144,86" href="#2">
+</map>
+</body>
+</html>

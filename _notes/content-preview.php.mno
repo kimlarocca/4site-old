@@ -1,0 +1,1 @@
+﻿<?xml version="1.0" encoding="utf-8" ?><info>	<infoitem key="UD_Recordset1" value="name:pageID;datatype:int,name:websiteID;datatype:int,name:username;datatype:blob,name:pageTitle;datatype:blob,name:pageContent;datatype:blob,name:pageModified;datatype:timestamp,name:pageActive;datatype:int" /></info>

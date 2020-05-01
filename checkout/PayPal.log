@@ -1,0 +1,985 @@
+[21-07-2015 08:44:41] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[21-07-2015 08:44:42] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.43;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVdZV2cxQ1QtcXl3a2MtXzR1emVlNnV5dE1TczhvZ0VDS182V1B0d1dNVVRpTE56ZF9yVHVxOVhSbkV4YVNIOG1EejFaTFNqTGVWbFUtc0M6RUllUDY4WDBaRzVOUWlWX1JKSjBtX0hZWExxYmx3V2NRZG1PZ2I2aC1GUThEbTVIZnRfN3NaUHNIMkRXQzBkNHJVWDRjVVNEN3hTVnhDbnA=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[21-07-2015 08:44:42] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[21-07-2015 08:44:42] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[21-07-2015 08:44:42] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 401 Unauthorized, Date: Tue, 21 Jul 2015 20:44:42 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=552136, Paypal-Debug-Id: 4857c33e180ad, CORRELATION-ID: 4857c33e180ad, Content-Length: 83, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D984591957; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[21-07-2015 08:44:42] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"The client credentials are invalid"}
+[21-07-2015 08:44:42] PayPal\Core\PayPalHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[21-07-2015 08:48:40] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[21-07-2015 08:48:41] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.43;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVdZV2cxQ1QtcXl3a2MtXzR1emVlNnV5dE1TczhvZ0VDS182V1B0d1dNVVRpTE56ZF9yVHVxOVhSbkV4YVNIOG1EejFaTFNqTGVWbFUtc0M6RUllUDY4WDBaRzVOUWlWX1JKSjBtX0hZWExxYmx3V2NRZG1PZ2I2aC1GUThEbTVIZnRfN3NaUHNIMkRXQzBkNHJVWDRjVVNEN3hTVnhDbnA=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[21-07-2015 08:48:41] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[21-07-2015 08:48:41] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[21-07-2015 08:48:41] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 401 Unauthorized, Date: Tue, 21 Jul 2015 20:48:40 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=206, Paypal-Debug-Id: 1ce8588feb258, CORRELATION-ID: 1ce8588feb258, Content-Length: 83, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D682667605; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[21-07-2015 08:48:41] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"The client credentials are invalid"}
+[21-07-2015 08:48:41] PayPal\Core\PayPalHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[21-07-2015 08:50:09] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[21-07-2015 08:50:09] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.43;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVdZV2cxQ1QtcXl3a2MtXzR1emVlNnV5dE1TczhvZ0VDS182V1B0d1dNVVRpTE56ZF9yVHVxOVhSbkV4YVNIOG1EejFaTFNqTGVWbFUtc0M6RUllUDY4WDBaRzVOUWlWX1JKSjBtX0hZWExxYmx3V2NRZG1PZ2I2aC1GUThEbTVIZnRfN3NaUHNIMkRXQzBkNHJVWDRjVVNEN3hTVnhDbnA=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[21-07-2015 08:50:09] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[21-07-2015 08:50:09] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[21-07-2015 08:50:09] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 401 Unauthorized, Date: Tue, 21 Jul 2015 20:50:09 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=275, Paypal-Debug-Id: 6915ff5746d7, CORRELATION-ID: 6915ff5746d7, Content-Length: 83, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D2175839829; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[21-07-2015 08:50:09] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"The client credentials are invalid"}
+[21-07-2015 08:50:09] PayPal\Core\PayPalHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[21-07-2015 08:55:02] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[21-07-2015 08:55:02] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.43;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVdZV2cxQ1QtcXl3a2MtXzR1emVlNnV5dE1TczhvZ0VDS182V1B0d1dNVVRpTE56ZF9yVHVxOVhSbkV4YVNIOG1EejFaTFNqTGVWbFUtc0M6RUllUDY4WDBaRzVOUWlWX1JKSjBtX0hZWExxYmx3V2NRZG1PZ2I2aC1GUThEbTVIZnRfN3NaUHNIMkRXQzBkNHJVWDRjVVNEN3hTVnhDbnA=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[21-07-2015 08:55:02] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[21-07-2015 08:55:02] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[21-07-2015 08:55:02] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 401 Unauthorized, Date: Tue, 21 Jul 2015 20:55:02 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=4080, Paypal-Debug-Id: a48dbc0c62c4d, CORRELATION-ID: a48dbc0c62c4d, Content-Length: 83, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D2796662357; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[21-07-2015 08:55:02] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"The client credentials are invalid"}
+[21-07-2015 08:55:02] PayPal\Core\PayPalHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[22-07-2015 12:23:34] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[22-07-2015 12:23:35] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.43;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVdZV2cxQ1QtcXl3a2MtXzR1emVlNnV5dE1TczhvZ0VDS182V1B0d1dNVVRpTE56ZF9yVHVxOVhSbkV4YVNIOG1EejFaTFNqTGVWbFUtc0M6RUllUDY4WDBaRzVOUWlWX1JKSjBtX0hZWExxYmx3V2NRZG1PZ2I2aC1GUThEbTVIZnRfN3NaUHNIMkRXQzBkNHJVWDRjVVNEN3hTVnhDbnA=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[22-07-2015 12:23:35] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[22-07-2015 12:23:35] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[22-07-2015 12:23:35] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 401 Unauthorized, Date: Wed, 22 Jul 2015 12:23:35 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=277, Paypal-Debug-Id: 2cd9c01faf08, CORRELATION-ID: 2cd9c01faf08, Content-Length: 83, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D1200336725; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[22-07-2015 12:23:35] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.sandbox.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"The client credentials are invalid"}
+[22-07-2015 12:23:35] PayPal\Core\PayPalHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[22-07-2015 12:28:32] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[22-07-2015 12:28:32] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[22-07-2015 12:28:33] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[22-07-2015 12:28:33] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[22-07-2015 12:28:33] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[22-07-2015 12:28:37] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[22-07-2015 01:02:06] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[22-07-2015 01:02:06] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[22-07-2015 01:02:10] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[22-07-2015 05:01:53] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[22-07-2015 05:01:55] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.43;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVlONXdkbVBaN3dDVTFMOTJpRFVJUWF4U1BKWU5HVnFqZ1lvNTI1LV94OVZwWndHVzVFTVlMT3lINVRtdVl5aUxCQVhoMFhiajdWYnhnQTY6RUZyREg2dWxtekRUenhiV3MtTTdLVGtEZ0pHTmdsYm03OUtoVi1TZ0taY0N3WkIzcmMtUC1UamY2UTFyNV8xSml1V1RtX1kxLXVWZUJLUW8=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[22-07-2015 05:01:55] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[22-07-2015 05:01:55] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[22-07-2015 05:01:55] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Date: Wed, 22 Jul 2015 17:01:54 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=55574, Paypal-Debug-Id: 5e8f6f273f641, CORRELATION-ID: 5e8f6f273f641, Content-Length: 426, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D2194452309; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[22-07-2015 05:01:55] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.*","access_token":"A015aTYNuK-YoCBg0IckFaYOEM6r.o6U.18moBLvlpJ0Xdg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":28800}
+
+================================================================================================================================
+
+[22-07-2015 05:01:55] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[22-07-2015 05:01:58] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.43;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A015aTYNuK-YoCBg0IckFaYOEM6r.o6U.18moBLvlpJ0Xdg, PayPal-Request-Id: 120862451016950143758451328984, Content-Length: 348, , 
+[22-07-2015 05:01:58] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5108050122619161","expire_month":"11","expire_year":"2016","cvv2":"853"}}]},"transactions":[{"amount":{"currency":"USD","total":"20","details":{"shipping":"0","tax":"0","subtotal":"20"}},"invoice_number":"55afcc81db3d5"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[22-07-2015 05:01:58] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[22-07-2015 05:01:58] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 22 Jul 2015 17:01:55 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=1047, Paypal-Debug-Id: 3cab99f6e3d5, CORRELATION-ID: 3cab99f6e3d5, Content-Language: *, Content-Length: 1177, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D2211229525; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[22-07-2015 05:01:58] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-0YK9782389112731BKWX4ZAY","create_time":"2015-07-22T17:01:55Z","update_time":"2015-07-22T17:01:58Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx9161","expire_month":"11","expire_year":"2016"}}]},"transactions":[{"amount":{"total":"20.00","currency":"USD","details":{"subtotal":"20.00"}},"invoice_number":"55afcc81db3d5","related_resources":[{"sale":{"id":"6RL828119J297892N","create_time":"2015-07-22T17:01:55Z","update_time":"2015-07-22T17:01:58Z","amount":{"total":"20.00","currency":"USD"},"state":"completed","parent_payment":"PAY-0YK9782389112731BKWX4ZAY","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/6RL828119J297892N","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/6RL828119J297892N/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0YK9782389112731BKWX4ZAY","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0YK9782389112731BKWX4ZAY","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[22-07-2015 05:03:42] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[22-07-2015 05:03:42] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[22-07-2015 05:03:46] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[22-07-2015 05:07:07] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[22-07-2015 05:07:07] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[22-07-2015 05:07:11] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[22-07-2015 10:50:41] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[22-07-2015 10:50:41] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[22-07-2015 10:50:42] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[22-07-2015 10:50:42] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[22-07-2015 10:50:42] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[22-07-2015 10:50:45] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[22-07-2015 11:10:45] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[22-07-2015 11:10:45] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[22-07-2015 11:10:48] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-08-2015 07:39:33] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-08-2015 07:39:33] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[04-08-2015 07:39:34] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[04-08-2015 07:39:34] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-08-2015 07:39:34] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-08-2015 07:39:38] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[05-08-2015 03:24:12] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[05-08-2015 03:24:12] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[05-08-2015 03:24:13] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[05-08-2015 03:24:13] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[05-08-2015 03:24:13] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[05-08-2015 03:24:16] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[05-08-2015 03:24:16] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"ed24715d0eaa5"}
+[05-08-2015 03:32:38] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[05-08-2015 03:32:38] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[05-08-2015 03:32:39] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[05-08-2015 03:32:39] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Amount cannot be zero"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"abdf1e1bf5d75"}
+[06-08-2015 03:12:13] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[06-08-2015 03:12:13] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[06-08-2015 03:12:14] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[06-08-2015 03:12:14] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[06-08-2015 03:12:14] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[06-08-2015 03:12:17] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[06-08-2015 03:12:17] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"712144d2b054c"}
+[15-08-2015 10:04:07] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-08-2015 10:04:07] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[15-08-2015 10:04:09] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[15-08-2015 10:04:09] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-08-2015 10:04:09] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[15-08-2015 10:04:13] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[15-08-2015 10:04:13] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_CVV_CHECK_FAILED","message":"The credit card CVV check failed","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_CVV_CHECK_FAILED","debug_id":"93f103defaba0"}
+[15-08-2015 10:16:23] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-08-2015 10:16:23] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[15-08-2015 10:16:27] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[15-08-2015 10:16:27] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_CVV_CHECK_FAILED","message":"The credit card CVV check failed","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_CVV_CHECK_FAILED","debug_id":"7c688743013ae"}
+[28-08-2015 01:12:45] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-08-2015 01:12:45] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[28-08-2015 01:12:46] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[28-08-2015 01:12:46] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-08-2015 01:12:46] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[28-08-2015 01:12:49] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[28-08-2015 01:14:48] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-08-2015 01:14:48] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[28-08-2015 01:14:51] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[31-08-2015 02:05:25] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[31-08-2015 02:05:25] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[31-08-2015 02:05:27] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[31-08-2015 02:05:27] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[31-08-2015 02:05:27] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[31-08-2015 02:05:30] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[31-08-2015 02:07:20] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[31-08-2015 02:07:20] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[31-08-2015 02:07:23] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[31-08-2015 02:09:24] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[31-08-2015 02:09:24] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[31-08-2015 02:09:28] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[31-08-2015 02:10:53] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[31-08-2015 02:10:53] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[31-08-2015 02:10:56] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[02-09-2015 05:09:05] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[02-09-2015 05:09:06] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVgwTDZVT0JhRkZESFFEeTkySGx3c1ItNkg2NGFvQlJpajd5X3VzSmFWa1lCdTc5ZmsxenlzaUR2NHRRYU5BdnI5WWdoTmZ0THhIbG9pS2c6RU92c2VrSTNYNFVHQmVJdjdXdWl1REotb0tReVpxXzdBQ2lQWEc3Z0ZzZTFWZ2ZuYkRaRVVBT0NiQUJ0ODdFYmtocnZhejhrUUl2V2Z2cE8=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[02-09-2015 05:09:06] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 05:09:06] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[02-09-2015 05:09:06] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Date: Wed, 02 Sep 2015 17:09:06 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=733, Paypal-Debug-Id: e504fbf52d161, CORRELATION-ID: e504fbf52d161, Content-Length: 426, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D841869141; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[02-09-2015 05:09:06] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.*","access_token":"A015d.8BbThgLm6r4.2Y-K-NPcyMMYrA9kTRbnzc80TmmTg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":28800}
+
+================================================================================================================================
+
+[02-09-2015 05:09:06] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[02-09-2015 05:09:08] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A015d.8BbThgLm6r4.2Y-K-NPcyMMYrA9kTRbnzc80TmmTg, PayPal-Request-Id: 120862451027505144121374522584, Content-Length: 348, , 
+[02-09-2015 05:09:08] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5581588071026272","expire_month":"05","expire_year":"2018","cvv2":"341"}}]},"transactions":[{"amount":{"currency":"USD","total":"20","details":{"shipping":"0","tax":"0","subtotal":"20"}},"invoice_number":"55e72d31c5cd1"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 05:09:08] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[02-09-2015 05:09:08] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 02 Sep 2015 17:09:07 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=474, Paypal-Debug-Id: 216b753b20ee4, CORRELATION-ID: 216b753b20ee4, Content-Language: *, Content-Length: 1176, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D858646357; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[02-09-2015 05:09:08] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-32021147WY4114201KXTS2MY","create_time":"2015-09-02T17:09:07Z","update_time":"2015-09-02T17:09:08Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx6272","expire_month":"5","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"20.00","currency":"USD","details":{"subtotal":"20.00"}},"invoice_number":"55e72d31c5cd1","related_resources":[{"sale":{"id":"76585738PA9768622","create_time":"2015-09-02T17:09:07Z","update_time":"2015-09-02T17:09:08Z","amount":{"total":"20.00","currency":"USD"},"state":"completed","parent_payment":"PAY-32021147WY4114201KXTS2MY","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/76585738PA9768622","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/76585738PA9768622/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-32021147WY4114201KXTS2MY","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-32021147WY4114201KXTS2MY","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[02-09-2015 05:14:19] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[02-09-2015 05:14:21] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A015d.8BbThgLm6r4.2Y-K-NPcyMMYrA9kTRbnzc80TmmTg, PayPal-Request-Id: 120862451027632144121405931240, Content-Length: 348, , 
+[02-09-2015 05:14:21] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5581588071026272","expire_month":"05","expire_year":"2018","cvv2":"341"}}]},"transactions":[{"amount":{"currency":"USD","total":"20","details":{"shipping":"0","tax":"0","subtotal":"20"}},"invoice_number":"55e72e6b8056c"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 05:14:21] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[02-09-2015 05:14:21] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 02 Sep 2015 17:14:19 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=153058, Paypal-Debug-Id: 78a66c55d975d, CORRELATION-ID: 78a66c55d975d, Content-Language: *, Content-Length: 1176, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D1798235989; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[02-09-2015 05:14:21] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-5LP57167VF720314WKXTS43A","create_time":"2015-09-02T17:14:20Z","update_time":"2015-09-02T17:14:21Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx6272","expire_month":"5","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"20.00","currency":"USD","details":{"subtotal":"20.00"}},"invoice_number":"55e72e6b8056c","related_resources":[{"sale":{"id":"0DS7474509582252K","create_time":"2015-09-02T17:14:20Z","update_time":"2015-09-02T17:14:21Z","amount":{"total":"20.00","currency":"USD"},"state":"completed","parent_payment":"PAY-5LP57167VF720314WKXTS43A","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/0DS7474509582252K","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/0DS7474509582252K/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-5LP57167VF720314WKXTS43A","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-5LP57167VF720314WKXTS43A","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[02-09-2015 05:21:34] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[02-09-2015 05:21:36] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A015d.8BbThgLm6r4.2Y-K-NPcyMMYrA9kTRbnzc80TmmTg, PayPal-Request-Id: 120862451028250144121449443299, Content-Length: 348, , 
+[02-09-2015 05:21:36] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5581588071026272","expire_month":"05","expire_year":"2018","cvv2":"341"}}]},"transactions":[{"amount":{"currency":"USD","total":"20","details":{"shipping":"0","tax":"0","subtotal":"20"}},"invoice_number":"55e7301e17353"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 05:21:36] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[02-09-2015 05:21:36] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 02 Sep 2015 17:21:34 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=367489, Paypal-Debug-Id: 20689756edf6, CORRELATION-ID: 20689756edf6, Content-Language: *, Content-Length: 1176, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D506521429; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[02-09-2015 05:21:36] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-7F237220FW494212LKXTTAHQ","create_time":"2015-09-02T17:21:34Z","update_time":"2015-09-02T17:21:36Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx6272","expire_month":"5","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"20.00","currency":"USD","details":{"subtotal":"20.00"}},"invoice_number":"55e7301e17353","related_resources":[{"sale":{"id":"3HB60804K0315624C","create_time":"2015-09-02T17:21:34Z","update_time":"2015-09-02T17:21:36Z","amount":{"total":"20.00","currency":"USD"},"state":"completed","parent_payment":"PAY-7F237220FW494212LKXTTAHQ","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/3HB60804K0315624C","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/3HB60804K0315624C/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-7F237220FW494212LKXTTAHQ","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-7F237220FW494212LKXTTAHQ","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[02-09-2015 05:25:36] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[02-09-2015 05:25:38] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A015d.8BbThgLm6r4.2Y-K-NPcyMMYrA9kTRbnzc80TmmTg, PayPal-Request-Id: 120862451028502144121473653278, Content-Length: 348, , 
+[02-09-2015 05:25:38] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5581588071026272","expire_month":"05","expire_year":"2018","cvv2":"341"}}]},"transactions":[{"amount":{"currency":"USD","total":"20","details":{"shipping":"0","tax":"0","subtotal":"20"}},"invoice_number":"55e7311030e05"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 05:25:38] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[02-09-2015 05:25:38] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 02 Sep 2015 17:25:36 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=53698, Paypal-Debug-Id: d7434288a30, CORRELATION-ID: d7434288a30, Content-Language: *, Content-Length: 1176, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D271705941; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[02-09-2015 05:25:38] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-0JD507849R246342SKXTTCEA","create_time":"2015-09-02T17:25:36Z","update_time":"2015-09-02T17:25:38Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx6272","expire_month":"5","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"20.00","currency":"USD","details":{"subtotal":"20.00"}},"invoice_number":"55e7311030e05","related_resources":[{"sale":{"id":"2B736951BB609882E","create_time":"2015-09-02T17:25:36Z","update_time":"2015-09-02T17:25:38Z","amount":{"total":"20.00","currency":"USD"},"state":"completed","parent_payment":"PAY-0JD507849R246342SKXTTCEA","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/2B736951BB609882E","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/2B736951BB609882E/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0JD507849R246342SKXTTCEA","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0JD507849R246342SKXTTCEA","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[02-09-2015 05:33:17] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[02-09-2015 05:33:17] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A015d.8BbThgLm6r4.2Y-K-NPcyMMYrA9kTRbnzc80TmmTg, PayPal-Request-Id: 120862451028630144121519720977, Content-Length: 331, , 
+[02-09-2015 05:33:17] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5581588071026272","expire_month":"05","expire_year":"2018","cvv2":"341"}}]},"transactions":[{"amount":{"currency":"USD","total":"0","details":{"shipping":"0","tax":"0"}},"invoice_number":"55e732dd6713c"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 05:33:17] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[02-09-2015 05:33:17] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 400 Bad Request, Date: Wed, 02 Sep 2015 17:33:17 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=882, Paypal-Debug-Id: dac6dd58c6668, CORRELATION-ID: dac6dd58c6668, Content-Language: *, Connection: close, Connection: close, Content-Length: 270, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D3711100757; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Content-Type: application/json, , 
+[02-09-2015 05:33:17] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.sandbox.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Amount cannot be zero"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"dac6dd58c6668"}
+[02-09-2015 05:33:17] PayPal\Core\PayPalHttpConnection: DEBUG	: 
+
+================================================================================================================================
+
+[02-09-2015 05:35:28] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[02-09-2015 05:35:30] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A015d.8BbThgLm6r4.2Y-K-NPcyMMYrA9kTRbnzc80TmmTg, PayPal-Request-Id: 120862451028685144121532833487, Content-Length: 350, , 
+[02-09-2015 05:35:30] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5581588071026272","expire_month":"05","expire_year":"2018","cvv2":"341"}}]},"transactions":[{"amount":{"currency":"USD","total":"120","details":{"shipping":"0","tax":"0","subtotal":"120"}},"invoice_number":"55e73360665fd"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 05:35:30] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[02-09-2015 05:35:30] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 02 Sep 2015 17:35:28 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=756102, Paypal-Debug-Id: 14dccf66c4d4d, CORRELATION-ID: 14dccf66c4d4d, Content-Language: *, Content-Length: 1179, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D1614014293; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[02-09-2015 05:35:30] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-22G98293M16218157KXTTGYI","create_time":"2015-09-02T17:35:29Z","update_time":"2015-09-02T17:35:30Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx6272","expire_month":"5","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"120.00","currency":"USD","details":{"subtotal":"120.00"}},"invoice_number":"55e73360665fd","related_resources":[{"sale":{"id":"5GK24082RH318144L","create_time":"2015-09-02T17:35:29Z","update_time":"2015-09-02T17:35:30Z","amount":{"total":"120.00","currency":"USD"},"state":"completed","parent_payment":"PAY-22G98293M16218157KXTTGYI","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/5GK24082RH318144L","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/5GK24082RH318144L/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-22G98293M16218157KXTTGYI","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-22G98293M16218157KXTTGYI","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[02-09-2015 05:53:45] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[02-09-2015 05:53:47] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A015d.8BbThgLm6r4.2Y-K-NPcyMMYrA9kTRbnzc80TmmTg, PayPal-Request-Id: 120862451028916144121642556725, Content-Length: 348, , 
+[02-09-2015 05:53:47] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5581588071026272","expire_month":"05","expire_year":"2018","cvv2":"341"}}]},"transactions":[{"amount":{"currency":"USD","total":"75","details":{"shipping":"0","tax":"0","subtotal":"75"}},"invoice_number":"55e737a98a0ec"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 05:53:47] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[02-09-2015 05:53:47] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 02 Sep 2015 17:53:45 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=854, Paypal-Debug-Id: 50498164ec91e, CORRELATION-ID: 50498164ec91e, Content-Language: *, Content-Length: 1176, Paypal-Debug-Id: 50498164ec91e, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D2839013205; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[02-09-2015 05:53:47] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-5YF212001A2721347KXTTPKQ","create_time":"2015-09-02T17:53:46Z","update_time":"2015-09-02T17:53:47Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx6272","expire_month":"5","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"75.00","currency":"USD","details":{"subtotal":"75.00"}},"invoice_number":"55e737a98a0ec","related_resources":[{"sale":{"id":"34N48405CA7228120","create_time":"2015-09-02T17:53:46Z","update_time":"2015-09-02T17:53:47Z","amount":{"total":"75.00","currency":"USD"},"state":"completed","parent_payment":"PAY-5YF212001A2721347KXTTPKQ","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/34N48405CA7228120","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/34N48405CA7228120/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-5YF212001A2721347KXTTPKQ","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-5YF212001A2721347KXTTPKQ","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[02-09-2015 06:12:27] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[02-09-2015 06:12:27] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[02-09-2015 06:12:27] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.paypal.com/v1/payments/payment. 
+[02-09-2015 06:12:44] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[02-09-2015 06:12:45] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[02-09-2015 06:12:45] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.paypal.com/v1/payments/payment. 
+[02-09-2015 06:18:09] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[02-09-2015 06:18:10] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[02-09-2015 06:18:10] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"The client credentials are invalid"}
+[02-09-2015 06:20:57] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-09-2015 06:20:57] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[02-09-2015 06:20:58] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[02-09-2015 06:20:58] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.paypal.com/v1/oauth2/token. {"error":"invalid_client","error_description":"The client credentials are invalid"}
+[02-09-2015 06:21:47] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[02-09-2015 06:21:48] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVlONXdkbVBaN3dDVTFMOTJpRFVJUWF4U1BKWU5HVnFqZ1lvNTI1LV94OVZwWndHVzVFTVlMT3lINVRtdVl5aUxCQVhoMFhiajdWYnhnQTY6RUZyREg2dWxtekRUenhiV3MtTTdLVGtEZ0pHTmdsYm03OUtoVi1TZ0taY0N3WkIzcmMtUC1UamY2UTFyNV8xSml1V1RtX1kxLXVWZUJLUW8=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[02-09-2015 06:21:48] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 06:21:48] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[02-09-2015 06:21:48] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Date: Wed, 02 Sep 2015 18:21:47 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=249, Paypal-Debug-Id: bca966e5d2422, CORRELATION-ID: bca966e5d2422, Content-Length: 426, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D993978197; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[02-09-2015 06:21:48] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.*","access_token":"A015YBrYEwfGOeRBv91.wkElTCsx9OBNEWZmkyiBckNiHgc","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":28800}
+
+================================================================================================================================
+
+[02-09-2015 06:21:48] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[02-09-2015 06:21:50] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A015YBrYEwfGOeRBv91.wkElTCsx9OBNEWZmkyiBckNiHgc, PayPal-Request-Id: 120862451029448144121810740441, Content-Length: 348, , 
+[02-09-2015 06:21:50] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5581588071026272","expire_month":"05","expire_year":"2018","cvv2":"341"}}]},"transactions":[{"amount":{"currency":"USD","total":"20","details":{"shipping":"0","tax":"0","subtotal":"20"}},"invoice_number":"55e73e3b747fc"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[02-09-2015 06:21:50] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[02-09-2015 06:21:50] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 02 Sep 2015 18:21:49 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=79269, Paypal-Debug-Id: ffaeec981ba46, CORRELATION-ID: ffaeec981ba46, Content-Language: *, Content-Length: 1176, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D1027532629; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Vary: Authorization, Connection: close, Content-Type: application/json, , 
+[02-09-2015 06:21:50] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-2YM05525T1984325PKXTT4PI","create_time":"2015-09-02T18:21:49Z","update_time":"2015-09-02T18:21:50Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx6272","expire_month":"5","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"20.00","currency":"USD","details":{"subtotal":"20.00"}},"invoice_number":"55e73e3b747fc","related_resources":[{"sale":{"id":"3AB7657175846922Y","create_time":"2015-09-02T18:21:49Z","update_time":"2015-09-02T18:21:50Z","amount":{"total":"20.00","currency":"USD"},"state":"completed","parent_payment":"PAY-2YM05525T1984325PKXTT4PI","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/3AB7657175846922Y","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/3AB7657175846922Y/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2YM05525T1984325PKXTT4PI","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2YM05525T1984325PKXTT4PI","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[02-09-2015 06:23:31] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-09-2015 06:23:31] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[02-09-2015 06:23:31] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[02-09-2015 06:23:31] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.paypal.com/v1/payments/payment. 
+[02-09-2015 06:24:23] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-09-2015 06:24:23] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[02-09-2015 06:24:23] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 401
+[02-09-2015 06:24:23] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 401 when accessing https://api.paypal.com/v1/payments/payment. 
+[02-09-2015 06:38:57] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[02-09-2015 06:38:58] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[02-09-2015 06:38:58] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[02-09-2015 06:39:02] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[03-09-2015 04:38:05] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[03-09-2015 04:38:06] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[03-09-2015 04:38:06] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[03-09-2015 04:38:10] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-09-2015 08:20:12] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[04-09-2015 08:20:13] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[04-09-2015 08:20:13] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-09-2015 08:20:17] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[05-09-2015 08:24:52] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[05-09-2015 08:24:53] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[05-09-2015 08:24:53] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[05-09-2015 08:24:56] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-09-2015 01:14:44] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[21-09-2015 01:14:46] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[21-09-2015 01:14:46] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-09-2015 01:14:50] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[16-10-2015 09:54:15] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[16-10-2015 09:54:15] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[16-10-2015 09:54:15] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[16-10-2015 09:54:20] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[24-10-2015 05:07:42] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[24-10-2015 05:07:42] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[24-10-2015 05:07:42] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[24-10-2015 05:07:46] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[19-11-2015 04:12:34] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[19-11-2015 04:12:35] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[19-11-2015 04:12:35] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[19-11-2015 04:12:38] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[19-11-2015 04:32:38] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[19-11-2015 04:32:40] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[19-11-2015 07:01:04] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[19-11-2015 07:01:08] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[19-11-2015 07:09:29] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[19-11-2015 07:09:30] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[19-11-2015 07:09:30] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[19-11-2015 07:09:33] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[20-11-2015 09:22:34] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[20-11-2015 09:22:34] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[20-11-2015 09:22:34] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[20-11-2015 09:22:38] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 03:28:02] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[25-11-2015 03:28:03] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVgwTDZVT0JhRkZESFFEeTkySGx3c1ItNkg2NGFvQlJpajd5X3VzSmFWa1lCdTc5ZmsxenlzaUR2NHRRYU5BdnI5WWdoTmZ0THhIbG9pS2c6RU92c2VrSTNYNFVHQmVJdjdXdWl1REotb0tReVpxXzdBQ2lQWEc3Z0ZzZTFWZ2ZuYkRaRVVBT0NiQUJ0ODdFYmtocnZhejhrUUl2V2Z2cE8=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[25-11-2015 03:28:03] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 03:28:03] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[25-11-2015 03:28:03] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Date: Wed, 25 Nov 2015 15:28:03 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=42671, Paypal-Debug-Id: 443e597611150, CORRELATION-ID: 443e597611150, X-PAYPAL-TOKEN-SERVICE: IAAS, Content-Length: 550, Paypal-Debug-Id: 443e597611150, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D2211665238; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 03:28:03] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2015-11-25T15:28:03ZbCPvJIZ1FBioo8ZEhbstV4IjQhl-l0RmhopE2exKJHk","access_token":"A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+
+================================================================================================================================
+
+[25-11-2015 03:28:03] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[25-11-2015 03:28:06] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG, PayPal-Request-Id: 1208624510219614484652822225, Content-Length: 340, , 
+[25-11-2015 03:28:06] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4034970040415438","expire_month":"07","expire_year":"2018","cvv2":"168"}}]},"transactions":[{"amount":{"currency":"USD","total":"5","details":{"shipping":"0","tax":"0","subtotal":"5"}},"invoice_number":"5655d382ae825"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 03:28:06] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 03:28:06] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 25 Nov 2015 15:28:03 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=373, Paypal-Debug-Id: 7de28f5fda18c, CORRELATION-ID: 7de28f5fda18c, Content-Language: *, Content-Length: 1237, Paypal-Debug-Id: 7de28f5fda18c, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D2211665238; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 03:28:06] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-6P981240MP876323GKZK5HBA","create_time":"2015-11-25T15:28:04Z","update_time":"2015-11-25T15:28:06Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx5438","expire_month":"7","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"5.00","currency":"USD","details":{"subtotal":"5.00"}},"invoice_number":"5655d382ae825","related_resources":[{"sale":{"id":"05G435802T612415N","create_time":"2015-11-25T15:28:04Z","update_time":"2015-11-25T15:28:06Z","amount":{"total":"5.00","currency":"USD"},"state":"completed","parent_payment":"PAY-6P981240MP876323GKZK5HBA","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/05G435802T612415N","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/05G435802T612415N/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-6P981240MP876323GKZK5HBA","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-6P981240MP876323GKZK5HBA","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[25-11-2015 03:28:06] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 03:28:06] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 03:45:05] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[25-11-2015 03:45:08] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG, PayPal-Request-Id: 12086245102495144846630561018, Content-Length: 342, , 
+[25-11-2015 03:45:08] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4034970040415438","expire_month":"07","expire_year":"2018","cvv2":"168"}}]},"transactions":[{"amount":{"currency":"USD","total":"15","details":{"shipping":"0","tax":"0","subtotal":"15"}},"invoice_number":"5655d78183e2c"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 03:45:08] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 03:45:08] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 25 Nov 2015 15:45:05 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=1041, Paypal-Debug-Id: e2b15651e2c21, CORRELATION-ID: e2b15651e2c21, Content-Language: *, Content-Length: 1240, Paypal-Debug-Id: e2b15651e2c21, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D2178372950; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 03:45:08] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-9FS15217PA839011UKZK5PAQ","create_time":"2015-11-25T15:45:06Z","update_time":"2015-11-25T15:45:07Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx5438","expire_month":"7","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"15.00","currency":"USD","details":{"subtotal":"15.00"}},"invoice_number":"5655d78183e2c","related_resources":[{"sale":{"id":"340859864K279133P","create_time":"2015-11-25T15:45:06Z","update_time":"2015-11-25T15:45:07Z","amount":{"total":"15.00","currency":"USD"},"state":"completed","parent_payment":"PAY-9FS15217PA839011UKZK5PAQ","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/340859864K279133P","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/340859864K279133P/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-9FS15217PA839011UKZK5PAQ","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-9FS15217PA839011UKZK5PAQ","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[25-11-2015 03:45:08] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 03:45:08] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 03:59:23] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[25-11-2015 03:59:26] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG, PayPal-Request-Id: 12086245102775144846716327475, Content-Length: 342, , 
+[25-11-2015 03:59:26] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4034970040415438","expire_month":"07","expire_year":"2018","cvv2":"168"}}]},"transactions":[{"amount":{"currency":"USD","total":"15","details":{"shipping":"0","tax":"0","subtotal":"15"}},"invoice_number":"5655dadb21aae"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 03:59:26] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 03:59:26] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 25 Nov 2015 15:59:23 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=2272, Paypal-Debug-Id: fbf95a1878d87, CORRELATION-ID: fbf95a1878d87, Content-Language: *, Content-Length: 1240, Paypal-Debug-Id: fbf95a1878d87, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D3688518998; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 03:59:26] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-2VE05104BC214235CKZK5VWY","create_time":"2015-11-25T15:59:23Z","update_time":"2015-11-25T15:59:26Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx5438","expire_month":"7","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"15.00","currency":"USD","details":{"subtotal":"15.00"}},"invoice_number":"5655dadb21aae","related_resources":[{"sale":{"id":"98149650M44995310","create_time":"2015-11-25T15:59:23Z","update_time":"2015-11-25T15:59:26Z","amount":{"total":"15.00","currency":"USD"},"state":"completed","parent_payment":"PAY-2VE05104BC214235CKZK5VWY","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/98149650M44995310","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/98149650M44995310/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2VE05104BC214235CKZK5VWY","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2VE05104BC214235CKZK5VWY","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[25-11-2015 03:59:26] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 03:59:26] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 04:01:31] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[25-11-2015 04:01:34] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG, PayPal-Request-Id: 12086245102845144846729148462, Content-Length: 342, , 
+[25-11-2015 04:01:34] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4034970040415438","expire_month":"07","expire_year":"2018","cvv2":"168"}}]},"transactions":[{"amount":{"currency":"USD","total":"15","details":{"shipping":"0","tax":"0","subtotal":"15"}},"invoice_number":"5655db5bb7ad0"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 04:01:34] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 04:01:34] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 25 Nov 2015 16:01:32 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=2272, Paypal-Debug-Id: 5f5764de21fd2, CORRELATION-ID: 5f5764de21fd2, Content-Language: *, Content-Length: 1240, Paypal-Debug-Id: 5f5764de21fd2, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D1557878102; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 04:01:34] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-07T868669W246391WKZK5WXA","create_time":"2015-11-25T16:01:32Z","update_time":"2015-11-25T16:01:34Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx5438","expire_month":"7","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"15.00","currency":"USD","details":{"subtotal":"15.00"}},"invoice_number":"5655db5bb7ad0","related_resources":[{"sale":{"id":"7MH43696US2695252","create_time":"2015-11-25T16:01:32Z","update_time":"2015-11-25T16:01:34Z","amount":{"total":"15.00","currency":"USD"},"state":"completed","parent_payment":"PAY-07T868669W246391WKZK5WXA","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/7MH43696US2695252","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/7MH43696US2695252/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-07T868669W246391WKZK5WXA","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-07T868669W246391WKZK5WXA","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[25-11-2015 04:01:34] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 04:01:34] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 04:42:49] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[25-11-2015 04:42:52] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG, PayPal-Request-Id: 12086245103653144846976957923, Content-Length: 342, , 
+[25-11-2015 04:42:52] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4034970040415438","expire_month":"07","expire_year":"2018","cvv2":"168"}}]},"transactions":[{"amount":{"currency":"USD","total":"15","details":{"shipping":"0","tax":"0","subtotal":"15"}},"invoice_number":"5655e509d883d"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 04:42:52] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 04:42:52] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 25 Nov 2015 16:42:50 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=197118, Paypal-Debug-Id: 8b9694173a2ee, CORRELATION-ID: 8b9694173a2ee, Content-Language: *, Content-Length: 1240, Paypal-Debug-Id: 8b9694173a2ee, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D182801750; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 04:42:52] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-2TM644889S949361KKZK6KCQ","create_time":"2015-11-25T16:42:50Z","update_time":"2015-11-25T16:42:52Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx5438","expire_month":"7","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"15.00","currency":"USD","details":{"subtotal":"15.00"}},"invoice_number":"5655e509d883d","related_resources":[{"sale":{"id":"5VY47231EK2742053","create_time":"2015-11-25T16:42:50Z","update_time":"2015-11-25T16:42:52Z","amount":{"total":"15.00","currency":"USD"},"state":"completed","parent_payment":"PAY-2TM644889S949361KKZK6KCQ","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/5VY47231EK2742053","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/5VY47231EK2742053/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2TM644889S949361KKZK6KCQ","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2TM644889S949361KKZK6KCQ","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[25-11-2015 04:42:52] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 04:42:52] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 04:54:59] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[25-11-2015 04:55:02] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG, PayPal-Request-Id: 12086245103834144847049910357, Content-Length: 342, , 
+[25-11-2015 04:55:02] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4034970040415438","expire_month":"07","expire_year":"2018","cvv2":"168"}}]},"transactions":[{"amount":{"currency":"USD","total":"70","details":{"shipping":"0","tax":"0","subtotal":"70"}},"invoice_number":"5655e7e3c5a17"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 04:55:02] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 04:55:02] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 25 Nov 2015 16:55:00 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=598, Paypal-Debug-Id: 7d5b69c02dcfb, CORRELATION-ID: 7d5b69c02dcfb, Content-Language: *, Content-Length: 1240, Paypal-Debug-Id: 7d5b69c02dcfb, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D3840365910; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 04:55:02] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-7XM33284VP7313810KZK6PZA","create_time":"2015-11-25T16:55:00Z","update_time":"2015-11-25T16:55:02Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx5438","expire_month":"7","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"70.00","currency":"USD","details":{"subtotal":"70.00"}},"invoice_number":"5655e7e3c5a17","related_resources":[{"sale":{"id":"4TC54160WL536563F","create_time":"2015-11-25T16:55:00Z","update_time":"2015-11-25T16:55:02Z","amount":{"total":"70.00","currency":"USD"},"state":"completed","parent_payment":"PAY-7XM33284VP7313810KZK6PZA","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/4TC54160WL536563F","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/4TC54160WL536563F/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-7XM33284VP7313810KZK6PZA","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-7XM33284VP7313810KZK6PZA","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[25-11-2015 04:55:02] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 04:55:02] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 11:10:53] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[25-11-2015 11:10:55] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG, PayPal-Request-Id: 120862451010656144849305322736, Content-Length: 342, , 
+[25-11-2015 11:10:55] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4034970040415438","expire_month":"07","expire_year":"2018","cvv2":"168"}}]},"transactions":[{"amount":{"currency":"USD","total":"70","details":{"shipping":"0","tax":"0","subtotal":"70"}},"invoice_number":"56563ffd13e57"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 11:10:55] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 11:10:55] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 25 Nov 2015 23:10:53 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=362, Paypal-Debug-Id: 688de238a7461, CORRELATION-ID: 688de238a7461, Content-Language: *, Content-Length: 1240, Paypal-Debug-Id: 688de238a7461, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D4248786518; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 11:10:55] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-89235879455853431KZLD77I","create_time":"2015-11-25T23:10:53Z","update_time":"2015-11-25T23:10:55Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx5438","expire_month":"7","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"70.00","currency":"USD","details":{"subtotal":"70.00"}},"invoice_number":"56563ffd13e57","related_resources":[{"sale":{"id":"19T91555720060139","create_time":"2015-11-25T23:10:53Z","update_time":"2015-11-25T23:10:55Z","amount":{"total":"70.00","currency":"USD"},"state":"completed","parent_payment":"PAY-89235879455853431KZLD77I","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/19T91555720060139","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/19T91555720060139/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-89235879455853431KZLD77I","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-89235879455853431KZLD77I","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[25-11-2015 11:10:55] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 11:10:55] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 11:11:16] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[25-11-2015 11:11:18] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG, PayPal-Request-Id: 120862451010671144849307660981, Content-Length: 344, , 
+[25-11-2015 11:11:18] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4034970040415438","expire_month":"07","expire_year":"2018","cvv2":"168"}}]},"transactions":[{"amount":{"currency":"USD","total":"115","details":{"shipping":"0","tax":"0","subtotal":"115"}},"invoice_number":"56564014cc00f"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 11:11:18] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 11:11:18] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 25 Nov 2015 23:11:17 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=346, Paypal-Debug-Id: 590babe03594d, CORRELATION-ID: 590babe03594d, Content-Language: *, Content-Length: 1243, Paypal-Debug-Id: 590babe03594d, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D356537942; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 11:11:18] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-1MJ59198PP8084410KZLEAFI","create_time":"2015-11-25T23:11:17Z","update_time":"2015-11-25T23:11:18Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx5438","expire_month":"7","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"115.00","currency":"USD","details":{"subtotal":"115.00"}},"invoice_number":"56564014cc00f","related_resources":[{"sale":{"id":"3EP37900L97364944","create_time":"2015-11-25T23:11:17Z","update_time":"2015-11-25T23:11:18Z","amount":{"total":"115.00","currency":"USD"},"state":"completed","parent_payment":"PAY-1MJ59198PP8084410KZLEAFI","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/3EP37900L97364944","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/3EP37900L97364944/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1MJ59198PP8084410KZLEAFI","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1MJ59198PP8084410KZLEAFI","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[25-11-2015 11:11:18] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 11:11:18] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 11:25:26] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[25-11-2015 11:25:28] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.A_1ft2otokxnr2p6_8smO8lnsQyxdWySIUdukUJ14P3tOUnQ5cvMm0P88uZxKOjO.2oK7EhSRTu0bboPmfBik1555PgG, PayPal-Request-Id: 120862451010989144849392623799, Content-Length: 344, , 
+[25-11-2015 11:25:28] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4034970040415438","expire_month":"07","expire_year":"2018","cvv2":"168"}}]},"transactions":[{"amount":{"currency":"USD","total":"130","details":{"shipping":"0","tax":"0","subtotal":"130"}},"invoice_number":"56564366181b3"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[25-11-2015 11:25:28] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 11:25:28] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Wed, 25 Nov 2015 23:25:26 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=606, Paypal-Debug-Id: db750d1d6eb5c, CORRELATION-ID: db750d1d6eb5c, Content-Language: *, Content-Length: 1243, Paypal-Debug-Id: db750d1d6eb5c, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D1715689046; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[25-11-2015 11:25:28] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-00C1022872503745HKZLEGZQ","create_time":"2015-11-25T23:25:26Z","update_time":"2015-11-25T23:25:28Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx5438","expire_month":"7","expire_year":"2018"}}]},"transactions":[{"amount":{"total":"130.00","currency":"USD","details":{"subtotal":"130.00"}},"invoice_number":"56564366181b3","related_resources":[{"sale":{"id":"7XR838980U150725G","create_time":"2015-11-25T23:25:26Z","update_time":"2015-11-25T23:25:28Z","amount":{"total":"130.00","currency":"USD"},"state":"completed","parent_payment":"PAY-00C1022872503745HKZLEGZQ","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/7XR838980U150725G","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/7XR838980U150725G/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-00C1022872503745HKZLEGZQ","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-00C1022872503745HKZLEGZQ","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[25-11-2015 11:25:28] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 11:25:28] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[25-11-2015 11:55:26] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[25-11-2015 11:55:26] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[25-11-2015 11:55:26] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[25-11-2015 11:55:26] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[25-11-2015 11:55:26] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[25-11-2015 11:55:29] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-11-2015 11:55:29] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[25-11-2015 11:55:29] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[26-11-2015 01:43:05] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[26-11-2015 01:43:05] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[26-11-2015 01:43:05] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[26-11-2015 01:43:09] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[26-11-2015 02:41:31] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[26-11-2015 02:41:31] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[26-11-2015 02:41:34] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[26-11-2015 02:41:34] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[26-11-2015 02:41:34] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:12:26] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[27-11-2015 04:12:27] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[27-11-2015 04:12:27] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:12:29] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:13:59] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:14:00] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[27-11-2015 04:14:00] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount.details.subtotal","issue":"Currency amount must be non-negative number, may optionally contain exactly 2 decimal places separated by '.', optional thousands separator ',', limited to 7 digits before the decimal point"},{"field":"transactions[0].amount.total","issue":"Currency amount must be non-negative number, may optionally contain exactly 2 decimal places separated by '.', optional thousands separator ',', limited to 7 digits before the decimal point"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"23d33ed7c8e73"}
+[27-11-2015 04:15:18] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:15:19] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[27-11-2015 04:15:19] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount.details.subtotal","issue":"Currency amount must be non-negative number, may optionally contain exactly 2 decimal places separated by '.', optional thousands separator ',', limited to 7 digits before the decimal point"},{"field":"transactions[0].amount.total","issue":"Currency amount must be non-negative number, may optionally contain exactly 2 decimal places separated by '.', optional thousands separator ',', limited to 7 digits before the decimal point"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"14360683408c4"}
+[27-11-2015 04:16:14] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:16:16] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:26:00] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:26:03] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:30:14] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:30:17] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:35:58] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:36:01] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:38:08] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:38:10] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:47:40] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:47:40] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[27-11-2015 04:47:40] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[27-11-2015 04:47:40] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:47:40] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:47:43] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:47:43] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:47:43] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:50:14] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:50:14] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:50:17] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:50:17] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:50:17] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:52:56] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:52:56] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:52:58] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:52:58] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:52:58] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:58:11] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:58:11] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 04:58:13] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 04:58:13] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 04:58:13] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 06:51:55] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 06:51:55] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[27-11-2015 06:51:56] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[27-11-2015 06:51:56] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 06:51:56] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 06:52:00] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 06:52:00] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 06:52:00] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 07:41:37] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 07:41:37] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 07:41:40] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 07:41:40] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 07:41:40] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 07:49:26] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 07:49:26] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 07:49:30] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 07:49:30] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 07:49:30] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 10:43:39] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 10:43:39] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 10:43:42] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[27-11-2015 10:43:42] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"98d9614de4146"}
+[27-11-2015 10:48:53] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 10:48:53] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[27-11-2015 10:48:56] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[27-11-2015 10:48:56] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[27-11-2015 10:48:56] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-11-2015 02:30:11] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-11-2015 02:30:11] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[28-11-2015 02:30:11] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[28-11-2015 02:30:11] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-11-2015 02:30:11] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[28-11-2015 02:30:15] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[28-11-2015 02:30:15] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-11-2015 02:30:15] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-11-2015 02:50:33] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-11-2015 02:50:33] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[28-11-2015 02:50:36] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[28-11-2015 02:50:36] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"f9a46a06cd2ee"}
+[30-11-2015 05:01:37] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[30-11-2015 05:01:37] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[30-11-2015 05:01:37] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[30-11-2015 05:01:37] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[30-11-2015 05:01:37] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[30-11-2015 05:01:42] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[30-11-2015 05:01:42] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[30-11-2015 05:01:42] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[30-11-2015 05:02:29] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[30-11-2015 05:02:29] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[30-11-2015 05:02:33] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[30-11-2015 05:02:33] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[30-11-2015 05:02:33] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[30-11-2015 05:03:28] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[30-11-2015 05:03:28] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[30-11-2015 05:03:32] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[30-11-2015 05:03:32] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[30-11-2015 05:03:32] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[03-12-2015 08:00:56] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[03-12-2015 08:00:56] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[03-12-2015 08:00:57] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[03-12-2015 08:00:57] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[03-12-2015 08:00:57] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[03-12-2015 08:01:00] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[03-12-2015 08:01:00] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[03-12-2015 08:01:00] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-12-2015 11:36:16] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-12-2015 11:36:16] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[04-12-2015 11:36:16] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[04-12-2015 11:36:16] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-12-2015 11:36:16] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-12-2015 11:36:20] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-12-2015 11:36:20] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-12-2015 11:36:20] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[05-12-2015 05:13:56] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[05-12-2015 05:13:56] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[05-12-2015 05:14:00] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[05-12-2015 05:14:00] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[05-12-2015 05:14:00] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[08-12-2015 09:10:56] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[08-12-2015 09:10:56] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[08-12-2015 09:10:57] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[08-12-2015 09:10:57] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[08-12-2015 09:10:57] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[08-12-2015 09:11:00] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[08-12-2015 09:11:00] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[08-12-2015 09:11:00] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[09-12-2015 07:28:14] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[09-12-2015 07:28:14] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[09-12-2015 07:28:14] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[09-12-2015 07:28:14] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[09-12-2015 07:28:14] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[09-12-2015 07:28:18] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[09-12-2015 07:28:18] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[09-12-2015 07:28:18] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[10-12-2015 09:34:42] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[10-12-2015 09:34:42] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[10-12-2015 09:34:42] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[10-12-2015 09:34:42] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[10-12-2015 09:34:42] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[10-12-2015 09:34:47] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[10-12-2015 09:34:47] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[10-12-2015 09:34:47] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[12-12-2015 01:21:39] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[12-12-2015 01:21:39] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[12-12-2015 01:21:40] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[12-12-2015 01:21:40] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[12-12-2015 01:21:40] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[12-12-2015 01:21:45] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[12-12-2015 01:21:45] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[12-12-2015 01:21:45] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[14-12-2015 02:07:10] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[14-12-2015 02:07:10] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[14-12-2015 02:07:11] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[14-12-2015 02:07:11] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[14-12-2015 02:07:11] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[14-12-2015 02:07:14] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[14-12-2015 02:07:14] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[14-12-2015 02:07:14] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[14-12-2015 09:51:13] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[14-12-2015 09:51:13] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[14-12-2015 09:51:16] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[14-12-2015 09:51:16] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[14-12-2015 09:51:16] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 02:49:30] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 02:49:30] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[15-12-2015 02:49:31] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[15-12-2015 02:49:31] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 02:49:31] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[15-12-2015 02:49:34] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[15-12-2015 02:49:34] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 02:49:34] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 04:01:52] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 04:01:52] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[15-12-2015 04:01:56] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[15-12-2015 04:01:56] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 04:01:56] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 05:06:49] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 05:06:49] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[15-12-2015 05:06:51] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[15-12-2015 05:06:51] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 05:06:51] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 07:04:00] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 07:04:00] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[15-12-2015 07:04:03] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[15-12-2015 07:04:03] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 07:04:03] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 08:02:22] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 08:02:22] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[15-12-2015 08:02:25] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[15-12-2015 08:02:25] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 08:02:25] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 08:56:12] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 08:56:12] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[15-12-2015 08:56:15] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[15-12-2015 08:56:15] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[15-12-2015 08:56:15] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[16-12-2015 04:37:15] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[16-12-2015 04:37:15] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[16-12-2015 04:37:16] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[16-12-2015 04:37:16] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[16-12-2015 04:37:16] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[16-12-2015 04:37:20] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[16-12-2015 04:37:20] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[16-12-2015 04:37:20] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 03:03:03] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 03:03:03] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[19-12-2015 03:03:03] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[19-12-2015 03:03:03] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 03:03:03] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[19-12-2015 03:03:06] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[19-12-2015 03:03:06] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 03:03:06] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 03:07:19] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 03:07:19] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[19-12-2015 03:07:22] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[19-12-2015 03:07:22] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 03:07:22] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 06:51:16] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 06:51:16] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[19-12-2015 06:51:19] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[19-12-2015 06:51:19] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 06:51:19] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 06:52:19] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 06:52:19] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[19-12-2015 06:52:22] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[19-12-2015 06:52:22] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 06:52:22] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 07:01:22] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 07:01:22] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[19-12-2015 07:01:25] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[19-12-2015 07:01:25] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[19-12-2015 07:01:25] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[20-12-2015 04:27:50] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[20-12-2015 04:27:50] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[20-12-2015 04:27:50] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[20-12-2015 04:27:50] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[20-12-2015 04:27:50] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[20-12-2015 04:27:53] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[20-12-2015 04:27:53] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[20-12-2015 04:27:53] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-12-2015 08:23:27] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-12-2015 08:23:27] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[21-12-2015 08:23:28] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[21-12-2015 08:23:28] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-12-2015 08:23:28] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[21-12-2015 08:23:31] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[21-12-2015 08:23:31] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[21-12-2015 08:23:31] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[23-12-2015 03:30:56] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[23-12-2015 03:30:57] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[23-12-2015 03:30:57] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[23-12-2015 03:31:00] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[23-12-2015 11:40:07] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[23-12-2015 11:40:07] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[23-12-2015 11:40:08] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[23-12-2015 11:40:08] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[23-12-2015 11:40:08] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[23-12-2015 11:40:10] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[23-12-2015 11:40:10] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[23-12-2015 11:40:10] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[23-12-2015 11:40:27] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[23-12-2015 11:40:27] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[23-12-2015 11:40:29] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[23-12-2015 11:40:29] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"b165bd446dad2"}
+[26-12-2015 01:11:30] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[26-12-2015 01:11:30] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[26-12-2015 01:11:31] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[26-12-2015 01:11:31] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[26-12-2015 01:11:31] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[26-12-2015 01:11:34] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[26-12-2015 01:11:34] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[26-12-2015 01:11:34] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[28-12-2015 06:14:09] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[28-12-2015 06:14:09] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[28-12-2015 06:14:09] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[28-12-2015 06:14:12] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 09:00:47] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:00:47] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[29-12-2015 09:00:48] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[29-12-2015 09:00:48] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:00:48] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[29-12-2015 09:00:52] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 09:00:52] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:00:52] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:04:17] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:04:17] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[29-12-2015 09:04:22] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 09:04:22] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:04:22] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:19:29] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:19:29] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[29-12-2015 09:19:32] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 09:19:32] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:19:32] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:19:33] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:19:33] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[29-12-2015 09:19:36] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 09:19:36] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:19:36] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:20:53] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:20:53] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[29-12-2015 09:20:55] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:20:55] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[29-12-2015 09:20:56] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 09:20:56] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:20:56] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:20:58] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 09:20:58] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:20:58] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:23:10] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:23:10] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[29-12-2015 09:23:12] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 09:23:12] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:23:12] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:25:39] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:25:39] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[29-12-2015 09:25:41] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 09:25:41] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 09:25:41] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 10:24:37] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 10:24:37] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[29-12-2015 10:24:40] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[29-12-2015 10:24:40] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[29-12-2015 10:24:40] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[01-01-2016 11:29:06] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[01-01-2016 11:29:06] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[01-01-2016 11:29:06] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[01-01-2016 11:29:06] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[01-01-2016 11:29:06] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[01-01-2016 11:29:09] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[01-01-2016 11:29:09] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[01-01-2016 11:29:09] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-01-2016 02:31:13] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-01-2016 02:31:13] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[02-01-2016 02:31:19] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 500
+[02-01-2016 02:31:19] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 500 when accessing https://api.paypal.com/v1/payments/payment. {"name":"INTERNAL_SERVICE_ERROR","message":"An internal service error has occurred","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#INTERNAL_SERVICE_ERROR","debug_id":"2f47a30da7b33"}
+[02-01-2016 04:11:42] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-01-2016 04:11:42] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[02-01-2016 04:11:43] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[02-01-2016 04:11:43] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-01-2016 04:11:43] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[02-01-2016 04:11:47] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[02-01-2016 04:11:47] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-01-2016 04:11:47] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-01-2016 10:36:36] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[02-01-2016 10:36:36] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[02-01-2016 10:36:38] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[02-01-2016 10:36:38] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"f36839c3d3ac4"}
+[04-01-2016 04:37:29] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 04:37:29] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[04-01-2016 04:37:29] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[04-01-2016 04:37:29] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 04:37:29] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-01-2016 04:37:32] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[04-01-2016 04:37:32] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"f6b107400e79e"}
+[04-01-2016 04:43:20] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 04:43:20] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-01-2016 04:43:23] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[04-01-2016 04:43:23] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"77c6c0ca24c09"}
+[04-01-2016 04:48:51] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 04:48:51] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-01-2016 04:48:53] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[04-01-2016 04:48:53] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"9654d9c1c5bdf"}
+[04-01-2016 04:49:47] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 04:49:47] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-01-2016 04:49:50] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 400
+[04-01-2016 04:49:50] PayPal\Core\PayPalHttpConnection: ERROR	: Got Http response code 400 when accessing https://api.paypal.com/v1/payments/payment. {"name":"CREDIT_CARD_REFUSED","message":"Credit card was refused","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#CREDIT_CARD_REFUSED","debug_id":"eb41e45ddce0d"}
+[04-01-2016 04:51:49] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 04:51:49] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-01-2016 04:51:53] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-01-2016 04:51:53] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 04:51:53] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 05:05:13] PayPal\Core\PayPalHttpConnection: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 05:05:13] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-01-2016 05:05:16] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-01-2016 05:05:16] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 05:05:16] PayPal\Validation\ModelAccessorValidator: ERROR	: Not allowed to keep 'Debug' level for Live Environments. Reduced to 'INFO'
+[04-01-2016 05:41:52] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[04-01-2016 05:41:54] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVgwTDZVT0JhRkZESFFEeTkySGx3c1ItNkg2NGFvQlJpajd5X3VzSmFWa1lCdTc5ZmsxenlzaUR2NHRRYU5BdnI5WWdoTmZ0THhIbG9pS2c6RU92c2VrSTNYNFVHQmVJdjdXdWl1REotb0tReVpxXzdBQ2lQWEc3Z0ZzZTFWZ2ZuYkRaRVVBT0NiQUJ0ODdFYmtocnZhejhrUUl2V2Z2cE8=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[04-01-2016 05:41:54] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[04-01-2016 05:41:54] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[04-01-2016 05:41:54] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Date: Mon, 04 Jan 2016 17:41:53 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=21025, Paypal-Debug-Id: 88caa90c1a21c, CORRELATION-ID: 88caa90c1a21c, X-PAYPAL-TOKEN-SERVICE: IAAS, Content-Length: 550, Paypal-Debug-Id: 88caa90c1a21c, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D3786312278; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[04-01-2016 05:41:54] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2016-01-04T17:41:53Z6ISHySmr4k1d3Qzd81HSIymK36BfPj429bOPwN5t5TI","access_token":"A101.POEBGWgjgA_DPEuQ3Fev50BZhC5lwL0MQbEVP0BX2_Y68X9XGgkyRIYjeRC1qXiK.c0YuVb1b8BPBr35byAAj-gdbr38","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32399}
+
+================================================================================================================================
+
+[04-01-2016 05:41:54] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[04-01-2016 05:41:57] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.POEBGWgjgA_DPEuQ3Fev50BZhC5lwL0MQbEVP0BX2_Y68X9XGgkyRIYjeRC1qXiK.c0YuVb1b8BPBr35byAAj-gdbr38, PayPal-Request-Id: 12086245101385814519293121335, Content-Length: 400, , 
+[04-01-2016 05:41:57] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5108050132874038","expire_month":"12","expire_year":"2019","cvv2":"666","first_name":"KIMBERLY","last_name":"LAROCCA-HENRY"}}]},"transactions":[{"amount":{"currency":"USD","total":"15","details":{"shipping":"0","tax":"0","subtotal":"15"}},"invoice_number":"568aaee0a3b1d"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[04-01-2016 05:41:57] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-01-2016 05:41:57] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Mon, 04 Jan 2016 17:41:54 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=19785, Paypal-Debug-Id: 66782d477ccd6, CORRELATION-ID: 66782d477ccd6, Content-Language: *, Content-Length: 1299, Paypal-Debug-Id: 66782d477ccd6, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D3803089494; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[04-01-2016 05:41:57] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-2FR74405SY176381XK2FK5YQ","create_time":"2016-01-04T17:41:54Z","update_time":"2016-01-04T17:41:57Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx4038","expire_month":"12","expire_year":"2019","first_name":"KIMBERLY","last_name":"LAROCCA-HENRY"}}]},"transactions":[{"amount":{"total":"15.00","currency":"USD","details":{"subtotal":"15.00"}},"invoice_number":"568aaee0a3b1d","related_resources":[{"sale":{"id":"2Y672160W1776630C","create_time":"2016-01-04T17:41:54Z","update_time":"2016-01-04T17:41:57Z","amount":{"total":"15.00","currency":"USD"},"state":"completed","parent_payment":"PAY-2FR74405SY176381XK2FK5YQ","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/2Y672160W1776630C","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/2Y672160W1776630C/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2FR74405SY176381XK2FK5YQ","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2FR74405SY176381XK2FK5YQ","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[04-01-2016 05:41:57] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[04-01-2016 05:41:57] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[04-01-2016 05:45:24] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[04-01-2016 05:45:27] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.POEBGWgjgA_DPEuQ3Fev50BZhC5lwL0MQbEVP0BX2_Y68X9XGgkyRIYjeRC1qXiK.c0YuVb1b8BPBr35byAAj-gdbr38, PayPal-Request-Id: 120862451014163145192952454208, Content-Length: 400, , 
+[04-01-2016 05:45:27] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5108050132874038","expire_month":"12","expire_year":"2019","cvv2":"666","first_name":"KIMBERLY","last_name":"LAROCCA-HENRY"}}]},"transactions":[{"amount":{"currency":"USD","total":"15","details":{"shipping":"0","tax":"0","subtotal":"15"}},"invoice_number":"568aafb4eb75e"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[04-01-2016 05:45:27] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-01-2016 05:45:27] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Mon, 04 Jan 2016 17:45:25 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=371, Paypal-Debug-Id: 962f637e5e605, CORRELATION-ID: 962f637e5e605, Content-Language: *, Content-Length: 1299, Paypal-Debug-Id: 962f637e5e605, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D3048180310; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[04-01-2016 05:45:27] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-4XN89017C0434700LK2FK7NI","create_time":"2016-01-04T17:45:25Z","update_time":"2016-01-04T17:45:27Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx4038","expire_month":"12","expire_year":"2019","first_name":"KIMBERLY","last_name":"LAROCCA-HENRY"}}]},"transactions":[{"amount":{"total":"15.00","currency":"USD","details":{"subtotal":"15.00"}},"invoice_number":"568aafb4eb75e","related_resources":[{"sale":{"id":"30810677C4992945W","create_time":"2016-01-04T17:45:25Z","update_time":"2016-01-04T17:45:27Z","amount":{"total":"15.00","currency":"USD"},"state":"completed","parent_payment":"PAY-4XN89017C0434700LK2FK7NI","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/30810677C4992945W","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/30810677C4992945W/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4XN89017C0434700LK2FK7NI","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4XN89017C0434700LK2FK7NI","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[04-01-2016 05:45:27] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[04-01-2016 05:45:27] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[04-01-2016 05:49:43] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[04-01-2016 05:49:47] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.POEBGWgjgA_DPEuQ3Fev50BZhC5lwL0MQbEVP0BX2_Y68X9XGgkyRIYjeRC1qXiK.c0YuVb1b8BPBr35byAAj-gdbr38, PayPal-Request-Id: 120862451014536145192978333642, Content-Length: 394, , 
+[04-01-2016 05:49:47] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5143780007024551","expire_month":"07","expire_year":"2017","cvv2":"416","first_name":"Alexandra","last_name":"Sutton"}}]},"transactions":[{"amount":{"currency":"USD","total":"15","details":{"shipping":"0","tax":"0","subtotal":"15"}},"invoice_number":"568ab0b77fadd"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[04-01-2016 05:49:47] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-01-2016 05:49:47] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Mon, 04 Jan 2016 17:49:43 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=421, Paypal-Debug-Id: 6f936c82de815, CORRELATION-ID: 6f936c82de815, Content-Language: *, Content-Length: 1292, Paypal-Debug-Id: 6f936c82de815, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D3081800278; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[04-01-2016 05:49:47] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-0PL00771CL919670RK2FLBOA","create_time":"2016-01-04T17:49:44Z","update_time":"2016-01-04T17:49:47Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx4551","expire_month":"7","expire_year":"2017","first_name":"Alexandra","last_name":"Sutton"}}]},"transactions":[{"amount":{"total":"15.00","currency":"USD","details":{"subtotal":"15.00"}},"invoice_number":"568ab0b77fadd","related_resources":[{"sale":{"id":"04N54581AB401883G","create_time":"2016-01-04T17:49:44Z","update_time":"2016-01-04T17:49:47Z","amount":{"total":"15.00","currency":"USD"},"state":"completed","parent_payment":"PAY-0PL00771CL919670RK2FLBOA","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/04N54581AB401883G","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/04N54581AB401883G/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0PL00771CL919670RK2FLBOA","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-0PL00771CL919670RK2FLBOA","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[04-01-2016 05:49:47] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[04-01-2016 05:49:47] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[04-01-2016 06:05:41] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[04-01-2016 06:05:44] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.POEBGWgjgA_DPEuQ3Fev50BZhC5lwL0MQbEVP0BX2_Y68X9XGgkyRIYjeRC1qXiK.c0YuVb1b8BPBr35byAAj-gdbr38, PayPal-Request-Id: 120862451015869145193074137638, Content-Length: 400, , 
+[04-01-2016 06:05:44] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"5108050132874038","expire_month":"12","expire_year":"2019","cvv2":"666","first_name":"KIMBERLY","last_name":"LAROCCA-HENRY"}}]},"transactions":[{"amount":{"currency":"USD","total":"15","details":{"shipping":"0","tax":"0","subtotal":"15"}},"invoice_number":"568ab475c2a09"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[04-01-2016 06:05:44] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-01-2016 06:05:44] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Mon, 04 Jan 2016 18:05:42 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3002.slc.paypal.com;threadId=265, Paypal-Debug-Id: 931ea8d72f7cd, CORRELATION-ID: 931ea8d72f7cd, Content-Language: *, Content-Length: 1299, Paypal-Debug-Id: 931ea8d72f7cd, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D1991543382; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[04-01-2016 06:05:44] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-1AP12506JF4471520K2FLI5Q","create_time":"2016-01-04T18:05:42Z","update_time":"2016-01-04T18:05:43Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"mastercard","number":"xxxxxxxxxxxx4038","expire_month":"12","expire_year":"2019","first_name":"KIMBERLY","last_name":"LAROCCA-HENRY"}}]},"transactions":[{"amount":{"total":"15.00","currency":"USD","details":{"subtotal":"15.00"}},"invoice_number":"568ab475c2a09","related_resources":[{"sale":{"id":"2XD50927KB9944444","create_time":"2016-01-04T18:05:42Z","update_time":"2016-01-04T18:05:43Z","amount":{"total":"15.00","currency":"USD"},"state":"completed","parent_payment":"PAY-1AP12506JF4471520K2FLI5Q","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/2XD50927KB9944444","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/2XD50927KB9944444/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1AP12506JF4471520K2FLI5Q","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1AP12506JF4471520K2FLI5Q","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[04-01-2016 06:05:44] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[04-01-2016 06:05:44] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[06-01-2016 03:50:36] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[06-01-2016 03:50:36] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[06-01-2016 03:50:36] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[06-01-2016 03:50:39] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[07-01-2016 03:27:56] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/oauth2/token
+[07-01-2016 03:27:57] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/oauth2/token HTTP/1.1, Host: api.sandbox.paypal.com, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Basic QVgwTDZVT0JhRkZESFFEeTkySGx3c1ItNkg2NGFvQlJpajd5X3VzSmFWa1lCdTc5ZmsxenlzaUR2NHRRYU5BdnI5WWdoTmZ0THhIbG9pS2c6RU92c2VrSTNYNFVHQmVJdjdXdWl1REotb0tReVpxXzdBQ2lQWEc3Z0ZzZTFWZ2ZuYkRaRVVBT0NiQUJ0ODdFYmtocnZhejhrUUl2V2Z2cE8=, Accept: */*, Content-Length: 29, Content-Type: application/x-www-form-urlencoded, , 
+[07-01-2016 03:27:57] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: grant_type=client_credentials
+--------------------------------------------------------------------------------------------------------------------------------
+
+[07-01-2016 03:27:57] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[07-01-2016 03:27:57] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 200 OK, Date: Thu, 07 Jan 2016 03:27:56 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=19771, Paypal-Debug-Id: a677a3dee982, CORRELATION-ID: a677a3dee982, X-PAYPAL-TOKEN-SERVICE: IAAS, Content-Length: 550, Paypal-Debug-Id: a677a3dee982, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D1021021526; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[07-01-2016 03:27:57] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2016-01-07T03:27:57Z32_ZZ5JIxfnvLgsBAf6dNkaZ6Tx5ODGgZRFsyQsjSU4","access_token":"A101.4piAKvIcg7qggmbW938jtP8kdvxu6h7vxMEZjRkRSnyeeXz_9suNaE-HZokE2Ukx.4Ma0mIfH7DDTfpptluASfOtlzEu","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+
+================================================================================================================================
+
+[07-01-2016 03:27:57] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.sandbox.paypal.com/v1/payments/payment
+[07-01-2016 03:28:01] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Headers 	: POST /v1/payments/payment HTTP/1.1, Host: api.sandbox.paypal.com, Accept: */*, Content-Type: application/json, User-Agent: PayPalSDK/PayPal-PHP-SDK 1.3.0 (lang=PHP;v=5.4.44;bit=64;os=Linux_2.6.32-042stab108.5;machine=x86_64;openssl=1.0.1e-fips;curl=7.38.0), Authorization: Bearer A101.4piAKvIcg7qggmbW938jtP8kdvxu6h7vxMEZjRkRSnyeeXz_9suNaE-HZokE2Ukx.4Ma0mIfH7DDTfpptluASfOtlzEu, PayPal-Request-Id: 120862451032744145213727642862, Content-Length: 383, , 
+[07-01-2016 03:28:01] PayPal\Core\PayPalHttpConnection: DEBUG	: Request Data		: {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"4207670146046738","expire_month":"09","expire_year":"2018","cvv2":"471","first_name":"NINA","last_name":"MISTRY"}}]},"transactions":[{"amount":{"currency":"USD","total":"70","details":{"shipping":"0","tax":"0","subtotal":"70"}},"invoice_number":"568ddb3c60b55"}]}
+--------------------------------------------------------------------------------------------------------------------------------
+
+[07-01-2016 03:28:01] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[07-01-2016 03:28:01] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Headers	: HTTP/1.1 201 Created, Date: Thu, 07 Jan 2016 03:27:57 GMT, Server: Apache, PROXY_SERVER_INFO: host=slcsbplatformapiserv3001.slc.paypal.com;threadId=385, Paypal-Debug-Id: d1b83fa6ce38f, CORRELATION-ID: d1b83fa6ce38f, Content-Language: *, Content-Length: 1281, Paypal-Debug-Id: d1b83fa6ce38f, Vary: Authorization, Content-Type: application/json, Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D1037798742; domain=.paypal.com; path=/; Secure; HttpOnly, Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT, Connection: close, , 
+[07-01-2016 03:28:01] PayPal\Core\PayPalHttpConnection: DEBUG	: Response Data 	: {"id":"PAY-2C047390UD023933KK2G5WPQ","create_time":"2016-01-07T03:27:58Z","update_time":"2016-01-07T03:28:01Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx6738","expire_month":"9","expire_year":"2018","first_name":"NINA","last_name":"MISTRY"}}]},"transactions":[{"amount":{"total":"70.00","currency":"USD","details":{"subtotal":"70.00"}},"invoice_number":"568ddb3c60b55","related_resources":[{"sale":{"id":"3TW48955369746323","create_time":"2016-01-07T03:27:58Z","update_time":"2016-01-07T03:28:01Z","amount":{"total":"70.00","currency":"USD"},"state":"completed","parent_payment":"PAY-2C047390UD023933KK2G5WPQ","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/3TW48955369746323","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/3TW48955369746323/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2C047390UD023933KK2G5WPQ","rel":"parent_payment","method":"GET"}],"fmf_details":{},"processor_response":{"avs_code":"X","cvv_code":"M"}}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2C047390UD023933KK2G5WPQ","rel":"self","method":"GET"}]}
+
+================================================================================================================================
+
+[07-01-2016 03:28:01] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[07-01-2016 03:28:01] PayPal\Validation\ModelAccessorValidator: DEBUG	: Missing Accessor: PayPal\Api\Sale:setProcessorResponse. You might be using older version of SDK. If not, create an issue at https://github.com/paypal/PayPal-PHP-SDK/issues
+[22-01-2016 01:51:15] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[22-01-2016 01:51:15] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[22-01-2016 01:51:15] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[22-01-2016 01:51:19] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[25-02-2016 09:55:19] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[25-02-2016 09:55:20] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[25-02-2016 09:55:20] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[25-02-2016 09:55:24] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[30-04-2016 01:09:45] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[30-04-2016 01:09:46] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[30-04-2016 01:09:46] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[30-04-2016 01:09:50] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[12-10-2016 06:38:01] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[12-10-2016 06:38:02] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[12-10-2016 06:38:02] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[12-10-2016 06:38:07] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[14-10-2016 11:54:27] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[14-10-2016 11:54:28] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[14-10-2016 11:54:28] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[14-10-2016 11:54:32] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[04-11-2016 11:17:23] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[04-11-2016 11:17:23] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[04-11-2016 11:17:23] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[04-11-2016 11:17:28] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201
+[11-11-2016 02:51:23] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/oauth2/token
+[11-11-2016 02:51:24] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 200
+[11-11-2016 02:51:24] PayPal\Core\PayPalHttpConnection: INFO	: POST https://api.paypal.com/v1/payments/payment
+[11-11-2016 02:51:29] PayPal\Core\PayPalHttpConnection: INFO	: Response Status 	: 201

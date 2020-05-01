@@ -1,0 +1,56 @@
+/**
+* Wicked Framework :: Hero's Journey Responsive Layout
+* ----------------- 
+* Copyright 2014 KimLaRocca.com
+* Licensed under MIT (https://github.com/kimlarocca/WickedFramework/blob/master/LICENSE)
+**/
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+
+html, body{
+  height:100%; background-color:#d6dadd; margin:0;
+	font-family: 'Raleway', sans-serif; font-size:16px; color:#444; text-align:center;
+}
+a, a:visited, a:active {
+	color: #00c185;
+	text-decoration: none;
+}
+a:hover {
+	opacity: .8;
+}
+a img {
+	border: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+hr {
+	border: 0;
+    height: 1px;
+    background: #fff;
+    background-image: linear-gradient(to right, #d6dadd, #fff, #d6dadd);
+	margin:20px 0 20px 0;
+}
+h1 {
+	font-size:3.5em;
+	width:75%; margin:auto;
+	text-align:center;
+	font-weight:normal;
+	padding:10px;
+	text-transform:uppercase;
+}
+.wickedForm input[type=submit], .button {
+	border:2px #8c8fa0 solid;
+	color:#8c8fa0;
+	text-transform:uppercase;
+	cursor:pointer; display:inline-block;
+	padding:10px; margin:10px;
+	font-weight:700; letter-spacing: 0.08em; background-color: transparent;	
+}
+.wickedForm input[type=submit]:hover, .button:hover {
+	opacity:.7;
+}
+h2 {
+	font-size:2.0em; font-weight:700;
+	color: #888; text-transform: lowercase; }
