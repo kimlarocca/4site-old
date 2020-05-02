@@ -70,8 +70,7 @@ if (isset($_POST['username'])) {
     if (isset($_SESSION['PrevUrl']) && false) {
       $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];
     }
-//    header("Location: " . $MM_redirectLoginSuccess );
-      echo 'kim';
+    header("Location: " . $MM_redirectLoginSuccess );
   }
   else {
     header("Location: ". $MM_redirectLoginFailed );
