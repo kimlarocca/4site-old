@@ -90,7 +90,7 @@ if ((isset($_POST['albumID'])) && ($_POST['albumID'] != "")) {
                        GetSQLValueString($_POST['albumID'], "int"));
 
   mysqli_select_db($cms, $database_cms);
-  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error($cms));
+  $Result1 = mysqli_query($cms, $deleteSQL) or die(mysqli_error($cms));
 
   $deleteGoTo = "albums.php?action=deleted";
   if (isset($_SERVER['QUERY_STRING'])) {
