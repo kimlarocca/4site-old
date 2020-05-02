@@ -50,34 +50,39 @@ if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers,
 ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+    function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+    {
+        if (PHP_VERSION < 6) {
+            $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+        }
+        $hostname_cms = "localhost";
+        $database_cms = "kim_4site";
+        $username_cms = "kim_larocca";
+        $password_cms = "Lotus18641864!";
+        $cms = mysqli_connect($hostname_cms, $username_cms, $password_cms, $database_cms) or trigger_error(mysqli_error($cms),E_USER_ERROR);
 
-  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
+        $theValue = mysqli_real_escape_string($cms, $theValue);
 
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
+        switch ($theType) {
+            case "text":
+                $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+                break;
+            case "long":
+            case "int":
+                $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+                break;
+            case "double":
+                $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+                break;
+            case "date":
+                $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+                break;
+            case "defined":
+                $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+                break;
+        }
+        return $theValue;
+    }
 }
 
 $church = false;
@@ -87,8 +92,8 @@ if ((isset($_POST['listingID'])) && ($_POST['listingID'] != "")) {
   $deleteSQL = sprintf("DELETE FROM listings WHERE listingID=%s",
                        GetSQLValueString($_POST['listingID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error($cms));
 
   $deleteGoTo = "listings.php?action=deleted";
   if($church) $deleteGoTo = "church-rentals.php?action=deleted";;
@@ -103,9 +108,9 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($cms, $query_currentUser) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -113,9 +118,9 @@ $colname_content = "-1";
 if (isset($_POST['pageID'])) {
   $colname_content = $_POST['pageID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_content = sprintf("SELECT * FROM cmsPages WHERE pageID = %s", GetSQLValueString($colname_content, "int"));
-$content = mysqli_query($query_content, $cms) or die(mysqli_error());
+$content = mysqli_query($cms, $query_content) or die(mysqli_error($cms));
 $row_content = mysqli_fetch_assoc($content);
 $totalRows_content = mysqli_num_rows($content);
 ?>

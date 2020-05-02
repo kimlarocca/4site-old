@@ -102,8 +102,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['albumName'], "text"),
                        GetSQLValueString($_POST['albumID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error($cms));
 
   $updateGoTo = "?action=saved&albumID=".$_POST['albumID'];
   //if (isset($_SERVER['QUERY_STRING'])) {
@@ -117,9 +117,9 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -127,15 +127,15 @@ $colname_album = "-1";
 if (isset($_GET['albumID'])) {
   $colname_album = $_GET['albumID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_album = sprintf("SELECT * FROM photoAlbums WHERE albumID = %s", GetSQLValueString($colname_album, "int"));
-$album = mysqli_query($query_album, $cms) or die(mysqli_error());
+$album = mysqli_query($query_album, $cms) or die(mysqli_error($cms));
 $row_album = mysqli_fetch_assoc($album);
 $totalRows_album = mysqli_num_rows($album);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_photos = "SELECT * FROM photos WHERE albumID = ".$_GET['albumID']." ORDER BY photoSequence ASC";
-$photos = mysqli_query($query_photos, $cms) or die(mysqli_error());
+$photos = mysqli_query($query_photos, $cms) or die(mysqli_error($cms));
 $row_photos = mysqli_fetch_assoc($photos);
 $totalRows_photos = mysqli_num_rows($photos);
 ?>

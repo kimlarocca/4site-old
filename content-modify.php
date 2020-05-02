@@ -93,8 +93,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form")) {
                        GetSQLValueString($_POST['pageModified'], "date"),
                        GetSQLValueString($_POST['pageID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error($cms));
 
   $updateGoTo = "content-modify.php?action=saved&pageID=".$row_content['pageID'];
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -107,23 +107,23 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form")) {
 //revert to draft
 if ($_POST['action'] == 'revert') {
     $updaterecord = "UPDATE cmsPages SET pageActive=0 WHERE pageID=".$_GET['pageID'];
-    mysqli_select_db($database_cms, $cms);
-    mysqli_query($updaterecord, $cms) or die(mysqli_error());
+    mysqli_select_db($cms, $database_cms);
+    mysqli_query($updaterecord, $cms) or die(mysqli_error($cms));
 }
 //publish
 if ($_POST['action'] == 'publish') {
     $updaterecord = "UPDATE cmsPages SET pageActive=1 WHERE pageID=".$_GET['pageID'];
-    mysqli_select_db($database_cms, $cms);
-    mysqli_query($updaterecord, $cms) or die(mysqli_error());
+    mysqli_select_db($cms, $database_cms);
+    mysqli_query($updaterecord, $cms) or die(mysqli_error($cms));
 }
 
 $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -131,9 +131,9 @@ $colname_content = "-1";
 if (isset($_GET['pageID'])) {
   $colname_content = $_GET['pageID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_content = sprintf("SELECT * FROM cmsPages WHERE pageID = %s", GetSQLValueString($colname_content, "int"));
-$content = mysqli_query($query_content, $cms) or die(mysqli_error());
+$content = mysqli_query($query_content, $cms) or die(mysqli_error($cms));
 $row_content = mysqli_fetch_assoc($content);
 $totalRows_content = mysqli_num_rows($content);
 ?>

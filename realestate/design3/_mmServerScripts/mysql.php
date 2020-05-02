@@ -328,7 +328,7 @@ class MySqlConnection
 	function HandleException()
 	{
 		global $debug_to_file, $f;
-		$this->error = create_error(' MySQL Error#: '. ((int)mysqli_errno()) . "\n\n".mysqli_error());
+		$this->error = create_error(' MySQL Error#: '. ((int)mysqli_errno()) . "\n\n".mysqli_error($cms));
 		log_messages($this->error);
 		die($this->error.'</HTML>');
 	}

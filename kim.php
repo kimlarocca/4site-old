@@ -113,7 +113,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['vimeo'], "text"));
 
   mysqli_select_db($cms, $database_cms);
-  $Result1 = mysqli_query($cms, $insertSQL) or die(mysqli_error());
+  $Result1 = mysqli_query($cms, $insertSQL) or die(mysqli_error($cms));
 
   $insertGoTo = "kim.php?action=added";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -133,7 +133,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
                        GetSQLValueString($_POST['websiteID'], "int"));
 
   mysqli_select_db($cms, $database_cms);
-  $Result1 = mysqli_query($cms, $insertSQL) or die(mysqli_error());
+  $Result1 = mysqli_query($cms, $insertSQL) or die(mysqli_error($cms));
 
   $insertGoTo = "kim.php?action=added";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -149,22 +149,22 @@ if (isset($_SESSION['MM_Username'])) {
 }
 mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($cms, $query_currentUser) or die(mysqli_error());
+$currentUser = mysqli_query($cms, $query_currentUser) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
 $query_securityLevels = "SELECT * FROM cmsSecurityLevels ORDER BY securityLevel ASC";
-$securityLevels = mysqli_query($cms, $query_securityLevels) or die(mysqli_error());
+$securityLevels = mysqli_query($cms, $query_securityLevels) or die(mysqli_error($cms));
 $row_securityLevels = mysqli_fetch_assoc($securityLevels);
 $totalRows_securityLevels = mysqli_num_rows($securityLevels);
 
 $query_websites = "SELECT * FROM cmsWebsites ORDER BY url";
-$websites = mysqli_query($cms, $query_websites) or die(mysqli_error());
+$websites = mysqli_query($cms, $query_websites) or die(mysqli_error($cms));
 $row_websites = mysqli_fetch_assoc($websites);
 $totalRows_websites = mysqli_num_rows($websites);
 
 $query_users = "SELECT * FROM cmsUsers,cmsSecurityLevels WHERE cmsUsers.securityLevelID=cmsSecurityLevels.securityLevelID ORDER BY cmsUsers.username ASC";
-$users = mysqli_query($cms, $query_users) or die(mysqli_error());
+$users = mysqli_query($cms, $query_users) or die(mysqli_error($cms));
 $row_users = mysqli_fetch_assoc($users);
 $totalRows_users = mysqli_num_rows($users);
 ?>

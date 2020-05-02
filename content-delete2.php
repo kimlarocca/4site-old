@@ -84,8 +84,8 @@ if ((isset($_POST['pageID'])) && ($_POST['pageID'] != "")) {
   $deleteSQL = sprintf("DELETE FROM cmsPages WHERE pageID=%s",
                        GetSQLValueString($_POST['pageID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error($cms));
 
   $deleteGoTo = "home.php?action=deleted";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -99,9 +99,9 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -109,9 +109,9 @@ $colname_content = "-1";
 if (isset($_POST['pageID'])) {
   $colname_content = $_POST['pageID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_content = sprintf("SELECT * FROM cmsPages WHERE pageID = %s", GetSQLValueString($colname_content, "int"));
-$content = mysqli_query($query_content, $cms) or die(mysqli_error());
+$content = mysqli_query($query_content, $cms) or die(mysqli_error($cms));
 $row_content = mysqli_fetch_assoc($content);
 $totalRows_content = mysqli_num_rows($content);
 ?>

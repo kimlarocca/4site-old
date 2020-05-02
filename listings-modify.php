@@ -56,8 +56,13 @@ if (!function_exists("GetSQLValueString")) {
         if (PHP_VERSION < 6) {
             $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
         }
+        $hostname_cms = "localhost";
+        $database_cms = "kim_4site";
+        $username_cms = "kim_larocca";
+        $password_cms = "Lotus18641864!";
+        $cms = mysqli_connect($hostname_cms, $username_cms, $password_cms, $database_cms) or trigger_error(mysqli_error($cms),E_USER_ERROR);
 
-        $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
+        $theValue = mysqli_real_escape_string($cms, $theValue);
 
         switch ($theType) {
             case "text":
@@ -86,47 +91,49 @@ if (isset($_SERVER['QUERY_STRING'])) {
     $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
 }
 
-if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
-    $updateSQL = sprintf("UPDATE listings SET displayOnSite=%s, mlsNumber=%s, propertyPrice=%s, propertyStatus=%s, shortDescription=%s, longDescription=%s, propertyType=%s, propertyStyle=%s, beds=%s, fullBaths=%s, halfBaths=%s, propertyLocation=%s, interiorFeatures=%s, exteriorFeatures=%s, virtualTourLink=%s, featureListing=%s, albumID=%s, agentName=%s, customField=%s  WHERE listingID=%s",
-        GetSQLValueString(isset($_POST['displayOnSite']) ? "true" : "", "defined", "1", "0"),
-        GetSQLValueString($_POST['mlsNumber'], "text"),
-        GetSQLValueString($_POST['propertyPrice'], "int"),
-        GetSQLValueString($_POST['propertyStatus'], "text"),
-        GetSQLValueString($_POST['shortDescription'], "text"),
-        GetSQLValueString($_POST['longDescription'], "text"),
-        GetSQLValueString($_POST['propertyType'], "text"),
-        GetSQLValueString($_POST['propertyStyle'], "text"),
-        GetSQLValueString($_POST['beds'], "text"),
-        GetSQLValueString($_POST['fullBaths'], "text"),
-        GetSQLValueString($_POST['halfBaths'], "text"),
-        GetSQLValueString($_POST['propertyLocation'], "text"),
-        GetSQLValueString($_POST['interiorFeatures'], "text"),
-        GetSQLValueString($_POST['exteriorFeatures'], "text"),
-        GetSQLValueString($_POST['virtualTourLink'], "text"),
-        GetSQLValueString(isset($_POST['featureListing']) ? "true" : "", "defined", "1", "0"),
-        GetSQLValueString($_POST['albumID'], "int"),
-        GetSQLValueString($_POST['agentName'], "text"),
-        GetSQLValueString($_POST['customField'], "text"),
-        GetSQLValueString($_POST['listingID'], "int"));
+if (!function_exists("GetSQLValueString")) {
+    function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+    {
+        if (PHP_VERSION < 6) {
+            $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+        }
+        $hostname_cms = "localhost";
+        $database_cms = "kim_4site";
+        $username_cms = "kim_larocca";
+        $password_cms = "Lotus18641864!";
+        $cms = mysqli_connect($hostname_cms, $username_cms, $password_cms, $database_cms) or trigger_error(mysqli_error($cms),E_USER_ERROR);
 
-    mysqli_select_db($database_cms, $cms);
-    $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
+        $theValue = mysqli_real_escape_string($cms, $theValue);
 
-    $updateGoTo = "listings-modify.php?action=saved";
-    if (isset($_SERVER['QUERY_STRING'])) {
-        $updateGoTo .= (strpos($updateGoTo, '?')) ? "&" : "?";
-        $updateGoTo .= $_SERVER['QUERY_STRING'];
+        switch ($theType) {
+            case "text":
+                $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+                break;
+            case "long":
+            case "int":
+                $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+                break;
+            case "double":
+                $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+                break;
+            case "date":
+                $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+                break;
+            case "defined":
+                $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+                break;
+        }
+        return $theValue;
     }
-    header(sprintf("Location: %s", $updateGoTo));
 }
 
 $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
     $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers,cmsWebsites WHERE cmsUsers.websiteID=cmsWebsites.websiteID AND cmsUsers.username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($cms, $query_currentUser) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -134,15 +141,15 @@ $colname_listing = "-1";
 if (isset($_GET['listingID'])) {
     $colname_listing = $_GET['listingID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_listing = sprintf("SELECT * FROM listings WHERE listingID = %s", GetSQLValueString($colname_listing, "int"));
-$listing = mysqli_query($query_listing, $cms) or die(mysqli_error());
+$listing = mysqli_query($cms, $query_listing) or die(mysqli_error($cms));
 $row_listing = mysqli_fetch_assoc($listing);
 $totalRows_listing = mysqli_num_rows($listing);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_albums = "SELECT * FROM photoAlbums WHERE websiteID = " . $row_currentUser['websiteID'] . " ORDER BY albumName ASC";
-$albums = mysqli_query($query_albums, $cms) or die(mysqli_error());
+$albums = mysqli_query($cms, $query_albums) or die(mysqli_error($cms));
 $row_albums = mysqli_fetch_assoc($albums);
 $totalRows_albums = mysqli_num_rows($albums);
 

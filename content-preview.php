@@ -39,9 +39,9 @@ $colname_Recordset1 = "-1";
 if (isset($_GET['pageID'])) {
   $colname_Recordset1 = $_GET['pageID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_Recordset1 = sprintf("SELECT * FROM cmsPages WHERE pageID = %s", GetSQLValueString($colname_Recordset1, "int"));
-$Recordset1 = mysqli_query($query_Recordset1, $cms) or die(mysqli_error());
+$Recordset1 = mysqli_query($query_Recordset1, $cms) or die(mysqli_error($cms));
 $row_Recordset1 = mysqli_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysqli_num_rows($Recordset1);
 ?>

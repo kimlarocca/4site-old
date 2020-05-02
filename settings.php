@@ -84,9 +84,9 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -94,9 +94,9 @@ $colname_cmsUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_cmsUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_cmsUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_cmsUser, "text"));
-$cmsUser = mysqli_query($query_cmsUser, $cms) or die(mysqli_error());
+$cmsUser = mysqli_query($query_cmsUser, $cms) or die(mysqli_error($cms));
 $row_cmsUser = mysqli_fetch_assoc($cmsUser);
 $totalRows_cmsUser = mysqli_num_rows($cmsUser);
 
@@ -111,8 +111,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
                        GetSQLValueString($_POST['Password'], "text"),
                        GetSQLValueString($_POST['userID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error($cms));
 
   $updateGoTo = "settings.php?action=password";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -148,8 +148,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['pinterest'], "text"),
                        GetSQLValueString($_POST['vimeo'], "text"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error($cms));
 
   $updateGoTo = "settings.php?action=saved";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -159,9 +159,9 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   header(sprintf("Location: %s", $updateGoTo));
 }
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_userSettings = "SELECT * FROM cmsWebsites WHERE websiteID = ".$row_currentUser['websiteID'];
-$userSettings = mysqli_query($query_userSettings, $cms) or die(mysqli_error());
+$userSettings = mysqli_query($query_userSettings, $cms) or die(mysqli_error($cms));
 $row_userSettings = mysqli_fetch_assoc($userSettings);
 $totalRows_userSettings = mysqli_num_rows($userSettings);
 ?>

@@ -86,15 +86,15 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_Recordset1 = "SELECT * FROM cmsPages,cmsWebsites WHERE cmsPages.websiteID=cmsWebsites.websiteID ORDER BY ".$sortBy;
-$Recordset1 = mysqli_query($query_Recordset1, $cms) or die(mysqli_error());
+$Recordset1 = mysqli_query($query_Recordset1, $cms) or die(mysqli_error($cms));
 $row_Recordset1 = mysqli_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysqli_num_rows($Recordset1);
 ?>

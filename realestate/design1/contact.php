@@ -38,21 +38,21 @@ $colname_Recordset1 = "-1";
 if (isset($_GET['listingID'])) {
   $colname_Recordset1 = $_GET['listingID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_Recordset1 = sprintf("SELECT * FROM listings WHERE listingID = %s", GetSQLValueString($colname_Recordset1, "int"));
-$Recordset1 = mysqli_query($query_Recordset1, $cms) or die(mysqli_error());
+$Recordset1 = mysqli_query($query_Recordset1, $cms) or die(mysqli_error($cms));
 $row_Recordset1 = mysqli_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysqli_num_rows($Recordset1);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentPage = "SELECT * FROM cmsPages WHERE pageID = ".$pageID;
-$currentPage = mysqli_query($query_currentPage, $cms) or die(mysqli_error());
+$currentPage = mysqli_query($query_currentPage, $cms) or die(mysqli_error($cms));
 $row_currentPage = mysqli_fetch_assoc($currentPage);
 $totalRows_currentPage = mysqli_num_rows($currentPage);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_websiteInfo = "SELECT * FROM cmsWebsites WHERE websiteID = ".$websiteID;
-$websiteInfo = mysqli_query($query_websiteInfo, $cms) or die(mysqli_error());
+$websiteInfo = mysqli_query($query_websiteInfo, $cms) or die(mysqli_error($cms));
 $row_websiteInfo = mysqli_fetch_assoc($websiteInfo);
 $totalRows_websiteInfo = mysqli_num_rows($websiteInfo);
 ?>

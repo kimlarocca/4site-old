@@ -90,8 +90,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['moduleName'], "text"),
                        GetSQLValueString($_POST['moduleDescription'], "text"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($cms, $insertSQL) or die(mysqli_error($cms));
 
   $insertGoTo = "modules.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -106,8 +106,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
                        GetSQLValueString($_POST['websiteID'], "int"),
                        GetSQLValueString($_POST['moduleID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($cms, $insertSQL) or die(mysqli_error($cms));
 
   $insertGoTo = "modules.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -121,33 +121,33 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_modules = "SELECT * FROM cmsModules ORDER BY moduleName ASC";
-$modules = mysqli_query($query_modules, $cms) or die(mysqli_error());
+$modules = mysqli_query($query_modules, $cms) or die(mysqli_error($cms));
 $row_modules = mysqli_fetch_assoc($modules);
 $totalRows_modules = mysqli_num_rows($modules);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_userModules = "SELECT * FROM cmsUserModules,cmsWebsites,cmsModules WHERE cmsUserModules.websiteID=cmsWebsites.websiteID AND cmsUserModules.moduleID=cmsModules.moduleID";
-$userModules = mysqli_query($query_userModules, $cms) or die(mysqli_error());
+$userModules = mysqli_query($query_userModules, $cms) or die(mysqli_error($cms));
 $row_userModules = mysqli_fetch_assoc($userModules);
 $totalRows_userModules = mysqli_num_rows($userModules);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_websites = "SELECT websiteID, url FROM cmsWebsites ORDER BY url ASC";
-$websites = mysqli_query($query_websites, $cms) or die(mysqli_error());
+$websites = mysqli_query($query_websites, $cms) or die(mysqli_error($cms));
 $row_websites = mysqli_fetch_assoc($websites);
 $totalRows_websites = mysqli_num_rows($websites);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_modules2 = "SELECT * FROM cmsModules ORDER BY moduleName ASC";
-$modules2 = mysqli_query($query_modules2, $cms) or die(mysqli_error());
+$modules2 = mysqli_query($query_modules2, $cms) or die(mysqli_error($cms));
 $row_modules2 = mysqli_fetch_assoc($modules2);
 $totalRows_modules2 = mysqli_num_rows($modules2);
 ?>

@@ -97,7 +97,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['pageActive'], "int"));
 
   mysqli_select_db($cms, $database_cms);
-  $Result1 = mysqli_query($cms, $insertSQL) or die(mysqli_error());
+  $Result1 = mysqli_query($cms, $insertSQL) or die(mysqli_error($cms));
 
 $lastID = mysqli_insert_id($cms);
 

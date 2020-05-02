@@ -50,10 +50,10 @@ $hostname_wotg = "localhost";
 $database_wotg = "studiocm_cms";
 $username_wotg = "studiocm_kim";
 $password_wotg = "Lotus18641864!";
-$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error($cms),E_USER_ERROR); 
 mysqli_select_db($database_wotg, $wotg);
 $query_order = "SELECT * FROM orders WHERE orderID='".$order_number."'";
-$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
+$order = mysqli_query($query_order, $wotg) or die(mysqli_error($cms));
 $row_orderInfo = mysqli_fetch_assoc($order);
 
 //update the following lines from your order database	
@@ -181,10 +181,10 @@ if ($payment->getState()=='approved') {
 	//the payment was approved!
 	
 	//update order database
-	$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+	$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error($cms),E_USER_ERROR); 
 	mysqli_select_db($database_wotg, $wotg);
 	$query_order = "UPDATE orders SET amount = '".$orderAmount."', orderStatus = 'complete', paymentType = 'Paydunk', firstName = '".$firstName."', lastName = '".$lastName."', emailAddress = '".$email."' WHERE orderID='".$order_number."'";
-	$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
+	$order = mysqli_query($query_order, $wotg) or die(mysqli_error($cms));
 	
 	//send email
 	

@@ -84,8 +84,8 @@ if ((isset($_GET['photoID'])) && ($_GET['photoID'] != "")) {
   $deleteSQL = sprintf("DELETE FROM photos WHERE id=%s",
                        GetSQLValueString($_GET['photoID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error($cms));
 
   $deleteGoTo = "albums-photos.php?albumID=".$_GET['albumID']."&action=deleted";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -103,9 +103,9 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -113,9 +113,9 @@ $colname_photo = "-1";
 if (isset($_GET['photoID'])) {
   $colname_photo = $_GET['photoID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_photo = sprintf("SELECT * FROM photos WHERE id = %s", GetSQLValueString($colname_photo, "int"));
-$photo = mysqli_query($query_photo, $cms) or die(mysqli_error());
+$photo = mysqli_query($query_photo, $cms) or die(mysqli_error($cms));
 $row_photo = mysqli_fetch_assoc($photo);
 $totalRows_photo = mysqli_num_rows($photo);
 ?>

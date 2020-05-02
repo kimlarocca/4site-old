@@ -52,12 +52,12 @@ if (isset($_POST['username'])) {
   $MM_redirectLoginSuccess = "home.php";
   $MM_redirectLoginFailed = "index.php?action=failed";
   $MM_redirecttoReferrer = false;
-  mysqli_select_db($database_cms, $cms);
+  mysqli_select_db($cms, $database_cms);
 
   $LoginRS__query=sprintf("SELECT username, password FROM cmsUsers WHERE username=%s AND password=%s",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text"));
 
-  $LoginRS = mysqli_query($LoginRS__query, $cms) or die(mysqli_error());
+  $LoginRS = mysqli_query($LoginRS__query, $cms) or die(mysqli_error($cms));
   $loginFoundUser = mysqli_num_rows($LoginRS);
   if ($loginFoundUser) {
      $loginStrGroup = "";

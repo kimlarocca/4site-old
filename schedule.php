@@ -85,16 +85,16 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
     $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 //$query_products = "SELECT * FROM products WHERE websiteID = ".$row_currentUser['websiteID']." ORDER BY productCategory, productName ASC";
 $query_products = "SELECT * FROM events WHERE websiteID = " . $row_currentUser['websiteID'] . " ORDER BY dayOfWeek, title ASC";
-$products = mysqli_query($query_products, $cms) or die(mysqli_error());
+$products = mysqli_query($query_products, $cms) or die(mysqli_error($cms));
 $row_products = mysqli_fetch_assoc($products);
 $totalRows_products = mysqli_num_rows($products);
 ?>

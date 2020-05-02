@@ -95,8 +95,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['websiteID'], "int"),
                        GetSQLValueString($_POST['userID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error($cms));
 
   $updateGoTo = "kim-users-modify.php?action=saved";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -110,9 +110,9 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -120,15 +120,15 @@ $colname_user = "-1";
 if (isset($_GET['userID'])) {
   $colname_user = $_GET['userID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_user = sprintf("SELECT * FROM cmsUsers WHERE userID = %s", GetSQLValueString($colname_user, "int"));
-$user = mysqli_query($query_user, $cms) or die(mysqli_error());
+$user = mysqli_query($query_user, $cms) or die(mysqli_error($cms));
 $row_user = mysqli_fetch_assoc($user);
 $totalRows_user = mysqli_num_rows($user);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_securityLevels = "SELECT * FROM cmsSecurityLevels ORDER BY securityLevel ASC";
-$securityLevels = mysqli_query($query_securityLevels, $cms) or die(mysqli_error());
+$securityLevels = mysqli_query($query_securityLevels, $cms) or die(mysqli_error($cms));
 $row_securityLevels = mysqli_fetch_assoc($securityLevels);
 $totalRows_securityLevels = mysqli_num_rows($securityLevels);
 ?>

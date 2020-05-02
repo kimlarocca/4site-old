@@ -84,9 +84,9 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -94,9 +94,9 @@ $colname_listing = "-1";
 if (isset($_GET['productID'])) {
   $colname_listing = $_GET['productID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_listing = sprintf("SELECT * FROM products WHERE productID = %s", GetSQLValueString($colname_listing, "int"));
-$listing = mysqli_query($query_listing, $cms) or die(mysqli_error());
+$listing = mysqli_query($query_listing, $cms) or die(mysqli_error($cms));
 $row_listing = mysqli_fetch_assoc($listing);
 $totalRows_listing = mysqli_num_rows($listing);
 ?>

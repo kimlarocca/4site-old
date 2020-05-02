@@ -35,10 +35,10 @@ $hostname_wotg = "localhost";
 $database_wotg = "studiocm_cms";
 $username_wotg = "studiocm_kim";
 $password_wotg = "Lotus18641864!";
-$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error($cms),E_USER_ERROR); 
 mysqli_select_db($database_wotg, $wotg);
 $query_order = "INSERT INTO orders (amount, studioID, orderInfo, orderStatus, notes) VALUES (".$amount.",".$studioID.",'".$orderInfo."','".$orderStatus."','no specific class specified')";
-$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
+$order = mysqli_query($query_order, $wotg) or die(mysqli_error($cms));
 $orderID = mysqli_insert_id();
 
 ?>

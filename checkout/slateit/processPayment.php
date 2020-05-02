@@ -29,7 +29,7 @@ function getCreditCardType($str, $format = 'string')
     }
 
 //get payment info from paydunk
-$expiration_date = $_POST["expiration_date"]; 
+$expiration_date = $_POST["expiration_date"];
 $expiration_dates = explode('/', $expiration_date);
 $month = $expiration_dates[0];
 $year = "20".$expiration_dates[1];
@@ -48,13 +48,13 @@ $hostname_wotg = "localhost";
 $database_wotg = "studiocm_cms";
 $username_wotg = "studiocm_kim";
 $password_wotg = "Lotus18641864!";
-$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error($cms),E_USER_ERROR);
 mysqli_select_db($database_wotg, $wotg);
 $query_order = "SELECT * FROM orders WHERE orderID='".$order_number."'";
-$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
+$order = mysqli_query($query_order, $wotg) or die(mysqli_error($cms));
 $row_orderInfo = mysqli_fetch_assoc($order);
 
-//update the following lines from your order database	
+//update the following lines from your order database
 $amount = $row_orderInfo['amount']-5;
 $paymentID = $row_orderInfo['paymentID'];
 $orderInfo = $row_orderInfo['orderInfo'];
@@ -68,10 +68,10 @@ $date = date($year."-".$month);
 $today = date("Y-m");
 $card_type = getCreditCardType($card_number);
 $total = $amount;
-	
+
 	//get student info
 	$query_student = "SELECT * FROM students WHERE studentID=".$studentID;
-	$student = mysqli_query($query_student, $wotg) or die(mysqli_error());
+	$student = mysqli_query($query_student, $wotg) or die(mysqli_error($cms));
 	$row_student = mysqli_fetch_assoc($student);
 
 
@@ -87,8 +87,8 @@ error_log("amount: ".$amount);
 // # CreatePaymentSample
 //
 // This sample code demonstrate how you can process
-// a direct credit card payment. Please note that direct 
-// credit card payment and related features using the 
+// a direct credit card payment. Please note that direct
+// credit card payment and related features using the
 // REST API is restricted in some countries.
 // API used: /v1/payments/payment
 
@@ -152,7 +152,7 @@ $amount->setCurrency("USD")
 // ### Transaction
 // A transaction defines the contract of a
 // payment - what is the payment for and who
-// is fulfilling it. 
+// is fulfilling it.
 $transaction = new Transaction();
 $transaction->setAmount($amount)
     ->setInvoiceNumber(uniqid());
@@ -184,36 +184,36 @@ try {
 possible PayPal payment states: created, approved, failed, cancelled, expired
 paydunk status - must be "success", "cancelled", or "error" depending on the outcome of your transaction.
 */
- 
+
 if ($payment->getState()=='approved') {
 	$status = 'success';
 	//the payment was approved!
 	//update order database
-	$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+	$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error($cms),E_USER_ERROR);
 	mysqli_select_db($database_wotg, $wotg);
 	$query_order = "UPDATE orders SET orderStatus = 'complete',paymentType = 'Paydunk' WHERE paymentID='".$paymentID."'";
-	$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
+	$order = mysqli_query($query_order, $wotg) or die(mysqli_error($cms));
 	error_log("order table updated");
-	
+
 	if ($orderInfo=='Drop In'){
-	
+
 	  //get instructor ID
 	  $query_classInfo = "SELECT * FROM classes,instructors WHERE classes.instructorID=instructors.instructorID AND classes.classID=".$row_orderInfo['classID'];
-	  $classInfo = mysqli_query($query_classInfo, $wotg) or die(mysqli_error());
+	  $classInfo = mysqli_query($query_classInfo, $wotg) or die(mysqli_error($cms));
 	  $row_classInfo = mysqli_fetch_assoc($classInfo);
 	  $instructorID = $row_classInfo['instructorID'];
 	  error_log("drop in info updated");
-  
+
 	  //update attendance records
 	  $addrecords = "INSERT INTO attendance(studentID, classID, instructorID, dateAdded, attendanceType, studioID, paymentType) VALUES (".$row_orderInfo['studentID'].",".$row_orderInfo['classID'].",".$instructorID.",'".$row_orderInfo['classDate']."','Drop In',".$row_orderInfo['studioID'].",'Paydunk')";
 	  mysqli_select_db($database_wotg, $wotg);
-	  mysqli_query($addrecords, $wotg) or die(mysqli_error());	
+	  mysqli_query($addrecords, $wotg) or die(mysqli_error($cms));
 	}
 	if ($orderInfo=='Pre Paid Package'){
 		//update student table
 		$classesLeft = (int)$row_student['classesLeft']+$row_orderInfo['classesAdded'];
 		$query_prepaid = "UPDATE students SET classesLeft = ".$classesLeft." WHERE studentID=".$studentID;
-		$prepaid = mysqli_query($query_prepaid, $wotg) or die(mysqli_error());
+		$prepaid = mysqli_query($query_prepaid, $wotg) or die(mysqli_error($cms));
 		error_log("prepaid info updated");
 	}
 	if ($orderInfo=='Membership'){
@@ -222,17 +222,17 @@ if ($payment->getState()=='approved') {
 		$startDate = date ( 'Y-m-d' , $startDate );
 		$endDate = strtotime ( '+1 month' , strtotime ( $startDate ) ) ;
 		$endDate = date ( 'Y-m-d' , $endDate );
-		
+
 		error_log("startDate: ".$startDate);
 		error_log("endDate: ".$endDate);
-	
+
 		//update members table
 		$query_prepaid = "INSERT INTO members (studentID, studioID, membershipFee, startDate, endDate) VALUES (".$row_orderInfo['studentID'].",".$row_orderInfo['studioID'].",".(int)$row_orderInfo['amount'].",'".$startDate."','".$endDate."')";
-		$prepaid = mysqli_query($query_prepaid, $wotg) or die(mysqli_error());
+		$prepaid = mysqli_query($query_prepaid, $wotg) or die(mysqli_error($cms));
 		error_log("member info updated");
 	}
-	
-	
+
+
 }
 if ($payment->getState()=='failed' || $payment->getState()=='expired') {
 	$status = 'error';
@@ -249,12 +249,12 @@ $bodyparams = array(
 //sends the PUT request to the Paydunk API
 function CallAPI($method, $url, $data = false){
 		$curl = curl_init();
-		curl_setopt($curl, CURLOPT_PUT, 1);		
-		$update_json = json_encode($data);	
+		curl_setopt($curl, CURLOPT_PUT, 1);
+		$update_json = json_encode($data);
 		curl_setopt($curl, CURLOPT_URL, $url . "?" . http_build_query($data));
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($curl, CURLOPT_SSLVERSION, 4);
-		$result = curl_exec($curl);  
+		$result = curl_exec($curl);
 		$api_response_info = curl_getinfo($curl);
 		curl_close($curl);
 		return $result;
@@ -264,7 +264,7 @@ $transaction_uuid = $_POST['transaction_uuid'];
 if (isset($transaction_uuid)) {
 	error_log("calling paydunk api");
 	$url = "https://api.paydunk.com/api/v1/transactions/".$transaction_uuid;
-	CallAPI("PUT", $url, $bodyparams);	
+	CallAPI("PUT", $url, $bodyparams);
 }
 if ($status=='error' OR $status=='declined') header("Location: http://studio.4siteusa.com/student-home.php?action=error");
 header("Location: http://studio.4siteusa.com/student-home.php?action=reserved");

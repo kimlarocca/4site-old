@@ -34,15 +34,15 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentPage = "SELECT * FROM cmsPages WHERE pageID = ".$pageID;
-$currentPage = mysqli_query($query_currentPage, $cms) or die(mysqli_error());
+$currentPage = mysqli_query($query_currentPage, $cms) or die(mysqli_error($cms));
 $row_currentPage = mysqli_fetch_assoc($currentPage);
 $totalRows_currentPage = mysqli_num_rows($currentPage);
 
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_websiteInfo = "SELECT * FROM cmsWebsites WHERE websiteID = ".$websiteID;
-$websiteInfo = mysqli_query($query_websiteInfo, $cms) or die(mysqli_error());
+$websiteInfo = mysqli_query($query_websiteInfo, $cms) or die(mysqli_error($cms));
 $row_websiteInfo = mysqli_fetch_assoc($websiteInfo);
 $totalRows_websiteInfo = mysqli_num_rows($websiteInfo);
 ?>

@@ -2,8 +2,8 @@
 <?php
 //update record
     $updaterecord = "UPDATE cmsPages SET pageActive=1 WHERE pageID=".$_GET['pageID'];
-    mysqli_select_db($database_cms, $cms);
-    mysqli_query($updaterecord, $cms) or die(mysqli_error());
+    mysqli_select_db($cms, $database_cms);
+    mysqli_query($updaterecord, $cms) or die(mysqli_error($cms));
     //print '<p style="color:red;">Your page has been published!</p>';
 	header("Location: home.php?action=published"); 
 ?>

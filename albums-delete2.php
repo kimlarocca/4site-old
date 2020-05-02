@@ -84,8 +84,8 @@ if ((isset($_POST['albumID'])) && ($_POST['albumID'] != "")) {
   $deleteSQL = sprintf("DELETE FROM photoAlbums WHERE albumID=%s",
                        GetSQLValueString($_POST['albumID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error($cms));
 
   $deleteGoTo = "albums.php?action=deleted";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -99,9 +99,9 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 ?>

@@ -34,10 +34,10 @@ $hostname_wotg = "localhost";
 $database_wotg = "studiocm_cms";
 $username_wotg = "studiocm_kim";
 $password_wotg = "Lotus18641864!";
-$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error($cms),E_USER_ERROR); 
 mysqli_select_db($database_wotg, $wotg);
 $query_order = "INSERT INTO orders (amount, firstName, lastName, emailAddress, studioID, orderInfo, orderStatus, notes) VALUES (".$amount.", '".$firstName."', '".$lastName."','".$emailAddress."',".$studioID.",'".$orderInfo."','".$orderStatus."','".$_POST["notes"]."')";
-$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
+$order = mysqli_query($query_order, $wotg) or die(mysqli_error($cms));
 $orderID = mysqli_insert_id();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

@@ -91,8 +91,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['categoryDescription'], "text"),
                        GetSQLValueString($_POST['productCategoryID'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error($cms));
 
   $updateGoTo = "products-categories-modify.php?action=saved";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -106,9 +106,9 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -116,9 +116,9 @@ $colname_category = "-1";
 if (isset($_GET['productCategoryID'])) {
   $colname_category = $_GET['productCategoryID'];
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms, $database_cms);
 $query_category = sprintf("SELECT * FROM productCategories WHERE productCategoryID = %s", GetSQLValueString($colname_category, "int"));
-$category = mysqli_query($query_category, $cms) or die(mysqli_error());
+$category = mysqli_query($query_category, $cms) or die(mysqli_error($cms));
 $row_category = mysqli_fetch_assoc($category);
 $totalRows_category = mysqli_num_rows($category);
 ?>
