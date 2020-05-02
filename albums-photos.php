@@ -210,7 +210,7 @@ var lastID = 0;
 setInterval(ajaxCall, 1000);
 function ajaxCall() {
  $.ajax({
-  url: 'albums-getPhotos.php?albumID=<?php echo $_GET['albumID'] ?>&lastID='+lastID, data: "", dataType: 'json',  success: function(rows)
+  url: 'albums-getPhotos.php?albumID=<?php echo $_GET['albumID'] ?>&amp;lastID='+lastID, data: "", dataType: 'json',  success: function(rows)
   {
     for (var i in rows)
     {
@@ -227,7 +227,7 @@ function ajaxCall() {
 	  if(id>lastID){
 		if(description == null) { description = ''; }
 		if(photoTitle == null) { photoTitle = ''; }
-		  $('#photos').append('<div class="pin"><a href="photos-modify.php?albumID=<?php echo $row_album['albumID']; ?>&photoID='+id+'"><img src="uploads/thumb-'+file_name+'"/></a><h2>'+photoTitle+'</h2><p>'+description+'</p><div style="margin:auto; width:100px; padding:10px 0 10px 0"><a href="albums-photos.php?action=cover&albumID=<?php echo $row_album['albumID']; ?>&photoID='+id+'" class="tooltip" title="set album cover"><img style="width:22px" src="images/'+coverPhoto+'.png" width="32" height="32" /></a> <a href="photos-modify.php?albumID=<?php echo $row_album['albumID']; ?>&photoID='+id+'" class="tooltip" title="update photo"><img style="width:22px" src="images/edit.png" width="32" height="32" /></a> <a href="photos-delete.php?albumID=<?php echo $row_album['albumID']; ?>&photoID='+id+'" class="tooltip" title="delete photo"><img style="width:22px" src="images/delete.png" width="32" height="32" /></a></div></div>');
+		  $('#photos').append('&lt;div class="pin">&lt;a href="photos-modify.php?albumID=<?php echo $row_album['albumID']; ?>&amp;photoID='+id+'">&lt;img src="uploads/thumb-'+file_name+'"/>&lt;/a>&lt;h2>'+photoTitle+'&lt;/h2>&lt;p>'+description+'&amp;lt;/p>&amp;lt;div style="margin:auto; width:100px; padding:10px 0 10px 0">&amp;lt;a href="albums-photos.php?action=cover&amp;albumID=<?php echo $row_album['albumID']; ?>&amp;photoID='+id+'" class="tooltip" title="set album cover">&lt;img style="width:22px" src="images/'+coverPhoto+'.png" width="32" height="32" />&lt;/a> &lt;a href="photos-modify.php?albumID=<?php echo $row_album['albumID']; ?>&amp;photoID='+id+'" class="tooltip" title="update photo">&lt;img style="width:22px" src="images/edit.png" width="32" height="32" />&lt;/a> &lt;a href="photos-delete.php?albumID=<?php echo $row_album['albumID']; ?>&amp;photoID='+id+'" class="tooltip" title="delete photo">&lt;img style="width:22px" src="images/delete.png" width="32" height="32" />&lt;/a>&lt;/div>&lt;/div>');
 	  }
     }
 	if (id != null) {lastID = id;}
