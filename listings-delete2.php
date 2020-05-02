@@ -93,7 +93,7 @@ if ((isset($_POST['listingID'])) && ($_POST['listingID'] != "")) {
                        GetSQLValueString($_POST['listingID'], "int"));
 
   mysqli_select_db($cms, $database_cms);
-  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error($cms));
+  $Result1 = mysqli_query($cms, $deleteSQL) or die(mysqli_error($cms));
 
   $deleteGoTo = "listings.php?action=deleted";
   if($church) $deleteGoTo = "church-rentals.php?action=deleted";;
