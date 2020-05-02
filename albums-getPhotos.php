@@ -9,7 +9,7 @@ session_start();
   $pass = $password_cms;
   $databaseName = $database_cms;
    $con = mysqli_connect($host,$user,$pass);
-  $dbs = mysqli_select_db($databaseName, $con);
+  $dbs = mysqli_select_db($con, $databaseName);
   $result = mysqli_query("SELECT * FROM photos WHERE albumID = ".$_GET['albumID']." AND id >= ".$_GET['lastID']." ORDER BY id");
   $data = array();
   while($row = mysqli_fetch_row($result)){
