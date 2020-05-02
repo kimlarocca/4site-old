@@ -54,8 +54,7 @@ if (isset($_POST['username'])) {
   $MM_redirecttoReferrer = false;
   mysqli_select_db($cms, $database_cms);
 
-  $LoginRS__query=sprintf("SELECT username, password FROM cmsUsers WHERE username=%s AND password=%s",
-    GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text"));
+  $LoginRS__query="SELECT username, password FROM cmsUsers WHERE username".$loginUsername." AND password=".$password;
 
   $LoginRS = mysqli_query($cms, $LoginRS__query) or die(mysqli_error($cms));
   $loginFoundUser = mysqli_num_rows($LoginRS);
