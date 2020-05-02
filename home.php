@@ -6,8 +6,6 @@ if (!isset($_SESSION)) {
 ?>
 <?php require_once('Connections/cms.php'); ?>
 <?php
-?>
-<?php
 $MM_authorizedUsers = "";
 $MM_donotCheckaccess = "true";
 
@@ -57,7 +55,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($cms, $theValue) : mysqli_escape_string($cms, $theValue);
 
   switch ($theType) {
     case "text":
@@ -93,8 +91,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['pageTitle'], "text"),
                        GetSQLValueString($_POST['pageActive'], "int"));
 
-  mysqli_select_db($database_cms, $cms);
-  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
+  mysqli_select_db($cms, $database_cms);
+  $Result1 = mysqli_query($cms, $insertSQL) or die(mysqli_error());
 
 $lastID = mysqli_insert_id($cms);
 
