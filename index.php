@@ -50,7 +50,7 @@ if (isset($_POST['username'])) {
   $password=$_POST['password'];
   $MM_fldUserAuthorization = "";
   $MM_redirectLoginSuccess = "home.php";
-  $MM_redirectLoginFailed = "index.php?action=failed";
+  $MM_redirectLoginFailed = "index.php?action=failed&1";
   $MM_redirecttoReferrer = false;
   mysqli_select_db($cms, $database_cms);
 
@@ -60,6 +60,7 @@ if (isset($_POST['username'])) {
   $LoginRS = mysqli_query($cms, $LoginRS__query) or die(mysqli_error($cms));
   $loginFoundUser = mysqli_num_rows($LoginRS);
   if ($loginFoundUser) {
+      $MM_redirectLoginFailed = "index.php?action=failed&2";
      $loginStrGroup = "";
 
 	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
