@@ -192,19 +192,50 @@ if ($_GET['action'] == 'cover') print '<p style="color:red;">Album cover photo b
       </div>
       <h3>Photos in this album</h3>
       <p>Click on any photo to update or delete.</p>
-      <div class="pinGridWrapper"><div id="photos" class="pinGrid">
-
-              <?php do { ?>
-
-              <div class="pin"><a href="photos-modify.php?albumID=<?php echo $row_album['albumID']; ?>&photoID=<?php echo $row_photos['id']; ?>"><img src="uploads/thumb-<?php echo $row_photos['file_name']; ?>"/></a><h2><?php echo $row_photos['photoTitle']; ?></h2><p><?php echo $row_photos['description']; ?></p><div style="margin:auto; width:100px; padding:10px 0 10px 0"><a href="albums-photos.php?action=cover&albumID=<?php echo $row_album['albumID']; ?>&photoID=<?php echo $row_photos['id']; ?>" class="tooltip" title="set album cover"><img style="width:22px" src="images/<?php echo $row_photos['coverPhoto']; ?>.png" width="32" height="32" /></a> <a href="photos-modify.php?albumID=<?php echo $row_album['albumID']; ?>&photoID=<?php echo $row_photos['id']; ?>" class="tooltip" title="update photo"><img style="width:22px" src="images/edit.png" width="32" height="32" /></a> <a href="photos-delete.php?albumID=<?php echo $row_album['albumID']; ?>&photoID=<?php echo $row_photos['id']; ?>" class="tooltip" title="delete photo"><img style="width:22px" src="images/delete.png" width="32" height="32" /></a></div></div>
-
-              <?php } while ($row_photos = mysqli_fetch_assoc($photos)); ?>
-
-          </div></div>
-
+      <div class="pinGridWrapper"><div id="photos" class="pinGrid"></div></div>
+		<!--
+        <div class="pin"><img src="http://placehold.it/260x250">
+          <h2>subtitle</h2>
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sed feugiat consectetur pellentesque. Nam ac elit risus,
+            ac blandit dui. Duis rutrum porta tortor ut convallis.
+            Duis rutrum porta tortor ut convallis. </p>
+        </div>
+        -->
     </div>
   </div>
 </div>
+<script type="text/javascript">
+var lastID = 0;
+setInterval(ajaxCall, 1000);
+function ajaxCall() {
+ $.ajax({
+  url: 'albums-getPhotos.php?albumID=<?php echo $_GET['albumID'] ?>&lastID='+lastID, data: "", dataType: 'json',  success: function(rows)
+  {
+    for (var i in rows)
+    {
+      var row = rows[i];
+      var id = row[0];
+      var file_name = row[1];
+      var description = row[6];
+      var photoTitle = row[8];
+	  var coverPhotoID = <?php echo $coverPhotoID ?>;
+	  var coverPhoto = 'heart';
+	  if(id==coverPhotoID){
+	  	coverPhoto = 'heart-pink';
+	  }
+	  if(id>lastID){
+		if(description == null) { description = ''; }
+		if(photoTitle == null) { photoTitle = ''; }
+		  $('#photos').append('<p>kim</p>');
+		  //$('#photos').append('&lt;div class="pin">&lt;a href="photos-modify.php?albumID=<?php //echo $row_album['albumID']; ?>//&amp;photoID='+id+'">&lt;img src="uploads/thumb-'+file_name+'"/>&lt;/a>&lt;h2>'+photoTitle+'</h2><p>'+description+'</p><div style="margin:auto; width:100px; padding:10px 0 10px 0"><a href="albums-photos.php?action=cover&albumID=<?php //echo $row_album['albumID']; ?>//&photoID='+id+'" class="tooltip" title="set album cover"><img style="width:22px" src="images/'+coverPhoto+'.png" width="32" height="32" /></a> <a href="photos-modify.php?albumID=<?php //echo $row_album['albumID']; ?>//&photoID='+id+'" class="tooltip" title="update photo"><img style="width:22px" src="images/edit.png" width="32" height="32" /></a> <a href="photos-delete.php?albumID=<?php //echo $row_album['albumID']; ?>//&photoID='+id+'" class="tooltip" title="delete photo"><img style="width:22px" src="images/delete.png" width="32" height="32" /></a></div></div>');
+	  }
+    }
+	if (id != null) {lastID = id;}
+  }
+});
+}
+</script>
 </body>
 </html>
 <?php
