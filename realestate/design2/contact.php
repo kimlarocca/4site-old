@@ -4,18 +4,18 @@ $pageID = $contactPage;
 ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -38,23 +38,23 @@ $colname_Recordset1 = "-1";
 if (isset($_GET['listingID'])) {
   $colname_Recordset1 = $_GET['listingID'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_Recordset1 = sprintf("SELECT * FROM listings WHERE listingID = %s", GetSQLValueString($colname_Recordset1, "int"));
-$Recordset1 = mysql_query($query_Recordset1, $cms) or die(mysql_error());
-$row_Recordset1 = mysql_fetch_assoc($Recordset1);
-$totalRows_Recordset1 = mysql_num_rows($Recordset1);
+$Recordset1 = mysqli_query($query_Recordset1, $cms) or die(mysqli_error());
+$row_Recordset1 = mysqli_fetch_assoc($Recordset1);
+$totalRows_Recordset1 = mysqli_num_rows($Recordset1);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentPage = "SELECT * FROM cmsPages WHERE pageID = ".$pageID;
-$currentPage = mysql_query($query_currentPage, $cms) or die(mysql_error());
-$row_currentPage = mysql_fetch_assoc($currentPage);
-$totalRows_currentPage = mysql_num_rows($currentPage);
+$currentPage = mysqli_query($query_currentPage, $cms) or die(mysqli_error());
+$row_currentPage = mysqli_fetch_assoc($currentPage);
+$totalRows_currentPage = mysqli_num_rows($currentPage);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_websiteInfo = "SELECT * FROM cmsWebsites WHERE websiteID = ".$websiteID;
-$websiteInfo = mysql_query($query_websiteInfo, $cms) or die(mysql_error());
-$row_websiteInfo = mysql_fetch_assoc($websiteInfo);
-$totalRows_websiteInfo = mysql_num_rows($websiteInfo);
+$websiteInfo = mysqli_query($query_websiteInfo, $cms) or die(mysqli_error());
+$row_websiteInfo = mysqli_fetch_assoc($websiteInfo);
+$totalRows_websiteInfo = mysqli_num_rows($websiteInfo);
 ?>
 <?php
 $emailSent = false;
@@ -121,7 +121,7 @@ function MM_validateForm() { //v4.0
     document.MM_returnValue = (errors == '');
 } }
 </script>
-<!-- InstanceEndEditable --> 
+<!-- InstanceEndEditable -->
 </head>
 
 <body>
@@ -191,16 +191,16 @@ function MM_validateForm() { //v4.0
     </ul>
   </nav>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <!-- InstanceBeginEditable name="scripts" -->
 <!-- InstanceEndEditable -->
 <script type="text/javascript" src="scripts/herosJourney.js"></script>
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($Recordset1);
+mysqli_free_result($Recordset1);
 
-mysql_free_result($currentPage);
+mysqli_free_result($currentPage);
 
-mysql_free_result($websiteInfo);
+mysqli_free_result($websiteInfo);
 ?>

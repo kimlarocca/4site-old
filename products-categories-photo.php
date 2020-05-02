@@ -56,7 +56,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -90,8 +90,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['file_name'], "text"),
                        GetSQLValueString($_POST['productCategoryID'], "int"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($updateSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
 
   $updateGoTo = "products-categories.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -105,21 +105,21 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
 $colname_category = "-1";
 if (isset($_GET['productCategoryID'])) {
   $colname_category = $_GET['productCategoryID'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_category = sprintf("SELECT * FROM productCategories WHERE productCategoryID = %s", GetSQLValueString($colname_category, "int"));
-$category = mysql_query($query_category, $cms) or die(mysql_error());
-$row_category = mysql_fetch_assoc($category);
-$totalRows_category = mysql_num_rows($category);
+$category = mysqli_query($query_category, $cms) or die(mysqli_error());
+$row_category = mysqli_fetch_assoc($category);
+$totalRows_category = mysqli_num_rows($category);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -159,7 +159,7 @@ $totalRows_category = mysql_num_rows($category);
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($category);
+mysqli_free_result($category);
 ?>

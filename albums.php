@@ -56,7 +56,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -90,8 +90,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['websiteID'], "int"),
                        GetSQLValueString($_POST['albumName'], "text"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($insertSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
 
   $insertGoTo = "albums.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -105,17 +105,17 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_albums = "SELECT * FROM photoAlbums LEFT JOIN (SELECT photos.id,photos.file_name FROM photos) AS a ON photoAlbums.coverPhotoID=a.id WHERE photoAlbums.websiteID = ".$row_currentUser['websiteID']." ORDER BY albumName";
-$albums = mysql_query($query_albums, $cms) or die(mysql_error());
-$row_albums = mysql_fetch_assoc($albums);
-$totalRows_albums = mysql_num_rows($albums);
+$albums = mysqli_query($query_albums, $cms) or die(mysqli_error());
+$row_albums = mysqli_fetch_assoc($albums);
+$totalRows_albums = mysqli_num_rows($albums);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -172,7 +172,7 @@ if ($_GET['action'] == 'deleted') print '<p style="color:red;">Album has been de
             </td>
             <td><a href="albums-photos.php?albumID=<?php echo $albumID; ?>"><?php echo $row_albums['albumName']; ?></a></td>
             <td><a class="tooltip" title="manage this album" href="albums-photos.php?albumID=<?php echo $albumID; ?>"><img src="images/edit.png" width="22" height="22" /></a> <a class="tooltip" title="delete this album" href="albums-delete.php?albumID=<?php echo $albumID; ?>"><img src="images/delete.png" width="22" height="22" /></a></td></tr>
-          <?php } while ($row_albums = mysql_fetch_assoc($albums)); } ?>
+          <?php } while ($row_albums = mysqli_fetch_assoc($albums)); } ?>
           </table>
     </div>
   </div>
@@ -180,7 +180,7 @@ if ($_GET['action'] == 'deleted') print '<p style="color:red;">Album has been de
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($albums);
+mysqli_free_result($albums);
 ?>

@@ -7,7 +7,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -49,13 +49,13 @@ if (isset($_POST['username'])) {
   $MM_redirectLoginSuccess = "home.php";
   $MM_redirectLoginFailed = "index.php?action=failed";
   $MM_redirecttoReferrer = false;
-  mysql_select_db($database_cms, $cms);
+  mysqli_select_db($database_cms, $cms);
   
   $LoginRS__query=sprintf("SELECT username, password FROM cmsUsers WHERE username=%s AND password=%s",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
    
-  $LoginRS = mysql_query($LoginRS__query, $cms) or die(mysql_error());
-  $loginFoundUser = mysql_num_rows($LoginRS);
+  $LoginRS = mysqli_query($LoginRS__query, $cms) or die(mysqli_error());
+  $loginFoundUser = mysqli_num_rows($LoginRS);
   if ($loginFoundUser) {
      $loginStrGroup = "";
     

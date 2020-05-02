@@ -56,7 +56,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -84,21 +84,21 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers,cmsWebsites WHERE cmsUsers.websiteID=cmsWebsites.websiteID AND cmsUsers.username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
 $colname_modules = "-1";
 if (isset($_GET['moduleID'])) {
   $colname_modules = $_GET['moduleID'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_modules = sprintf("SELECT * FROM cmsModules WHERE moduleID = %s", GetSQLValueString($colname_modules, "int"));
-$modules = mysql_query($query_modules, $cms) or die(mysql_error());
-$row_modules = mysql_fetch_assoc($modules);
-$totalRows_modules = mysql_num_rows($modules);
+$modules = mysqli_query($query_modules, $cms) or die(mysqli_error());
+$row_modules = mysqli_fetch_assoc($modules);
+$totalRows_modules = mysqli_num_rows($modules);
 ?>
 <?php
 $realtor = false;
@@ -133,7 +133,7 @@ if ($row_modules['moduleName'] == 'Events') header('Location: events.php');
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($modules);
+mysqli_free_result($modules);
 ?>

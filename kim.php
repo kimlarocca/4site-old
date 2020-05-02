@@ -56,7 +56,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -107,8 +107,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['pinterest'], "text"),
                        GetSQLValueString($_POST['vimeo'], "text"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($insertSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
 
   $insertGoTo = "kim.php?action=added";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -127,8 +127,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
                        GetSQLValueString($_POST['securityLevelID'], "int"),
                        GetSQLValueString($_POST['websiteID'], "int"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($insertSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
 
   $insertGoTo = "kim.php?action=added";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -142,29 +142,29 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_securityLevels = "SELECT * FROM cmsSecurityLevels ORDER BY securityLevel ASC";
-$securityLevels = mysql_query($query_securityLevels, $cms) or die(mysql_error());
-$row_securityLevels = mysql_fetch_assoc($securityLevels);
-$totalRows_securityLevels = mysql_num_rows($securityLevels);
+$securityLevels = mysqli_query($query_securityLevels, $cms) or die(mysqli_error());
+$row_securityLevels = mysqli_fetch_assoc($securityLevels);
+$totalRows_securityLevels = mysqli_num_rows($securityLevels);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_websites = "SELECT * FROM cmsWebsites ORDER BY url";
-$websites = mysql_query($query_websites, $cms) or die(mysql_error());
-$row_websites = mysql_fetch_assoc($websites);
-$totalRows_websites = mysql_num_rows($websites);
+$websites = mysqli_query($query_websites, $cms) or die(mysqli_error());
+$row_websites = mysqli_fetch_assoc($websites);
+$totalRows_websites = mysqli_num_rows($websites);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_users = "SELECT * FROM cmsUsers,cmsSecurityLevels WHERE cmsUsers.securityLevelID=cmsSecurityLevels.securityLevelID ORDER BY cmsUsers.username ASC";
-$users = mysql_query($query_users, $cms) or die(mysql_error());
-$row_users = mysql_fetch_assoc($users);
-$totalRows_users = mysql_num_rows($users);
+$users = mysqli_query($query_users, $cms) or die(mysqli_error());
+$row_users = mysqli_fetch_assoc($users);
+$totalRows_users = mysqli_num_rows($users);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -290,7 +290,7 @@ if ($_GET['action'] == 'userDeleted') print '<p style="color:red;">CMS user has 
             <td><a href="kim-clients-modify.php?websiteID=<?php echo $row_websites['websiteID']; ?>"><img src="images/edit.png" width="22" height="22" /></a></td>
             <td><a href="kim-clients-delete.php?websiteID=<?php echo $row_websites['websiteID']; ?>"><img src="images/delete.png" width="22" height="22" /></a></td>
           </tr>
-          <?php } while ($row_websites = mysql_fetch_assoc($websites)); ?>
+          <?php } while ($row_websites = mysqli_fetch_assoc($websites)); ?>
       </table>
     </div>
     <div class="twd_column twd_two twd_margin20">
@@ -323,11 +323,11 @@ do {
 ?>
               <option value="<?php echo $row_securityLevels['securityLevelID']?>"><?php echo $row_securityLevels['securityLevel']?></option>
               <?php
-} while ($row_securityLevels = mysql_fetch_assoc($securityLevels));
-  $rows = mysql_num_rows($securityLevels);
+} while ($row_securityLevels = mysqli_fetch_assoc($securityLevels));
+  $rows = mysqli_num_rows($securityLevels);
   if($rows > 0) {
-      mysql_data_seek($securityLevels, 0);
-	  $row_securityLevels = mysql_fetch_assoc($securityLevels);
+      mysqli_data_seek($securityLevels, 0);
+	  $row_securityLevels = mysqli_fetch_assoc($securityLevels);
   }
 ?>
             </select>
@@ -362,7 +362,7 @@ do {
             <td><a href="kim-users-modify.php?userID=<?php echo $row_users['userID']; ?>"><img src="images/edit.png" width="22" height="22" /></a></td>
             <td><a href="kim-users-delete.php?userID=<?php echo $row_users['userID']; ?>"><img src="images/delete.png" width="22" height="22" /></a></td>
           </tr>
-          <?php } while ($row_users = mysql_fetch_assoc($users)); ?>
+          <?php } while ($row_users = mysqli_fetch_assoc($users)); ?>
       </table>
     </div>
   </div>
@@ -379,11 +379,11 @@ $("#addClient").click(function() {
 </script>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($securityLevels);
+mysqli_free_result($securityLevels);
 
-mysql_free_result($websites);
+mysqli_free_result($websites);
 
-mysql_free_result($users);
+mysqli_free_result($users);
 ?>

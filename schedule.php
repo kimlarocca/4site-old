@@ -57,7 +57,7 @@ if (!function_exists("GetSQLValueString")) {
             $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
         }
 
-        $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+        $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
         switch ($theType) {
             case "text":
@@ -85,18 +85,18 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
     $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 //$query_products = "SELECT * FROM products WHERE websiteID = ".$row_currentUser['websiteID']." ORDER BY productCategory, productName ASC";
 $query_products = "SELECT * FROM events WHERE websiteID = " . $row_currentUser['websiteID'] . " ORDER BY dayOfWeek, title ASC";
-$products = mysql_query($query_products, $cms) or die(mysql_error());
-$row_products = mysql_fetch_assoc($products);
-$totalRows_products = mysql_num_rows($products);
+$products = mysqli_query($query_products, $cms) or die(mysqli_error());
+$row_products = mysqli_fetch_assoc($products);
+$totalRows_products = mysqli_num_rows($products);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -149,7 +149,7 @@ $totalRows_products = mysql_num_rows($products);
                                         src="images/delete.png" width="22" height="22"/></a>
                         </td>
                     </tr>
-                <?php } while ($row_products = mysql_fetch_assoc($products)); ?>
+                <?php } while ($row_products = mysqli_fetch_assoc($products)); ?>
             </table>
         </div>
     </div>

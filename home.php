@@ -57,7 +57,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -93,10 +93,10 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['pageTitle'], "text"),
                        GetSQLValueString($_POST['pageActive'], "int"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($insertSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
 
-$lastID = mysql_insert_id($cms);
+$lastID = mysqli_insert_id($cms);
 
   $insertGoTo = "content-add.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -110,23 +110,23 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers,cmsWebsites WHERE cmsUsers.websiteID=cmsWebsites.websiteID AND cmsUsers.username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_cmsModules = "SELECT * FROM cmsUserModules,cmsModules WHERE cmsUserModules.moduleID=cmsModules.moduleID AND cmsUserModules.websiteID = ".$row_currentUser['websiteID'].' ORDER BY cmsModules.moduleName';
-$cmsModules = mysql_query($query_cmsModules, $cms) or die(mysql_error());
-$row_cmsModules = mysql_fetch_assoc($cmsModules);
-$totalRows_cmsModules = mysql_num_rows($cmsModules);
+$cmsModules = mysqli_query($query_cmsModules, $cms) or die(mysqli_error());
+$row_cmsModules = mysqli_fetch_assoc($cmsModules);
+$totalRows_cmsModules = mysqli_num_rows($cmsModules);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_content = sprintf("SELECT * FROM cmsPages WHERE websiteID = ".$row_currentUser['websiteID']." ORDER BY pageTitle ASC");
-$content = mysql_query($query_content, $cms) or die(mysql_error());
-$row_content = mysql_fetch_assoc($content);
-$totalRows_content = mysql_num_rows($content);
+$content = mysqli_query($query_content, $cms) or die(mysqli_error());
+$row_content = mysqli_fetch_assoc($content);
+$totalRows_content = mysqli_num_rows($content);
 
 $realtor = false;
 $church = false;
@@ -196,7 +196,7 @@ if($church == false) {
             <td><a href="content-modify.php?pageID=<?php echo $row_content['pageID']; ?>"><?php echo $row_content['pageTitle']; ?></a></td>
             <td width="125"><a class="tooltip" title="publish this page" href="content-publish.php?pageID=<?php echo $row_content['pageID']; ?>"><img src="images/upload.png" width="22" height="22" /></a> <a class="tooltip" target="_blank" title="preview this page" href="<?php echo $row_currentUser['url']; ?>/preview.php?pageID=<?php echo $row_content['pageID']; ?>"><img src="images/view.png" width="22" height="22" /></a> <a class="tooltip" title="edit this page" href="content-modify.php?pageID=<?php echo $row_content['pageID']; ?>"><img src="images/edit.png" width="22" height="22" /></a> <a class="tooltip" title="delete this page" href="content-delete.php?pageID=<?php echo $row_content['pageID']; ?>"><img src="images/delete.png" width="22" height="22" /></a></td>
           </tr>
-          <?php } while ($row_content = mysql_fetch_assoc($content)); } ?>
+          <?php } while ($row_content = mysqli_fetch_assoc($content)); } ?>
       </table>
     </div>
 
@@ -217,7 +217,7 @@ if($church == false) {
         <?php
 		do { ?>
           <p><a class="button" href="modules-manage.php?moduleID=<?php echo $row_cmsModules['moduleID']; ?>"><?php echo $row_cmsModules['moduleName']; ?></a></p>
-          <?php } while ($row_cmsModules = mysql_fetch_assoc($cmsModules)); } ?>
+          <?php } while ($row_cmsModules = mysqli_fetch_assoc($cmsModules)); } ?>
         <?php } else { ?>
           <p><a class="button" href="church-rentals.php">Manage Rentals</a></p>
           <p><a class="button" href="modules-manage.php?moduleID=2">Manage Photo Albums</a></p>
@@ -229,9 +229,9 @@ if($church == false) {
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($cmsModules);
+mysqli_free_result($cmsModules);
 
-mysql_free_result($content);
+mysqli_free_result($content);
 ?>

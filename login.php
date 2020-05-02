@@ -1,18 +1,18 @@
 <?php require_once('Connections/cms.php'); ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -52,23 +52,23 @@ if (isset($_POST['username'])) {
   $MM_redirectLoginSuccess = "home.php";
   $MM_redirectLoginFailed = "index.php?action=failed";
   $MM_redirecttoReferrer = false;
-  mysql_select_db($database_cms, $cms);
-  
+  mysqli_select_db($database_cms, $cms);
+
   $LoginRS__query=sprintf("SELECT username, password FROM cmsUsers WHERE username=%s AND password=%s",
-    GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text")); 
-   
-  $LoginRS = mysql_query($LoginRS__query, $cms) or die(mysql_error());
-  $loginFoundUser = mysql_num_rows($LoginRS);
+    GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text"));
+
+  $LoginRS = mysqli_query($LoginRS__query, $cms) or die(mysqli_error());
+  $loginFoundUser = mysqli_num_rows($LoginRS);
   if ($loginFoundUser) {
      $loginStrGroup = "";
-    
+
 	if (PHP_VERSION >= 5.1) {session_regenerate_id(true);} else {session_regenerate_id();}
     //declare two session variables and assign them
     $_SESSION['MM_Username'] = $loginUsername;
-    $_SESSION['MM_UserGroup'] = $loginStrGroup;	      
+    $_SESSION['MM_UserGroup'] = $loginStrGroup;
 
     if (isset($_SESSION['PrevUrl']) && false) {
-      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];	
+      $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];
     }
     header("Location: " . $MM_redirectLoginSuccess );
   }
@@ -92,7 +92,7 @@ if (isset($_POST['username'])) {
 <div class="twd_container twd_centered" style="padding-top:20px;">
 <?php
 //check if login failed
-if ($_GET['action'] == 'failed') print '<p style="color:red;">LOGIN FAILED! Please try again:</p>'; 
+if ($_GET['action'] == 'failed') print '<p style="color:red;">LOGIN FAILED! Please try again:</p>';
 ?>
 <form id="form1" name="form1" method="POST" action="<?php echo $loginFormAction; ?>" style="text-align:center">
 Username:<br />

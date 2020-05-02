@@ -48,11 +48,11 @@ $hostname_wotg = "localhost";
 $database_wotg = "studiocm_cms";
 $username_wotg = "studiocm_kim";
 $password_wotg = "Lotus18641864!";
-$wotg = mysql_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysql_error(),E_USER_ERROR); 
-mysql_select_db($database_wotg, $wotg);
+$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+mysqli_select_db($database_wotg, $wotg);
 $query_order = "SELECT * FROM orders WHERE orderID='".$order_number."'";
-$order = mysql_query($query_order, $wotg) or die(mysql_error());
-$row_orderInfo = mysql_fetch_assoc($order);
+$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
+$row_orderInfo = mysqli_fetch_assoc($order);
 
 //update the following lines from your order database	
 $amount = $row_orderInfo['amount']-5;
@@ -71,8 +71,8 @@ $total = $amount;
 	
 	//get student info
 	$query_student = "SELECT * FROM students WHERE studentID=".$studentID;
-	$student = mysql_query($query_student, $wotg) or die(mysql_error());
-	$row_student = mysql_fetch_assoc($student);
+	$student = mysqli_query($query_student, $wotg) or die(mysqli_error());
+	$row_student = mysqli_fetch_assoc($student);
 
 
 error_log("date: ".$date." | today: ".$today." | month: ".$month." | year: ".$year." | #: ".$card_number." | type: ".$card_type." | ccv: ".$cvv);
@@ -189,31 +189,31 @@ if ($payment->getState()=='approved') {
 	$status = 'success';
 	//the payment was approved!
 	//update order database
-	$wotg = mysql_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysql_error(),E_USER_ERROR); 
-	mysql_select_db($database_wotg, $wotg);
+	$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+	mysqli_select_db($database_wotg, $wotg);
 	$query_order = "UPDATE orders SET orderStatus = 'complete',paymentType = 'Paydunk' WHERE paymentID='".$paymentID."'";
-	$order = mysql_query($query_order, $wotg) or die(mysql_error());
+	$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
 	error_log("order table updated");
 	
 	if ($orderInfo=='Drop In'){
 	
 	  //get instructor ID
 	  $query_classInfo = "SELECT * FROM classes,instructors WHERE classes.instructorID=instructors.instructorID AND classes.classID=".$row_orderInfo['classID'];
-	  $classInfo = mysql_query($query_classInfo, $wotg) or die(mysql_error());
-	  $row_classInfo = mysql_fetch_assoc($classInfo);
+	  $classInfo = mysqli_query($query_classInfo, $wotg) or die(mysqli_error());
+	  $row_classInfo = mysqli_fetch_assoc($classInfo);
 	  $instructorID = $row_classInfo['instructorID'];
 	  error_log("drop in info updated");
   
 	  //update attendance records
 	  $addrecords = "INSERT INTO attendance(studentID, classID, instructorID, dateAdded, attendanceType, studioID, paymentType) VALUES (".$row_orderInfo['studentID'].",".$row_orderInfo['classID'].",".$instructorID.",'".$row_orderInfo['classDate']."','Drop In',".$row_orderInfo['studioID'].",'Paydunk')";
-	  mysql_select_db($database_wotg, $wotg);
-	  mysql_query($addrecords, $wotg) or die(mysql_error());	
+	  mysqli_select_db($database_wotg, $wotg);
+	  mysqli_query($addrecords, $wotg) or die(mysqli_error());	
 	}
 	if ($orderInfo=='Pre Paid Package'){
 		//update student table
 		$classesLeft = (int)$row_student['classesLeft']+$row_orderInfo['classesAdded'];
 		$query_prepaid = "UPDATE students SET classesLeft = ".$classesLeft." WHERE studentID=".$studentID;
-		$prepaid = mysql_query($query_prepaid, $wotg) or die(mysql_error());
+		$prepaid = mysqli_query($query_prepaid, $wotg) or die(mysqli_error());
 		error_log("prepaid info updated");
 	}
 	if ($orderInfo=='Membership'){
@@ -228,7 +228,7 @@ if ($payment->getState()=='approved') {
 	
 		//update members table
 		$query_prepaid = "INSERT INTO members (studentID, studioID, membershipFee, startDate, endDate) VALUES (".$row_orderInfo['studentID'].",".$row_orderInfo['studioID'].",".(int)$row_orderInfo['amount'].",'".$startDate."','".$endDate."')";
-		$prepaid = mysql_query($query_prepaid, $wotg) or die(mysql_error());
+		$prepaid = mysqli_query($query_prepaid, $wotg) or die(mysqli_error());
 		error_log("member info updated");
 	}
 	

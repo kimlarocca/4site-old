@@ -56,7 +56,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -93,8 +93,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form")) {
                        GetSQLValueString($_POST['pageModified'], "date"),
                        GetSQLValueString($_POST['pageID'], "int"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($updateSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
 
   $updateGoTo = "content-modify.php?action=saved&pageID=".$row_content['pageID'];
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -107,35 +107,35 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form")) {
 //revert to draft
 if ($_POST['action'] == 'revert') {
     $updaterecord = "UPDATE cmsPages SET pageActive=0 WHERE pageID=".$_GET['pageID'];
-    mysql_select_db($database_cms, $cms);
-    mysql_query($updaterecord, $cms) or die(mysql_error());
+    mysqli_select_db($database_cms, $cms);
+    mysqli_query($updaterecord, $cms) or die(mysqli_error());
 }
 //publish
 if ($_POST['action'] == 'publish') {
     $updaterecord = "UPDATE cmsPages SET pageActive=1 WHERE pageID=".$_GET['pageID'];
-    mysql_select_db($database_cms, $cms);
-    mysql_query($updaterecord, $cms) or die(mysql_error());
+    mysqli_select_db($database_cms, $cms);
+    mysqli_query($updaterecord, $cms) or die(mysqli_error());
 }
 
 $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
 $colname_content = "-1";
 if (isset($_GET['pageID'])) {
   $colname_content = $_GET['pageID'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_content = sprintf("SELECT * FROM cmsPages WHERE pageID = %s", GetSQLValueString($colname_content, "int"));
-$content = mysql_query($query_content, $cms) or die(mysql_error());
-$row_content = mysql_fetch_assoc($content);
-$totalRows_content = mysql_num_rows($content);
+$content = mysqli_query($query_content, $cms) or die(mysqli_error());
+$row_content = mysqli_fetch_assoc($content);
+$totalRows_content = mysqli_num_rows($content);
 ?>
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="ckeditor/ckeditor.js"></script>
@@ -206,7 +206,7 @@ if ($_GET['action'] == 'saved') {
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($content);
+mysqli_free_result($content);
 ?>

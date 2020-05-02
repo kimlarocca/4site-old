@@ -4,18 +4,18 @@ $pageID = $resourcesPage;
 ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -34,17 +34,17 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 }
 }
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentPage = "SELECT * FROM cmsPages WHERE pageID = ".$pageID;
-$currentPage = mysql_query($query_currentPage, $cms) or die(mysql_error());
-$row_currentPage = mysql_fetch_assoc($currentPage);
-$totalRows_currentPage = mysql_num_rows($currentPage);
+$currentPage = mysqli_query($query_currentPage, $cms) or die(mysqli_error());
+$row_currentPage = mysqli_fetch_assoc($currentPage);
+$totalRows_currentPage = mysqli_num_rows($currentPage);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_websiteInfo = "SELECT * FROM cmsWebsites WHERE websiteID = ".$websiteID;
-$websiteInfo = mysql_query($query_websiteInfo, $cms) or die(mysql_error());
-$row_websiteInfo = mysql_fetch_assoc($websiteInfo);
-$totalRows_websiteInfo = mysql_num_rows($websiteInfo);
+$websiteInfo = mysqli_query($query_websiteInfo, $cms) or die(mysqli_error());
+$row_websiteInfo = mysqli_fetch_assoc($websiteInfo);
+$totalRows_websiteInfo = mysqli_num_rows($websiteInfo);
 ?>
 <?php
 $pageTitle = $row_currentPage['pageTitle'];
@@ -85,11 +85,11 @@ $pageTitle = $row_currentPage['pageTitle'];
     </nav>
   </div>
 </div>
-<!-- /container --> 
+<!-- /container -->
 
 <!-- main content -->
 <div class="content"> <!-- InstanceBeginEditable name="mainContent" -->
- 
+
     <?php echo $row_currentPage['pageContent']; ?>
 
   <!-- InstanceEndEditable -->
@@ -112,10 +112,10 @@ $pageTitle = $row_currentPage['pageTitle'];
     </div>
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
-<!-- InstanceBeginEditable name="scripts" --> 
-<script type="text/javascript" src="scripts/masonry.pkgd.min.js"></script> 
-<script type="text/javascript" src="scripts/imagesloaded.pkgd.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- InstanceBeginEditable name="scripts" -->
+<script type="text/javascript" src="scripts/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="scripts/imagesloaded.pkgd.min.js"></script>
 <script>
 $(document).ready(function() {
   // initiallize masonry
@@ -124,13 +124,13 @@ $(document).ready(function() {
     $container.masonry();
   });
 });
-</script> 
-<!-- InstanceEndEditable --> 
+</script>
+<!-- InstanceEndEditable -->
 <script src="scripts/scripts.js"></script>
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($currentPage);
+mysqli_free_result($currentPage);
 
-mysql_free_result($websiteInfo);
+mysqli_free_result($websiteInfo);
 ?>

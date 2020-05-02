@@ -56,7 +56,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -95,8 +95,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['websiteID'], "int"),
                        GetSQLValueString($_POST['userID'], "int"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($updateSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
 
   $updateGoTo = "kim-users-modify.php?action=saved";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -110,27 +110,27 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
 $colname_user = "-1";
 if (isset($_GET['userID'])) {
   $colname_user = $_GET['userID'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_user = sprintf("SELECT * FROM cmsUsers WHERE userID = %s", GetSQLValueString($colname_user, "int"));
-$user = mysql_query($query_user, $cms) or die(mysql_error());
-$row_user = mysql_fetch_assoc($user);
-$totalRows_user = mysql_num_rows($user);
+$user = mysqli_query($query_user, $cms) or die(mysqli_error());
+$row_user = mysqli_fetch_assoc($user);
+$totalRows_user = mysqli_num_rows($user);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_securityLevels = "SELECT * FROM cmsSecurityLevels ORDER BY securityLevel ASC";
-$securityLevels = mysql_query($query_securityLevels, $cms) or die(mysql_error());
-$row_securityLevels = mysql_fetch_assoc($securityLevels);
-$totalRows_securityLevels = mysql_num_rows($securityLevels);
+$securityLevels = mysqli_query($query_securityLevels, $cms) or die(mysqli_error());
+$row_securityLevels = mysqli_fetch_assoc($securityLevels);
+$totalRows_securityLevels = mysqli_num_rows($securityLevels);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -181,7 +181,7 @@ do {
 ?>
               <option value="<?php echo $row_securityLevels['securityLevelID']?>" <?php if (!(strcmp($row_securityLevels['securityLevelID'], htmlentities($row_user['securityLevelID'])))) {echo "SELECTED";} ?>><?php echo $row_securityLevels['securityLevel']?></option>
               <?php
-} while ($row_securityLevels = mysql_fetch_assoc($securityLevels));
+} while ($row_securityLevels = mysqli_fetch_assoc($securityLevels));
 ?>
             </select></td>
           </tr>
@@ -205,9 +205,9 @@ do {
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($user);
+mysqli_free_result($user);
 
-mysql_free_result($securityLevels);
+mysqli_free_result($securityLevels);
 ?>

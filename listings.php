@@ -60,7 +60,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -88,17 +88,17 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers, cmsWebsites WHERE cmsUsers.websiteID=cmsWebsites.websiteID AND cmsUsers.username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_listings = "SELECT * FROM listings  LEFT JOIN (SELECT photoAlbums.albumID,photoAlbums.coverPhotoID,photoAlbums.albumName,photos.id,photos.file_name FROM photoAlbums,photos WHERE photoAlbums.coverPhotoID=photos.id)  AS a ON listings.albumID=a.albumID  WHERE listings.websiteID = ".$row_currentUser['websiteID']." ORDER BY ".$sortBy;
-$listings = mysql_query($query_listings, $cms) or die(mysql_error());
-$row_listings = mysql_fetch_assoc($listings);
-$totalRows_listings = mysql_num_rows($listings);
+$listings = mysqli_query($query_listings, $cms) or die(mysqli_error());
+$row_listings = mysqli_fetch_assoc($listings);
+$totalRows_listings = mysqli_num_rows($listings);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -163,7 +163,7 @@ if ($_GET['action'] == 'deleted') print '<p style="color:red;">Your listing has 
             <a class="tooltip" target="_blank" title="preview this listing" href="<?php echo $row_currentUser['url']; ?>/listing-details.php?listingID=<?php echo $row_listings['listingID']; ?>"><img src="images/view.png" width="22" height="22" /></a> <a class="tooltip" title="edit this listing" href="listings-modify.php?listingID=<?php echo $row_listings['listingID']; ?>"><img src="images/edit.png" width="22" height="22" /></a> <a class="tooltip" title="listing photos" href="albums-photos.php?listingID=<?php echo $row_listings['listingID']; ?>&albumID=<?php echo $row_listings['albumID']; ?>"><img src="images/image.png" width="22" height="22" /></a> <a class="tooltip" title="delete this listing" href="listings-delete.php?listingID=<?php echo $row_listings['listingID']; ?>"><img src="images/delete.png" width="22" height="22" /></a>
             </td>
           </tr>
-          <?php } while ($row_listings = mysql_fetch_assoc($listings)); ?>
+          <?php } while ($row_listings = mysqli_fetch_assoc($listings)); ?>
       </table>
     </div>
   </div>
@@ -171,7 +171,7 @@ if ($_GET['action'] == 'deleted') print '<p style="color:red;">Your listing has 
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($listings);
+mysqli_free_result($listings);
 ?>

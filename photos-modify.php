@@ -56,7 +56,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -93,8 +93,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['photoLink'], "text"),
                        GetSQLValueString($_POST['id'], "int"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($updateSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
 
   $updateGoTo = "photos-modify.php?action=saved";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -108,21 +108,21 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
 $colname_photo = "-1";
 if (isset($_GET['photoID'])) {
   $colname_photo = $_GET['photoID'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_photo = sprintf("SELECT * FROM photos WHERE id = %s", GetSQLValueString($colname_photo, "int"));
-$photo = mysql_query($query_photo, $cms) or die(mysql_error());
-$row_photo = mysql_fetch_assoc($photo);
-$totalRows_photo = mysql_num_rows($photo);
+$photo = mysqli_query($query_photo, $cms) or die(mysqli_error());
+$row_photo = mysqli_fetch_assoc($photo);
+$totalRows_photo = mysqli_num_rows($photo);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -205,7 +205,7 @@ $(function() {
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($photo);
+mysqli_free_result($photo);
 ?>

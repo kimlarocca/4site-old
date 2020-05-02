@@ -10,7 +10,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -38,27 +38,27 @@ $colname_listing = "-1";
 if (isset($_GET['listingID'])) {
   $colname_listing = $_GET['listingID'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_listing = sprintf("SELECT * FROM listings  LEFT JOIN (SELECT photoAlbums.albumID,photoAlbums.coverPhotoID,photoAlbums.albumName,photos.id,photos.file_name FROM photoAlbums,photos WHERE photoAlbums.coverPhotoID=photos.id)  AS a ON listings.albumID=a.albumID  WHERE listingID = %s", GetSQLValueString($colname_listing, "int"));
-$listing = mysql_query($query_listing, $cms) or die(mysql_error());
-$row_listing = mysql_fetch_assoc($listing);
-$totalRows_listing = mysql_num_rows($listing);
+$listing = mysqli_query($query_listing, $cms) or die(mysqli_error());
+$row_listing = mysqli_fetch_assoc($listing);
+$totalRows_listing = mysqli_num_rows($listing);
 
 if ($row_listing['albumID'] != NULL){
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_photos = "SELECT * FROM photos WHERE albumID = ".$row_listing['albumID']." ORDER BY photoSequence ASC";
-$photos = mysql_query($query_photos, $cms) or die(mysql_error());
-$row_photos = mysql_fetch_assoc($photos);
-$totalRows_photos = mysql_num_rows($photos);
+$photos = mysqli_query($query_photos, $cms) or die(mysqli_error());
+$row_photos = mysqli_fetch_assoc($photos);
+$totalRows_photos = mysqli_num_rows($photos);
 
 }
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_websiteInfo = "SELECT * FROM cmsWebsites WHERE websiteID = ".$websiteID;
-$websiteInfo = mysql_query($query_websiteInfo, $cms) or die(mysql_error());
-$row_websiteInfo = mysql_fetch_assoc($websiteInfo);
-$totalRows_websiteInfo = mysql_num_rows($websiteInfo);
+$websiteInfo = mysqli_query($query_websiteInfo, $cms) or die(mysqli_error());
+$row_websiteInfo = mysqli_fetch_assoc($websiteInfo);
+$totalRows_websiteInfo = mysqli_num_rows($websiteInfo);
 ?>
 <?php
 $pageTitle = 'Listing Details';
@@ -109,7 +109,7 @@ if ($totalRows_photos>0){
   list($width, $height) = getimagesize('http://4siteusa.com/uploads/'.$row_photos['file_name']);
   ?>
     <div class="gallery-cell" style="width:<?php echo $width ?>px; height:auto;"><img width="<?php echo $width ?>" height="<?php echo $height ?>" src="http://4siteusa.com/uploads/<?php echo $row_photos['file_name']; ?>"/></div>
-    <?php } while ($row_photos = mysql_fetch_assoc($photos)); ?>
+    <?php } while ($row_photos = mysqli_fetch_assoc($photos)); ?>
   </div>
   <?php
 }
@@ -244,9 +244,9 @@ jQuery(document).ready(function() {
 </body>
 <!-- InstanceEnd --></html>
 <?php
-mysql_free_result($listing);
+mysqli_free_result($listing);
 
-mysql_free_result($photos);
+mysqli_free_result($photos);
 
-mysql_free_result($websiteInfo);
+mysqli_free_result($websiteInfo);
 ?>

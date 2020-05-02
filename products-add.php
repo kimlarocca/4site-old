@@ -56,7 +56,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -95,8 +95,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['albumID'], "text"),
                        GetSQLValueString($_POST['productDescription'], "text"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($insertSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
 
   $insertGoTo = "products.php?action=added";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -110,23 +110,23 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_albums = "SELECT * FROM photoAlbums WHERE websiteID = ".$row_currentUser['websiteID']." ORDER BY albumName ASC";
-$albums = mysql_query($query_albums, $cms) or die(mysql_error());
-$row_albums = mysql_fetch_assoc($albums);
-$totalRows_albums = mysql_num_rows($albums);
+$albums = mysqli_query($query_albums, $cms) or die(mysqli_error());
+$row_albums = mysqli_fetch_assoc($albums);
+$totalRows_albums = mysqli_num_rows($albums);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_categories = "SELECT productCategoryID, categoryName FROM productCategories ORDER BY categoryName ASC";
-$categories = mysql_query($query_categories, $cms) or die(mysql_error());
-$row_categories = mysql_fetch_assoc($categories);
-$totalRows_categories = mysql_num_rows($categories);
+$categories = mysqli_query($query_categories, $cms) or die(mysqli_error());
+$row_categories = mysqli_fetch_assoc($categories);
+$totalRows_categories = mysqli_num_rows($categories);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -178,11 +178,11 @@ do {
 ?>
                 <option value="<?php echo $row_categories['productCategoryID']?>"><?php echo $row_categories['categoryName']?></option>
                 <?php
-} while ($row_categories = mysql_fetch_assoc($categories));
-  $rows = mysql_num_rows($categories);
+} while ($row_categories = mysqli_fetch_assoc($categories));
+  $rows = mysqli_num_rows($categories);
   if($rows > 0) {
-      mysql_data_seek($categories, 0);
-	  $row_categories = mysql_fetch_assoc($categories);
+      mysqli_data_seek($categories, 0);
+	  $row_categories = mysqli_fetch_assoc($categories);
   }
 ?>
             </select></td>
@@ -201,11 +201,11 @@ do {
 ?>
                 <option value="<?php echo $row_albums['albumID']?>"<?php if (!(strcmp($row_albums['albumID'], $row_listing['albumID']))) {echo "selected=\"selected\"";} ?>><?php echo $row_albums['albumName']?></option>
                 <?php
-} while ($row_albums = mysql_fetch_assoc($albums));
-  $rows = mysql_num_rows($albums);
+} while ($row_albums = mysqli_fetch_assoc($albums));
+  $rows = mysqli_num_rows($albums);
   if($rows > 0) {
-      mysql_data_seek($albums, 0);
-	  $row_albums = mysql_fetch_assoc($albums);
+      mysqli_data_seek($albums, 0);
+	  $row_albums = mysqli_fetch_assoc($albums);
   }
 ?>
               </select></td>
@@ -230,7 +230,7 @@ do {
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($categories);
+mysqli_free_result($categories);
 ?>

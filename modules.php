@@ -11,57 +11,57 @@ $MM_authorizedUsers = "";
 $MM_donotCheckaccess = "true";
 
 // *** Restrict Access To Page: Grant or deny access to this page
-function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) { 
-  // For security, start by assuming the visitor is NOT authorized. 
-  $isValid = False; 
+function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
+  // For security, start by assuming the visitor is NOT authorized.
+  $isValid = False;
 
-  // When a visitor has logged into this site, the Session variable MM_Username set equal to their username. 
-  // Therefore, we know that a user is NOT logged in if that Session variable is blank. 
-  if (!empty($UserName)) { 
-    // Besides being logged in, you may restrict access to only certain users based on an ID established when they login. 
-    // Parse the strings into arrays. 
-    $arrUsers = Explode(",", $strUsers); 
-    $arrGroups = Explode(",", $strGroups); 
-    if (in_array($UserName, $arrUsers)) { 
-      $isValid = true; 
-    } 
-    // Or, you may restrict access to only certain users based on their username. 
-    if (in_array($UserGroup, $arrGroups)) { 
-      $isValid = true; 
-    } 
-    if (($strUsers == "") && true) { 
-      $isValid = true; 
-    } 
-  } 
-  return $isValid; 
+  // When a visitor has logged into this site, the Session variable MM_Username set equal to their username.
+  // Therefore, we know that a user is NOT logged in if that Session variable is blank.
+  if (!empty($UserName)) {
+    // Besides being logged in, you may restrict access to only certain users based on an ID established when they login.
+    // Parse the strings into arrays.
+    $arrUsers = Explode(",", $strUsers);
+    $arrGroups = Explode(",", $strGroups);
+    if (in_array($UserName, $arrUsers)) {
+      $isValid = true;
+    }
+    // Or, you may restrict access to only certain users based on their username.
+    if (in_array($UserGroup, $arrGroups)) {
+      $isValid = true;
+    }
+    if (($strUsers == "") && true) {
+      $isValid = true;
+    }
+  }
+  return $isValid;
 }
 
 $MM_restrictGoTo = "index.php?action=failed";
-if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {   
+if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {
   $MM_qsChar = "?";
   $MM_referrer = $_SERVER['PHP_SELF'];
   if (strpos($MM_restrictGoTo, "?")) $MM_qsChar = "&";
-  if (isset($_SERVER['QUERY_STRING']) && strlen($_SERVER['QUERY_STRING']) > 0) 
+  if (isset($_SERVER['QUERY_STRING']) && strlen($_SERVER['QUERY_STRING']) > 0)
   $MM_referrer .= "?" . $_SERVER['QUERY_STRING'];
   $MM_restrictGoTo = $MM_restrictGoTo. $MM_qsChar . "accesscheck=" . urlencode($MM_referrer);
-  header("Location: ". $MM_restrictGoTo); 
+  header("Location: ". $MM_restrictGoTo);
   exit;
 }
 ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -90,8 +90,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
                        GetSQLValueString($_POST['moduleName'], "text"),
                        GetSQLValueString($_POST['moduleDescription'], "text"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($insertSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
 
   $insertGoTo = "modules.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -106,8 +106,8 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form2")) {
                        GetSQLValueString($_POST['websiteID'], "int"),
                        GetSQLValueString($_POST['moduleID'], "int"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($insertSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($insertSQL, $cms) or die(mysqli_error());
 
   $insertGoTo = "modules.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -121,35 +121,35 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_modules = "SELECT * FROM cmsModules ORDER BY moduleName ASC";
-$modules = mysql_query($query_modules, $cms) or die(mysql_error());
-$row_modules = mysql_fetch_assoc($modules);
-$totalRows_modules = mysql_num_rows($modules);
+$modules = mysqli_query($query_modules, $cms) or die(mysqli_error());
+$row_modules = mysqli_fetch_assoc($modules);
+$totalRows_modules = mysqli_num_rows($modules);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_userModules = "SELECT * FROM cmsUserModules,cmsWebsites,cmsModules WHERE cmsUserModules.websiteID=cmsWebsites.websiteID AND cmsUserModules.moduleID=cmsModules.moduleID";
-$userModules = mysql_query($query_userModules, $cms) or die(mysql_error());
-$row_userModules = mysql_fetch_assoc($userModules);
-$totalRows_userModules = mysql_num_rows($userModules);
+$userModules = mysqli_query($query_userModules, $cms) or die(mysqli_error());
+$row_userModules = mysqli_fetch_assoc($userModules);
+$totalRows_userModules = mysqli_num_rows($userModules);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_websites = "SELECT websiteID, url FROM cmsWebsites ORDER BY url ASC";
-$websites = mysql_query($query_websites, $cms) or die(mysql_error());
-$row_websites = mysql_fetch_assoc($websites);
-$totalRows_websites = mysql_num_rows($websites);
+$websites = mysqli_query($query_websites, $cms) or die(mysqli_error());
+$row_websites = mysqli_fetch_assoc($websites);
+$totalRows_websites = mysqli_num_rows($websites);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_modules2 = "SELECT * FROM cmsModules ORDER BY moduleName ASC";
-$modules2 = mysql_query($query_modules2, $cms) or die(mysql_error());
-$row_modules2 = mysql_fetch_assoc($modules2);
-$totalRows_modules2 = mysql_num_rows($modules2);
+$modules2 = mysqli_query($query_modules2, $cms) or die(mysqli_error());
+$row_modules2 = mysqli_fetch_assoc($modules2);
+$totalRows_modules2 = mysqli_num_rows($modules2);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -197,7 +197,7 @@ $totalRows_modules2 = mysql_num_rows($modules2);
             <td><?php echo $row_modules['moduleName']; ?></td>
             <td><?php echo $row_modules['moduleDescription']; ?></td>
           </tr>
-          <?php } while ($row_modules = mysql_fetch_assoc($modules)); ?>
+          <?php } while ($row_modules = mysqli_fetch_assoc($modules)); ?>
       </table>
     </div>
     <div class="twd_column twd_two twd_margin20">
@@ -208,12 +208,12 @@ $totalRows_modules2 = mysql_num_rows($modules2);
           <tr valign="baseline">
             <td nowrap="nowrap" align="right">WebsiteID:</td>
             <td><select name="websiteID">
-              <?php 
-do {  
+              <?php
+do {
 ?>
               <option value="<?php echo $row_websites['websiteID']?>" ><?php echo $row_websites['url']?></option>
               <?php
-} while ($row_websites = mysql_fetch_assoc($websites));
+} while ($row_websites = mysqli_fetch_assoc($websites));
 ?>
             </select></td>
           </tr>
@@ -222,15 +222,15 @@ do {
             <td nowrap="nowrap" align="right">ModuleID:</td>
             <td><select name="moduleID">
               <?php
-do {  
+do {
 ?>
               <option value="<?php echo $row_modules2['moduleID']?>"><?php echo $row_modules2['moduleName']?></option>
               <?php
-} while ($row_modules2 = mysql_fetch_assoc($modules2));
-  $rows = mysql_num_rows($modules2);
+} while ($row_modules2 = mysqli_fetch_assoc($modules2));
+  $rows = mysqli_num_rows($modules2);
   if($rows > 0) {
-      mysql_data_seek($modules2, 0);
-	  $row_modules2 = mysql_fetch_assoc($modules2);
+      mysqli_data_seek($modules2, 0);
+	  $row_modules2 = mysqli_fetch_assoc($modules2);
   }
 ?>
             </select></td>
@@ -254,7 +254,7 @@ do {
             <td><?php echo $row_userModules['url']; ?></td>
             <td><?php echo $row_userModules['moduleName']; ?></td>
           </tr>
-          <?php } while ($row_userModules = mysql_fetch_assoc($userModules)); ?>
+          <?php } while ($row_userModules = mysqli_fetch_assoc($userModules)); ?>
       </table>
     </div>
   </div>
@@ -262,13 +262,13 @@ do {
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($modules);
+mysqli_free_result($modules);
 
-mysql_free_result($userModules);
+mysqli_free_result($userModules);
 
-mysql_free_result($websites);
+mysqli_free_result($websites);
 
-mysql_free_result($modules2);
+mysqli_free_result($modules2);
 ?>

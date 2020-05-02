@@ -56,7 +56,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
   }
 
-  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
   switch ($theType) {
     case "text":
@@ -84,21 +84,21 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
 $colname_cmsUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
   $colname_cmsUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_cmsUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_cmsUser, "text"));
-$cmsUser = mysql_query($query_cmsUser, $cms) or die(mysql_error());
-$row_cmsUser = mysql_fetch_assoc($cmsUser);
-$totalRows_cmsUser = mysql_num_rows($cmsUser);
+$cmsUser = mysqli_query($query_cmsUser, $cms) or die(mysqli_error());
+$row_cmsUser = mysqli_fetch_assoc($cmsUser);
+$totalRows_cmsUser = mysqli_num_rows($cmsUser);
 
 $editFormAction = $_SERVER['PHP_SELF'];
 if (isset($_SERVER['QUERY_STRING'])) {
@@ -111,8 +111,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form2")) {
                        GetSQLValueString($_POST['Password'], "text"),
                        GetSQLValueString($_POST['userID'], "int"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($updateSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
 
   $updateGoTo = "settings.php?action=password";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -148,8 +148,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['pinterest'], "text"),
                        GetSQLValueString($_POST['vimeo'], "text"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($updateSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
 
   $updateGoTo = "settings.php?action=saved";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -159,11 +159,11 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
   header(sprintf("Location: %s", $updateGoTo));
 }
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_userSettings = "SELECT * FROM cmsWebsites WHERE websiteID = ".$row_currentUser['websiteID'];
-$userSettings = mysql_query($query_userSettings, $cms) or die(mysql_error());
-$row_userSettings = mysql_fetch_assoc($userSettings);
-$totalRows_userSettings = mysql_num_rows($userSettings);
+$userSettings = mysqli_query($query_userSettings, $cms) or die(mysqli_error());
+$row_userSettings = mysqli_fetch_assoc($userSettings);
+$totalRows_userSettings = mysqli_num_rows($userSettings);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -372,9 +372,9 @@ if ($_GET['action'] == 'failed') print '<p style="color:red;">Passwords do not m
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($cmsUser);
+mysqli_free_result($cmsUser);
 
-mysql_free_result($userSettings);
+mysqli_free_result($userSettings);
 ?>

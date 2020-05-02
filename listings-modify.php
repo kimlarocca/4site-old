@@ -57,7 +57,7 @@ if (!function_exists("GetSQLValueString")) {
             $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
         }
 
-        $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+        $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
         switch ($theType) {
             case "text":
@@ -109,8 +109,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
         GetSQLValueString($_POST['customField'], "text"),
         GetSQLValueString($_POST['listingID'], "int"));
 
-    mysql_select_db($database_cms, $cms);
-    $Result1 = mysql_query($updateSQL, $cms) or die(mysql_error());
+    mysqli_select_db($database_cms, $cms);
+    $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
 
     $updateGoTo = "listings-modify.php?action=saved";
     if (isset($_SERVER['QUERY_STRING'])) {
@@ -124,27 +124,27 @@ $colname_currentUser = "-1";
 if (isset($_SESSION['MM_Username'])) {
     $colname_currentUser = $_SESSION['MM_Username'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers,cmsWebsites WHERE cmsUsers.websiteID=cmsWebsites.websiteID AND cmsUsers.username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysql_query($query_currentUser, $cms) or die(mysql_error());
-$row_currentUser = mysql_fetch_assoc($currentUser);
-$totalRows_currentUser = mysql_num_rows($currentUser);
+$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error());
+$row_currentUser = mysqli_fetch_assoc($currentUser);
+$totalRows_currentUser = mysqli_num_rows($currentUser);
 
 $colname_listing = "-1";
 if (isset($_GET['listingID'])) {
     $colname_listing = $_GET['listingID'];
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_listing = sprintf("SELECT * FROM listings WHERE listingID = %s", GetSQLValueString($colname_listing, "int"));
-$listing = mysql_query($query_listing, $cms) or die(mysql_error());
-$row_listing = mysql_fetch_assoc($listing);
-$totalRows_listing = mysql_num_rows($listing);
+$listing = mysqli_query($query_listing, $cms) or die(mysqli_error());
+$row_listing = mysqli_fetch_assoc($listing);
+$totalRows_listing = mysqli_num_rows($listing);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_albums = "SELECT * FROM photoAlbums WHERE websiteID = " . $row_currentUser['websiteID'] . " ORDER BY albumName ASC";
-$albums = mysql_query($query_albums, $cms) or die(mysql_error());
-$row_albums = mysql_fetch_assoc($albums);
-$totalRows_albums = mysql_num_rows($albums);
+$albums = mysqli_query($query_albums, $cms) or die(mysqli_error());
+$row_albums = mysqli_fetch_assoc($albums);
+$totalRows_albums = mysqli_num_rows($albums);
 
 $church = false;
 if ($_GET['church'] == 'yes') $church = true;
@@ -303,11 +303,11 @@ if ($_GET['church'] == 'yes') $church = true;
                                         echo "selected=\"selected\"";
                                     } ?>><?php echo $row_albums['albumName'] ?></option>
                                     <?php
-                                } while ($row_albums = mysql_fetch_assoc($albums));
-                                $rows = mysql_num_rows($albums);
+                                } while ($row_albums = mysqli_fetch_assoc($albums));
+                                $rows = mysqli_num_rows($albums);
                                 if ($rows > 0) {
-                                    mysql_data_seek($albums, 0);
-                                    $row_albums = mysql_fetch_assoc($albums);
+                                    mysqli_data_seek($albums, 0);
+                                    $row_albums = mysqli_fetch_assoc($albums);
                                 }
                                 ?>
                             </select></td>
@@ -342,9 +342,9 @@ if ($_GET['church'] == 'yes') $church = true;
 </body>
 </html>
 <?php
-mysql_free_result($currentUser);
+mysqli_free_result($currentUser);
 
-mysql_free_result($listing);
+mysqli_free_result($listing);
 
-mysql_free_result($albums);
+mysqli_free_result($albums);
 ?>

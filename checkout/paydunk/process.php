@@ -50,11 +50,11 @@ $hostname_wotg = "localhost";
 $database_wotg = "studiocm_cms";
 $username_wotg = "studiocm_kim";
 $password_wotg = "Lotus18641864!";
-$wotg = mysql_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysql_error(),E_USER_ERROR); 
-mysql_select_db($database_wotg, $wotg);
+$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+mysqli_select_db($database_wotg, $wotg);
 $query_order = "SELECT * FROM orders WHERE orderID='".$order_number."'";
-$order = mysql_query($query_order, $wotg) or die(mysql_error());
-$row_orderInfo = mysql_fetch_assoc($order);
+$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
+$row_orderInfo = mysqli_fetch_assoc($order);
 
 //update the following lines from your order database	
 $amount = $row_orderInfo['amount']-5;//paydunk promo	
@@ -181,10 +181,10 @@ if ($payment->getState()=='approved') {
 	//the payment was approved!
 	
 	//update order database
-	$wotg = mysql_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysql_error(),E_USER_ERROR); 
-	mysql_select_db($database_wotg, $wotg);
+	$wotg = mysqli_pconnect($hostname_wotg, $username_wotg, $password_wotg) or trigger_error(mysqli_error(),E_USER_ERROR); 
+	mysqli_select_db($database_wotg, $wotg);
 	$query_order = "UPDATE orders SET amount = '".$orderAmount."', orderStatus = 'complete', paymentType = 'Paydunk', firstName = '".$firstName."', lastName = '".$lastName."', emailAddress = '".$email."' WHERE orderID='".$order_number."'";
-	$order = mysql_query($query_order, $wotg) or die(mysql_error());
+	$order = mysqli_query($query_order, $wotg) or die(mysqli_error());
 	
 	//send email
 	

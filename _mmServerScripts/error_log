@@ -1,2 +1,2 @@
-[26-Jun-2015 12:59:35 UTC] PHP Warning:  mysql_connect(): Access denied for user 'jgdesig1_kim'@'localhost' (using password: YES) in /home/kim/public_html/_mmServerScripts/mysql.php on line 101
-[26-Jun-2015 12:59:35 UTC] PHP Warning:  mysql_connect(): Access denied for user 'jgdesig1_kim'@'localhost' (using password: YES) in /home/kim/public_html/_mmServerScripts/mysql.php on line 101
+[26-Jun-2015 12:59:35 UTC] PHP Warning:  mysqli_connect(): Access denied for user 'jgdesig1_kim'@'localhost' (using password: YES) in /home/kim/public_html/_mmServerScripts/mysql.php on line 101
+[26-Jun-2015 12:59:35 UTC] PHP Warning:  mysqli_connect(): Access denied for user 'jgdesig1_kim'@'localhost' (using password: YES) in /home/kim/public_html/_mmServerScripts/mysql.php on line 101
