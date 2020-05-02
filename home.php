@@ -115,19 +115,19 @@ if (isset($_SESSION['MM_Username'])) {
 }
 mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers,cmsWebsites WHERE cmsUsers.websiteID=cmsWebsites.websiteID AND cmsUsers.username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
+$currentUser = mysqli_query($cms, $query_currentUser) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
 mysqli_select_db($cms, $database_cms);
 $query_cmsModules = "SELECT * FROM cmsUserModules,cmsModules WHERE cmsUserModules.moduleID=cmsModules.moduleID AND cmsUserModules.websiteID = ".$row_currentUser['websiteID'].' ORDER BY cmsModules.moduleName';
-$cmsModules = mysqli_query($query_cmsModules, $cms) or die(mysqli_error($cms));
+$cmsModules = mysqli_query($cms, $query_cmsModules) or die(mysqli_error($cms));
 $row_cmsModules = mysqli_fetch_assoc($cmsModules);
 $totalRows_cmsModules = mysqli_num_rows($cmsModules);
 
 mysqli_select_db($cms, $database_cms);
 $query_content = sprintf("SELECT * FROM cmsPages WHERE websiteID = ".$row_currentUser['websiteID']." ORDER BY pageTitle ASC");
-$content = mysqli_query($query_content, $cms) or die(mysqli_error($cms));
+$content = mysqli_query($cms, $query_content) or die(mysqli_error($cms));
 $row_content = mysqli_fetch_assoc($content);
 $totalRows_content = mysqli_num_rows($content);
 
