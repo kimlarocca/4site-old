@@ -57,7 +57,7 @@ if (isset($_POST['username'])) {
   $LoginRS__query=sprintf("SELECT username, password FROM cmsUsers WHERE username=%s AND password=%s",
     GetSQLValueString($loginUsername, "text"), GetSQLValueString($password, "text"));
 
-  $LoginRS = mysqli_query($cms, $LoginRS__query) or die(mysqli_error());
+  $LoginRS = mysqli_query($cms, $LoginRS__query) or die(mysqli_error($cms));
   $loginFoundUser = mysqli_num_rows($LoginRS);
   if ($loginFoundUser) {
      $loginStrGroup = "";
@@ -70,7 +70,8 @@ if (isset($_POST['username'])) {
     if (isset($_SESSION['PrevUrl']) && false) {
       $MM_redirectLoginSuccess = $_SESSION['PrevUrl'];
     }
-    header("Location: " . $MM_redirectLoginSuccess );
+//    header("Location: " . $MM_redirectLoginSuccess );
+      echo 'kim';
   }
   else {
     header("Location: ". $MM_redirectLoginFailed );
