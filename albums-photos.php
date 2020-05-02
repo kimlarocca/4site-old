@@ -210,7 +210,7 @@ var lastID = 0;
 setInterval(ajaxCall, 1000);
 function ajaxCall() {
  $.ajax({
-  url: 'albums-getPhotos.php?albumID=<?php echo $_GET['albumID'] ?>&amp;lastID='+lastID, data: "", dataType: 'json',  success: function(rows)
+  url: 'albums-getPhotos.php?albumID=<?php echo $_GET['albumID'] ?>&lastID='+lastID, data: "", dataType: 'json',  success: function(rows)
   {
     for (var i in rows)
     {
