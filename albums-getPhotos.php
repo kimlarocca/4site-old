@@ -11,5 +11,5 @@ echo '<script>console.log('. $result .')</script>';
 while ($row = mysqli_fetch_row($result)) {
     $data[] = $row;
 }
-echo json_encode($data);
+echo json_encode($result);
 ?>
