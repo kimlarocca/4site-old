@@ -24,7 +24,11 @@ class SimpleImage {
 
     public function __construct($filename = null){
         if (!empty($filename)) {
-            $this->load($filename);
+            try {
+                $this->load($filename);
+            } catch (Exception $e) {
+                log("file couldn't be loaded");
+            }
         }
     }
 
@@ -131,17 +135,17 @@ class SimpleImage {
         $this->image = $new_image;
     }
 
-    public function cut($x, $y, $width, $height) {
-        $new_image = imagecreatetruecolor($width, $height);
-
-        imagecolortransparent($new_image, imagecolorallocate($new_image, 0, 0, 0));
-        imagealphablending($new_image, false);
-        imagesavealpha($new_image, true);
-
-        imagecopy($new_image, $this->image, 0, 0, $x, $y, $width, $height);
-
-        $this->image = $new_image;
-    }
+//    public function cut($x, $y, $width, $height) {
+//        $new_image = imagecreatetruecolor($width, $height);
+//
+//        imagecolortransparent($new_image, imagecolorallocate($new_image, 0, 0, 0));
+//        imagealphablending($new_image, false);
+//        imagesavealpha($new_image, true);
+//
+//        imagecopy($new_image, $this->image, 0, 0, $x, $y, $width, $height);
+//
+//        $this->image = $new_image;
+//    }
 
     public function maxarea($width, $height = null)	{
         $height = $height ? $height : $width;
@@ -154,31 +158,31 @@ class SimpleImage {
         }
     }
 
-    public function minarea($width, $height = null)	{
-        $height = $height ? $height : $width;
-
-        if ($this->getWidth() < $width) {
-            $this->resizeToWidth($width);
-        }
-        if ($this->getHeight() < $height) {
-            $this->resizeToheight($height);
-        }
-    }
-
-    public function cutFromCenter($width, $height) {
-
-        if ($width < $this->getWidth() && $width > $height) {
-            $this->resizeToWidth($width);
-        }
-        if ($height < $this->getHeight() && $width < $height) {
-            $this->resizeToHeight($height);
-        }
-
-        $x = ($this->getWidth() / 2) - ($width / 2);
-        $y = ($this->getHeight() / 2) - ($height / 2);
-
-        return $this->cut($x, $y, $width, $height);
-    }
+//    public function minarea($width, $height = null)	{
+//        $height = $height ? $height : $width;
+//
+//        if ($this->getWidth() < $width) {
+//            $this->resizeToWidth($width);
+//        }
+//        if ($this->getHeight() < $height) {
+//            $this->resizeToheight($height);
+//        }
+//    }
+//
+//    public function cutFromCenter($width, $height) {
+//
+//        if ($width < $this->getWidth() && $width > $height) {
+//            $this->resizeToWidth($width);
+//        }
+//        if ($height < $this->getHeight() && $width < $height) {
+//            $this->resizeToHeight($height);
+//        }
+//
+//        $x = ($this->getWidth() / 2) - ($width / 2);
+//        $y = ($this->getHeight() / 2) - ($height / 2);
+//
+//        return $this->cut($x, $y, $width, $height);
+//    }
 
     public function maxareafill($width, $height, $red = 0, $green = 0, $blue = 0) {
         $this->maxarea($width, $height);
@@ -202,27 +206,27 @@ class SimpleImage {
 
 // Usage:
 // Load the original image
-$image = new SimpleImage('lemon.jpg');
-
-// Resize the image to 600px width and the proportional height
-$image->resizeToWidth(600);
-$image->save('lemon_resized.jpg');
-
-// Create a squared version of the image
-$image->square(200);
-$image->save('lemon_squared.jpg');
-
-// Scales the image to 75%
-$image->scale(75);
-$image->save('lemon_scaled.jpg');
-
-// Resize the image to specific width and height
-$image->resize(80,60);
-$image->save('lemon_resized2.jpg');
-
-// Resize the canvas and fill the empty space with a color of your choice
-$image->maxareafill(600,400, 32, 39, 240);
-$image->save('lemon_filled.jpg');
-
-// Output the image to the browser:
-$image->output();
+//$image = new SimpleImage('lemon.jpg');
+//
+//// Resize the image to 600px width and the proportional height
+//$image->resizeToWidth(600);
+//$image->save('lemon_resized.jpg');
+//
+//// Create a squared version of the image
+//$image->square(200);
+//$image->save('lemon_squared.jpg');
+//
+//// Scales the image to 75%
+//$image->scale(75);
+//$image->save('lemon_scaled.jpg');
+//
+//// Resize the image to specific width and height
+//$image->resize(80,60);
+//$image->save('lemon_resized2.jpg');
+//
+//// Resize the canvas and fill the empty space with a color of your choice
+//$image->maxareafill(600,400, 32, 39, 240);
+//$image->save('lemon_filled.jpg');
+//
+//// Output the image to the browser:
+//$image->output();
