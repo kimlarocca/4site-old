@@ -87,7 +87,7 @@ if (isset($_POST['username'])) {
 </head>
 
 <body>
-<div class="logo"><img src="images/logo.png" width="400"/></div>
+<div class="logo"><img src="images/logo.png" width="300"/></div>
 <h1 class="twd_centered">Client Login</h1>
 <div class="twd_container twd_centered" style="padding-top:20px;">
 <?php
