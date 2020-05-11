@@ -1,3 +1,4 @@
+<?php require_once('Connections/cms.php'); ?>
 <?php
 mysqli_select_db($cms, $database_cms);
 $query_photos = "SELECT * FROM photos WHERE albumID = " . $_GET['albumID'] . " ORDER BY photoSequence ASC";

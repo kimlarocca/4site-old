@@ -203,8 +203,9 @@ if ($row_album['coverPhotoID'] != NULL) $coverPhotoID = $row_album['coverPhotoID
 </div>
 <script type="text/javascript">
     setInterval("my_function();", 3000);
+
     function my_function () {
-        $('#photos').load('images.php')
+        $("#photos").load("images.php?albumID=<?php echo $_GET['albumID'] ?>")
     }
 </script>
 </body>
