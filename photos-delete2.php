@@ -50,34 +50,39 @@ if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers,
 ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
-{
-  if (PHP_VERSION < 6) {
-    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-  }
+    function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
+    {
+        if (PHP_VERSION < 6) {
+            $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+        }
+        $hostname_cms = "localhost";
+        $database_cms = "kim_4site";
+        $username_cms = "kim_larocca";
+        $password_cms = "Lotus18641864!";
+        $cms = mysqli_connect($hostname_cms, $username_cms, $password_cms, $database_cms) or trigger_error(mysqli_error($cms), E_USER_ERROR);
 
-  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
+        $theValue = mysqli_real_escape_string($cms, $theValue);
 
-  switch ($theType) {
-    case "text":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "long":
-    case "int":
-      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
-      break;
-    case "double":
-      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
-      break;
-    case "date":
-      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;
-    case "defined":
-      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
-      break;
-  }
-  return $theValue;
-}
+        switch ($theType) {
+            case "text":
+                $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+                break;
+            case "long":
+            case "int":
+                $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+                break;
+            case "double":
+                $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+                break;
+            case "date":
+                $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+                break;
+            case "defined":
+                $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+                break;
+        }
+        return $theValue;
+    }
 }
 
 if ((isset($_GET['photoID'])) && ($_GET['photoID'] != "")) {
@@ -85,7 +90,7 @@ if ((isset($_GET['photoID'])) && ($_GET['photoID'] != "")) {
                        GetSQLValueString($_GET['photoID'], "int"));
 
   mysqli_select_db($cms, $database_cms);
-  $Result1 = mysqli_query($deleteSQL, $cms) or die(mysqli_error($cms));
+  $Result1 = mysqli_query($cms, $deleteSQL) or die(mysqli_error($cms));
 
   $deleteGoTo = "albums-photos.php?albumID=".$_GET['albumID']."&action=deleted";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -105,7 +110,7 @@ if (isset($_SESSION['MM_Username'])) {
 }
 mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers WHERE username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
+$currentUser = mysqli_query($cms, $query_currentUser) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
@@ -115,7 +120,7 @@ if (isset($_GET['photoID'])) {
 }
 mysqli_select_db($cms, $database_cms);
 $query_photo = sprintf("SELECT * FROM photos WHERE id = %s", GetSQLValueString($colname_photo, "int"));
-$photo = mysqli_query($query_photo, $cms) or die(mysqli_error($cms));
+$photo = mysqli_query($cms, $query_photo) or die(mysqli_error($cms));
 $row_photo = mysqli_fetch_assoc($photo);
 $totalRows_photo = mysqli_num_rows($photo);
 ?>
