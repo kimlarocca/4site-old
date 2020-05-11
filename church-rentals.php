@@ -90,7 +90,7 @@ if (isset($_SESSION['MM_Username'])) {
 }
 mysqli_select_db($cms, $database_cms);
 $query_currentUser = sprintf("SELECT * FROM cmsUsers, cmsWebsites WHERE cmsUsers.websiteID=cmsWebsites.websiteID AND cmsUsers.username = %s", GetSQLValueString($colname_currentUser, "text"));
-$currentUser = mysqli_query($query_currentUser, $cms) or die(mysqli_error($cms));
+$currentUser = mysqli_query($cms, $query_currentUser) or die(mysqli_error($cms));
 $row_currentUser = mysqli_fetch_assoc($currentUser);
 $totalRows_currentUser = mysqli_num_rows($currentUser);
 
