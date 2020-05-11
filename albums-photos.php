@@ -137,14 +137,6 @@ $query_album = sprintf("SELECT * FROM photoAlbums WHERE albumID = %s", GetSQLVal
 $album = mysqli_query($cms, $query_album) or die(mysqli_error($cms));
 $row_album = mysqli_fetch_assoc($album);
 $totalRows_album = mysqli_num_rows($album);
-
-mysqli_select_db($cms, $database_cms);
-$query_photos = "SELECT * FROM photos WHERE albumID = ".$_GET['albumID']." ORDER BY photoSequence ASC";
-$photos = mysqli_query($cms, $query_photos) or die(mysqli_error($cms));
-$row_photos = mysqli_fetch_assoc($photos);
-$totalRows_photos = mysqli_num_rows($photos);
-?>
-<?php
 if ($row_album['coverPhotoID'] != NULL) $coverPhotoID = $row_album['coverPhotoID'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -194,6 +186,13 @@ if ($_GET['action'] == 'cover') print '<p style="color:red;">Album cover photo b
       <p>Click on any photo to update or delete.</p>
       <div class="pinGridWrapper"><div id="photos" class="pinGrid">
 
+              <?php
+              mysqli_select_db($cms, $database_cms);
+              $query_photos = "SELECT * FROM photos WHERE albumID = ".$_GET['albumID']." ORDER BY photoSequence ASC";
+              $photos = mysqli_query($cms, $query_photos) or die(mysqli_error($cms));
+              $row_photos = mysqli_fetch_assoc($photos);
+              $totalRows_photos = mysqli_num_rows($photos);
+              ?>
               <?php do { ?>
 
               <div class="pin"><a href="photos-modify.php?albumID=<?php echo $row_album['albumID']; ?>&photoID=<?php echo $row_photos['id']; ?>"><img src="uploads/thumb-<?php echo $row_photos['file_name']; ?>"/></a><h2><?php echo $row_photos['photoTitle']; ?></h2><p><?php echo $row_photos['photoDescription']; ?></p><div style="margin:auto; width:100px; padding:10px 0 10px 0"><a href="albums-photos.php?action=cover&albumID=<?php echo $row_album['albumID']; ?>&photoID=<?php echo $row_photos['id']; ?>" class="tooltip" title="set album cover">
