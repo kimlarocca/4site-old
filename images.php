@@ -33,3 +33,7 @@ $coverPhotoID = $_GET['coverPhotoID'];
     </div>
 
 <?php } while ($row_photos = mysqli_fetch_assoc($photos)); ?>
+
+<?php
+mysqli_free_result($photos);
+?>

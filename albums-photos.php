@@ -202,8 +202,9 @@ if ($row_album['coverPhotoID'] != NULL) $coverPhotoID = $row_album['coverPhotoID
     </div>
 </div>
 <script type="text/javascript">
+    $("#photos").load("images.php?albumID=<?php echo $_GET['albumID'] ?>&amp;coverPhotoID=<?php echo $coverPhotoID ?>")
+    console.log("images.php?albumID=<?php echo $_GET['albumID'] ?>&amp;coverPhotoID=<?php echo $coverPhotoID ?>")
     setInterval("my_function();", 3000);
-
     function my_function () {
         $("#photos").load("images.php?albumID=<?php echo $_GET['albumID'] ?>&amp;coverPhotoID=<?php echo $coverPhotoID ?>")
     }
@@ -212,8 +213,5 @@ if ($row_album['coverPhotoID'] != NULL) $coverPhotoID = $row_album['coverPhotoID
 </html>
 <?php
 mysqli_free_result($currentUser);
-
 mysqli_free_result($album);
-
-mysqli_free_result($photos);
 ?>
