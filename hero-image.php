@@ -93,7 +93,7 @@ $totalRows_currentUser = mysqli_num_rows($currentUser);
 
 mysqli_select_db($cms, $database_cms);
 $query_userSettings = "SELECT * FROM cmsWebsites WHERE websiteID = " . $row_currentUser['websiteID'];
-$userSettings = mysqli_query($query_userSettings, $cms) or die(mysqli_error($cms));
+$userSettings = mysqli_query($cms, $query_userSettings) or die(mysqli_error($cms));
 $row_userSettings = mysqli_fetch_assoc($userSettings);
 $totalRows_userSettings = mysqli_num_rows($userSettings);
 ?>

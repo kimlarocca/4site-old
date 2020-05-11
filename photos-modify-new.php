@@ -11,46 +11,46 @@ $MM_authorizedUsers = "";
 $MM_donotCheckaccess = "true";
 
 // *** Restrict Access To Page: Grant or deny access to this page
-function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) { 
-  // For security, start by assuming the visitor is NOT authorized. 
-  $isValid = False; 
+function isAuthorized($strUsers, $strGroups, $UserName, $UserGroup) {
+  // For security, start by assuming the visitor is NOT authorized.
+  $isValid = False;
 
-  // When a visitor has logged into this site, the Session variable MM_Username set equal to their username. 
-  // Therefore, we know that a user is NOT logged in if that Session variable is blank. 
-  if (!empty($UserName)) { 
-    // Besides being logged in, you may restrict access to only certain users based on an ID established when they login. 
-    // Parse the strings into arrays. 
-    $arrUsers = Explode(",", $strUsers); 
-    $arrGroups = Explode(",", $strGroups); 
-    if (in_array($UserName, $arrUsers)) { 
-      $isValid = true; 
-    } 
-    // Or, you may restrict access to only certain users based on their username. 
-    if (in_array($UserGroup, $arrGroups)) { 
-      $isValid = true; 
-    } 
-    if (($strUsers == "") && true) { 
-      $isValid = true; 
-    } 
-  } 
-  return $isValid; 
+  // When a visitor has logged into this site, the Session variable MM_Username set equal to their username.
+  // Therefore, we know that a user is NOT logged in if that Session variable is blank.
+  if (!empty($UserName)) {
+    // Besides being logged in, you may restrict access to only certain users based on an ID established when they login.
+    // Parse the strings into arrays.
+    $arrUsers = Explode(",", $strUsers);
+    $arrGroups = Explode(",", $strGroups);
+    if (in_array($UserName, $arrUsers)) {
+      $isValid = true;
+    }
+    // Or, you may restrict access to only certain users based on their username.
+    if (in_array($UserGroup, $arrGroups)) {
+      $isValid = true;
+    }
+    if (($strUsers == "") && true) {
+      $isValid = true;
+    }
+  }
+  return $isValid;
 }
 
 $MM_restrictGoTo = "index.php?action=failed";
-if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {   
+if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers, $_SESSION['MM_Username'], $_SESSION['MM_UserGroup'])))) {
   $MM_qsChar = "?";
   $MM_referrer = $_SERVER['PHP_SELF'];
   if (strpos($MM_restrictGoTo, "?")) $MM_qsChar = "&";
-  if (isset($_SERVER['QUERY_STRING']) && strlen($_SERVER['QUERY_STRING']) > 0) 
+  if (isset($_SERVER['QUERY_STRING']) && strlen($_SERVER['QUERY_STRING']) > 0)
   $MM_referrer .= "?" . $_SERVER['QUERY_STRING'];
   $MM_restrictGoTo = $MM_restrictGoTo. $MM_qsChar . "accesscheck=" . urlencode($MM_referrer);
-  header("Location: ". $MM_restrictGoTo); 
+  header("Location: ". $MM_restrictGoTo);
   exit;
 }
 ?>
 <?php
 if (!function_exists("GetSQLValueString")) {
-function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
   if (PHP_VERSION < 6) {
     $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -61,7 +61,7 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
-      break;    
+      break;
     case "long":
     case "int":
       $theValue = ($theValue != "") ? intval($theValue) : "NULL";
@@ -94,7 +94,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['id'], "int"));
 
   mysqli_select_db($cms, $database_cms);
-  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error($cms));
+  $Result1 = mysqli_query($cms, $updateSQL) or die(mysqli_error($cms));
 
   $updateGoTo = "photos-modify.php?action=saved";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -143,7 +143,7 @@ $totalRows_photo = mysqli_num_rows($photo);
       <h2>Photo Albums</h2>
       <p><a class="button" href="photos-delete.php?photoID=<?php echo $row_photo['id']; ?>">delete this photo</a> <a class="button" href="albums-photos.php?albumID=<?php echo $_GET['albumID']; ?>">go back to album</a></p>
       <h3>Update this photo</h3>
-      
+
       <div style="width:420px;">
 <div style="width:200px;  margin:auto; padding:10px 20px 0 0; float:left" id="logo">
  <img src="uploads/<?php echo $row_photo['file_name']; ?>" />
@@ -156,8 +156,8 @@ $totalRows_photo = mysqli_num_rows($photo);
         </form>
       </div>
   </div>
-  <div class="twd_clearfloat" style="padding-top:20px"></div> 
-      
+  <div class="twd_clearfloat" style="padding-top:20px"></div>
+
 <?php
 if ($_GET['action'] == 'saved') print '<p style="color:red;">Your photo information has been updated.</p>';
 ?><br />
@@ -198,7 +198,7 @@ $(function() {
   var myDropzone = new Dropzone("#myAwesomeForm");
   myDropzone.on("queuecomplete", function(file) {
 		//location.reload();
-		$('#logo').load(document.URL +  ' #logo'); 
+		$('#logo').load(document.URL +  ' #logo');
   });
 })
 </script>

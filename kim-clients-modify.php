@@ -110,7 +110,7 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
                        GetSQLValueString($_POST['websiteID'], "int"));
 
   mysqli_select_db($cms, $database_cms);
-  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error($cms));
+  $Result1 = mysqli_query($cms, $updateSQL) or die(mysqli_error($cms));
 
   $updateGoTo = "kim-clients-modify.php?action=saved";
   if (isset($_SERVER['QUERY_STRING'])) {
