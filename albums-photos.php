@@ -211,6 +211,10 @@ if ($_GET['action'] == 'cover') print '<p style="color:red;">Album cover photo b
     </div>
   </div>
 </div>
+<script type="text/javascript">
+    setInterval(function(){
+        $('#photos').reload();
+    }, 2000);
 </body>
 </html>
 <?php
