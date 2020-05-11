@@ -242,6 +242,7 @@ if ($row_album['coverPhotoID'] != NULL) $coverPhotoID = $row_album['coverPhotoID
 
     function my_function () {
         $('#photos').reload();
+        console.log('kim')
     }
 </script>
 </body>
