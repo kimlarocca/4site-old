@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 # FileName="Connection_php_mysql.htm"
 # Type="MYSQL"
 # HTTP="true"
